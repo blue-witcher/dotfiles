@@ -1,0 +1,53 @@
+#!/bin/bash
+
+## Add secure github email to .gitconfig
+# Ask if the user wants to first
+# Add 171081467+blue-witcher@users.noreply.github.com to ~/.gitconfig
+
+# Add user "blue" to wheel group (Necessary for sudo configuration)
+sudo usermod -a -G wheel blue
+
+# Delete the plasma specific locale file so plasma uses the locales from /etc/locale.conf
+rm ~/.config/plasma-localerc
+
+# Function to determine the Linux distribution
+detect_distro() {
+    if [ -f /etc/os-release ]; then
+        # Read the distribution information from /etc/os-release
+        . /etc/os-release
+        DISTRO=$NAME
+    elif [ -f /etc/lsb-release ]; then
+        # Read the distribution information from /etc/lsb-release
+        . /etc/lsb-release
+        DISTRO=$DISTRIB_ID
+    elif [ -f /etc/debian_version ]; then
+        DISTRO="Debian"
+    elif [ -f /etc/redhat-release ]; then
+        DISTRO=$(cat /etc/redhat-release)
+    else
+        DISTRO="Unknown"
+    fi
+    echo "Detected Linux distribution: $DISTRO"
+}
+
+# Execute the function to detect and print the distribution
+detect_distro
+
+# Additional section for openSUSE
+if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; then
+    echo "This is openSUSE. Performing openSUSE-specific tasks..."
+    # Add openSUSE-specific commands here
+    # Example: Updating the system
+    sudo zypper install zoxide fzf fzf-fish-integration fastfetch steam flatpak flatpak-remote-flathub rclone
+
+fi
+
+## Ask the user if he wants to install obsidian
+# INSERT ASK USER COMMAND
+# flatpak install flathub md.obsidian.Obsidian
+
+## Ask the user if he wants to install vesktop
+# INSERT ASK USER COMMAND
+# flatpak install flathub dev.vencord.Vesktop
+
+## Ask if the user wants to restart and remind him that he needs to restart for the sudo configuration to work

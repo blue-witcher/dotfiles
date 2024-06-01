@@ -1,0 +1,22 @@
+MenuBar=Disabled
+
+[Desktop Entry]
+DefaultProfile=Profile 1.profile
+
+[General]
+ConfigVersion=1
+
+[KonsoleWindow]
+FocusFollowsMouse=true
+ShowWindowTitleOnTitleBar=true
+
+[MainWindow]
+ToolBarsMovable=Disabled
+
+[TabBar]
+CloseTabOnMiddleMouseButton=true
+ExpandTabWidth=true
+NewTabButton=true
+
+[UiSettings]
+ColorScheme=
