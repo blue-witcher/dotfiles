@@ -2,7 +2,7 @@
 
 ## Add secure github email to .gitconfig
 # Ask if the user wants to first
-# Add 171081467+blue-witcher@users.noreply.github.com to ~/.gitconfig
+git config --global user.email "171081467+blue-witcher@users.noreply.github.com"
 
 # Add user "blue" to wheel group (Necessary for sudo configuration)
 sudo usermod -a -G wheel blue
