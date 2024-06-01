@@ -4,3 +4,6 @@ This is my dotfiles repository where I eventually want to have all my user and s
 
 ## Sudoers
 The only change to the sudoers file is the one from [this article](https://www.suse.com/support/kb/doc/?id=000016906) under section "Configuring who's password to use" > "2. For non-root user access by entering their own password".
+
+## Zypp.conf
+The only change to zypp.conf is the line `solver.onlyRequires = true`
