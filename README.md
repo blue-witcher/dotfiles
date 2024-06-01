@@ -7,3 +7,4 @@ The only change to the sudoers file is the one from [this article](https://www.s
 
 ## Zypp.conf
 The only change to zypp.conf is the line `solver.onlyRequires = true`
+`solver.dupAllowVendorChange = false` is also set (and important because of packman!) but I didn't set it. (I think it got set automatically by `opi codecs`)
