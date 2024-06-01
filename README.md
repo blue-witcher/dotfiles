@@ -7,4 +7,5 @@ The only change to the sudoers file is the one from [this article](https://www.s
 
 ## Zypp.conf
 The only change to zypp.conf is the line `solver.onlyRequires = true`. 
+
 `solver.dupAllowVendorChange = false` is also set (and important because of packman!) but I didn't set it. (I think it got set automatically either by `opi codecs` or by tumbleweed, which would mean the "defaults" in the file are openSuse Leap defaults and tumbleweed installs with a few non-default values set from the start)
