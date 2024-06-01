@@ -44,10 +44,12 @@ fi
 
 ## Ask the user if he wants to install obsidian
 # INSERT ASK USER COMMAND
-# flatpak install flathub md.obsidian.Obsidian
+flatpak install flathub md.obsidian.Obsidian
 
 ## Ask the user if he wants to install vesktop
 # INSERT ASK USER COMMAND
-# flatpak install flathub dev.vencord.Vesktop
+flatpak install flathub dev.vencord.Vesktop
 
 ## Ask if the user wants to restart and remind him that he needs to restart for the sudo configuration to work
+# Ask user
+systemctl reboot
