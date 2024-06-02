@@ -80,6 +80,10 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
             # If user answers yes, add the email to gitconfig
             GIT_CONFIG=true
         fi
+        if ask_user "Do you want to install the fish config and fish aliases?"; then
+            FISH_CONFIG=true
+            FISH_SUSE=true
+        fi
     fi
     else
         echo "Not installing packages."
@@ -131,6 +135,23 @@ if [ "$SUSE_INSTALL" = true ]; then
     if [ "$GIT_CONFIG" = true ]; then
         git config --global user.email '171081467+blue-witcher@users.noreply.github.com'
         echo 'Added 171081467+blue-witcher@users.noreply.github.com to gitconfig'
+    fi
+fi
+
+# Install fish config
+if [ "$FISH_CONFIG" = true ]; then
+    echo "Installing fish configs.."
+    mkdir -p ~/.config/fish/functions
+    cp fish/config.fish ~/.config/fish 
+    echo "Installed fish config."
+    # Install distro-independent functions V
+    cp fish/functions/* ~/.config/fish/functions
+    echo "Installed fish functions"
+    # If on openSuse, install the openSuse-specific functions
+    if [ "$FISH_SUSE" = true ]; then
+        echo "Installing openSuse functions.."
+        cp fish/functions/openSuse/* ~/.config/fish/functions
+        echo "Installed openSuse functions."
     fi
 fi
 
