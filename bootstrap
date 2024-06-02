@@ -31,7 +31,7 @@ detect_distro() {
 ask_user() {
     while true; do
         read -p "$1 (Y/n): " yn
-        yn=${yn:-yes}
+        yn=${yn:-y}
         case $yn in
             [Yy] ) return 0;;
             [Nn] ) return 1;;
