@@ -89,7 +89,7 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
         # If user answers yes, install packman and codecs
         sudo opi codecs
         echo "Installed packman and codecs."
-        echo "You may need to run \"zypper dup --from packman --alow-vendor-change\""
+        echo "You may need to run \"zypper dup --from packman --allow-vendor-change\""
     else
         echo "Skipping packman and codecs."
     fi
