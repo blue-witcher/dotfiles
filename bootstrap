@@ -47,19 +47,14 @@ get_current_user() {
 }
 
 
+######################################### 
 ### Code
+
 # Execute the function to detect and print the distribution
 detect_distro
 
 # Execute the function to detect and print the current user
 get_current_user
-
-## Add secure github email to .gitconfig
-if ask_user 'Do you want to add the noreply github email address to your gitconfig?'; then
-    # If user answers yes, add the email to gitconfig
-    git config --global user.email '171081467+blue-witcher@users.noreply.github.com'
-    echo 'Added 171081467+blue-witcher@users.noreply.github.com to gitconfig'
-fi
 
 # Add user to wheel group (Necessary for sudo configuration)
 if ask_user "Add user \"$CURRENT_USER\" to group \"wheel\"?"; then
@@ -79,8 +74,13 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
     echo "This is openSUSE. Performing openSUSE-specific tasks..."
     # Add openSUSE-specific commands here
     if ask_user "Do you want to install packages?"; then
-        # If user answers yes, install the packages
-        sudo zypper install opi fish zoxide fzf fzf-fish-integration fastfetch steam flatpak flatpak-remote-flathub rclone yt-dlp
+        # Store yes so the installations can all the done in the end
+        SUSE_INSTALL=true
+        if ask_user 'Do you want to add the noreply github email address to your gitconfig?'; then
+            # If user answers yes, add the email to gitconfig
+            GIT_CONFIG=true
+        fi
+    fi
     else
         echo "Not installing packages."
     fi
@@ -88,9 +88,7 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
     # Ask if the user wants to install packman repo and codecs
     if ask_user "Do you want to enable the packman repo and install codecs?"; then
         # If user answers yes, install packman and codecs
-        sudo opi codecs
-        echo "Installed packman and codecs."
-        echo "You may need to run \"zypper dup --from packman --allow-vendor-change\""
+        SUSE_CODECS=true
     else
         echo "Skipping packman and codecs."
     fi
@@ -98,35 +96,81 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
     ## vscode
     # Ask if the user wants to install vscode from the obs
     if ask_user "Do you want to install vscode from the obs?"; then
-        # Yes
-        if [ "$DISTRO" = "openSUSE Tumbleweed" ]; then
-            sudo zypper addrepo https://download.opensuse.org/repositories/devel:tools:ide:vscode/openSUSE_Tumbleweed/devel:tools:ide:vscode.repo
-            sudo zypper refresh
-            sudo zypper install code
-        elif [ "$DISTRO" = "openSUSE Leap" ]; then
-            zypper addrepo "https://download.opensuse.org/repositories/devel:tools:ide:vscode/$DISTRO_VERSION/devel:tools:ide:vscode.repo"
-            zypper refresh
-            zypper install code
-        fi
-    else
-        echo "Skipping vscode."
+            # Yes
+            VSCODE_OBS=true
+            echo "vscode will be installed."
+        else
+            echo "Skipping vscode."
     fi
 fi
+
 
 ## Ask the user if he wants to install obsidian
 if ask_user "Do you want to install ObsidianMD as flatpak?"; then
     # Yes
-    flatpak install flathub md.obsidian.Obsidian
-    echo "Installed ObsidianMD."
+    OBSIDIAN=true
+    echo "Obsidian will be installed."
 fi
 
 ## Ask the user if he wants to install vesktop
 if ask_user "Do you want to install Vesktop? (Alternate discord client)"; then
     # Yes
+    VESKTOP=true
+fi
+
+
+######################################### 
+### Installations
+
+echo "Installing programs now.."
+if [ "$SUSE_INSTALL" = true ]; then
+    echo "Installing openSuse packages.."
+    sudo zypper install opi fish zoxide fzf fzf-fish-integration fastfetch steam flatpak flatpak-remote-flathub rclone yt-dlp
+    echo "Installed openSuse packages."
+
+    if [ "$GIT_CONFIG" = true ]; then
+        git config --global user.email '171081467+blue-witcher@users.noreply.github.com'
+        echo 'Added 171081467+blue-witcher@users.noreply.github.com to gitconfig'
+    fi
+fi
+
+if [ "$SUSE_CODECS" = true ]; then
+    echo "Installing packman and codecs.."
+    sudo opi codecs
+    echo "Installed packman and codecs."
+    echo "You may need to run \"zypper dup --from packman --allow-vendor-change\""
+fi
+
+if [ "$VSCODE_OBS = true" ]; then
+    echo "Installing vscode.."
+    if [ "$DISTRO" = "openSUSE Tumbleweed" ]; then
+            echo "Installing vscode for openSuse Tumbleweed.."
+            sudo zypper addrepo https://download.opensuse.org/repositories/devel:tools:ide:vscode/openSUSE_Tumbleweed/devel:tools:ide:vscode.repo
+            sudo zypper refresh
+            sudo zypper install code
+        elif [ "$DISTRO" = "openSUSE Leap" ]; then
+            echo "Installing vscode for openSuse Leap $DISTRO_VERSION.."
+            zypper addrepo "https://download.opensuse.org/repositories/devel:tools:ide:vscode/$DISTRO_VERSION/devel:tools:ide:vscode.repo"
+            zypper refresh
+            zypper install code
+    fi
+    echo "Installed vscode."
+fi
+
+
+if [ "$OBSIDIAN" = true ]; then
+    echo "Installing Obsidian.."
+    flatpak install flathub md.obsidian.Obsidian
+    echo "Installed Obsidian."
+fi
+
+if [ "$VESKTOP" = true ]; then
+    echo "Installing Vesktop.."
     flatpak install flathub dev.vencord.Vesktop
     echo "Installed vesktop."
     echo "Remember to import your settings."
 fi
+
 
 ## Ask if the user wants to restart and remind him that he needs to restart for the sudo configuration to work
 if ask_user "Do you want to reboot now?"; then
