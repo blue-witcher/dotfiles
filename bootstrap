@@ -94,12 +94,19 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
         echo "Skipping packman and codecs."
     fi
 
+    ## vscode
     # Ask if the user wants to install vscode from the obs
     if ask_user "Do you want to install vscode from the obs?"; then
         # Yes
-        sudo zypper addrepo https://download.opensuse.org/repositories/devel:tools:ide:vscode/openSUSE_Tumbleweed/devel:tools:ide:vscode.repo
-        sudo zypper refresh
-        sudo zypper install code
+        if "$DISTRO" = "openSUSE Tumbleweed"; then
+            sudo zypper addrepo https://download.opensuse.org/repositories/devel:tools:ide:vscode/openSUSE_Tumbleweed/devel:tools:ide:vscode.repo
+            sudo zypper refresh
+            sudo zypper install code
+        elif "$DISTRO" = "openSUSE Leap"; then
+            zypper addrepo "https://download.opensuse.org/repositories/devel:tools:ide:vscode/$DISTRO_VERSION/devel:tools:ide:vscode.repo"
+            zypper refresh
+            zypper install code
+        fi
     else
         echo "Skipping vscode."
     fi
