@@ -7,18 +7,24 @@ detect_distro() {
         # Read the distribution information from /etc/os-release
         . /etc/os-release
         DISTRO=$NAME
+        DISTRO_VERSION=$VERSION_ID
     elif [ -f /etc/lsb-release ]; then
         # Read the distribution information from /etc/lsb-release
         . /etc/lsb-release
         DISTRO=$DISTRIB_ID
+        DISTRO_VERSION=$DISTRIB_RELEASE
     elif [ -f /etc/debian_version ]; then
         DISTRO="Debian"
+        DISTRO_VERSION=$(cat /etc/debian_version)
     elif [ -f /etc/redhat-release ]; then
         DISTRO=$(cat /etc/redhat-release)
+        DISTRO_VERSION=$(cat /etc/redhat-release | grep -oP '\d+(\.\d+)?')
     else
         DISTRO="Unknown"
+        DISTRO_VERSION="Unknown"
     fi
     echo "Detected Linux distribution: $DISTRO"
+    echo "Detected distro version: $DISTRO_VERSION"
 }
 
 # Function to ask the user a yes/no question
