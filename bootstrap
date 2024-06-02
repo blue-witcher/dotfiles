@@ -70,6 +70,7 @@ fi
 
 # Delete the plasma specific locale file so plasma uses the locales from /etc/locale.conf
 rm ~/.config/plasma-localerc
+echo "Deleted \"~/.config/plasma-localerc\" file."
 
 
 
