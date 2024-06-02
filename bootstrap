@@ -34,10 +34,19 @@ ask_user() {
     done
 }
 
+# Function to get the current user
+get_current_user() {
+    CURRENT_USER=$(whoami)
+    echo "Current user: $CURRENT_USER"
+}
+
 
 ### Code
 # Execute the function to detect and print the distribution
 detect_distro
+
+# Execute the function to detect and print the current user
+get_current_user
 
 ## Add secure github email to .gitconfig
 # Ask if the user wants to first
