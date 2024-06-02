@@ -109,3 +109,5 @@ root ALL=(ALL:ALL) ALL
 ## Read drop-in files from /usr/etc/sudoers.d
 @includedir /usr/etc/sudoers.d
 @includedir /etc/sudoers.d
+# Blue comment: Maybe it's safer to comment out the two lines above?
+# Don't know if it breaks anything yet, so I won't right now.
