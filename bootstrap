@@ -61,7 +61,7 @@ if ask_user 'Do you want to add the noreply github email address to your gitconf
         echo 'Added 171081467+blue-witcher@users.noreply.github.com to gitconfig'
 fi
 
-# Add user "blue" to wheel group (Necessary for sudo configuration)
+# Add user to wheel group (Necessary for sudo configuration)
 if ask_user "Add user \"$CURRENT_USER\" to group \"wheel\"?"; then
         # If user answers yes, add the email to gitconfig
         sudo usermod -a -G wheel $CURRENT_USER
