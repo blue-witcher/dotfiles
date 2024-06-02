@@ -1,15 +1,6 @@
 #!/bin/bash
 
-## Add secure github email to .gitconfig
-# Ask if the user wants to first
-git config --global user.email "171081467+blue-witcher@users.noreply.github.com"
-
-# Add user "blue" to wheel group (Necessary for sudo configuration)
-sudo usermod -a -G wheel blue
-
-# Delete the plasma specific locale file so plasma uses the locales from /etc/locale.conf
-rm ~/.config/plasma-localerc
-
+###Functions
 # Function to determine the Linux distribution
 detect_distro() {
     if [ -f /etc/os-release ]; then
@@ -29,6 +20,35 @@ detect_distro() {
     fi
     echo "Detected Linux distribution: $DISTRO"
 }
+
+# Function to ask the user a yes/no question
+ask_user() {
+    while true; do
+        read -p "$1 (Y/n): " yn
+        yn=${yn:-yes}
+        case $yn in
+            [Yy]* ) return 0;;
+            [Nn]* ) return 1;;
+            * ) echo "Please answer yes or no.";;
+        esac
+    done
+}
+
+
+### Code
+# Execute the function to detect and print the distribution
+detect_distro
+
+## Add secure github email to .gitconfig
+# Ask if the user wants to first
+git config --global user.email "171081467+blue-witcher@users.noreply.github.com"
+
+# Add user "blue" to wheel group (Necessary for sudo configuration)
+sudo usermod -a -G wheel blue
+
+# Delete the plasma specific locale file so plasma uses the locales from /etc/locale.conf
+rm ~/.config/plasma-localerc
+
 
 # Execute the function to detect and print the distribution
 detect_distro
