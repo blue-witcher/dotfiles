@@ -38,7 +38,11 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
     echo "This is openSUSE. Performing openSUSE-specific tasks..."
     # Add openSUSE-specific commands here
     # Example: Updating the system
-    sudo zypper install fish zoxide fzf fzf-fish-integration fastfetch steam flatpak flatpak-remote-flathub rclone yt-dlp
+    sudo zypper install opi fish zoxide fzf fzf-fish-integration fastfetch steam flatpak flatpak-remote-flathub rclone yt-dlp
+
+    # Ask if the user wants to install packman repo and codecs
+    sudo opi codecs
+    # Tell the user that they may need to run zypper dup --from packman --allow-vendor-change
 
 fi
 
