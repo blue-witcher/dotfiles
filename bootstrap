@@ -43,7 +43,6 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
     # Ask if the user wants to install packman repo and codecs
     sudo opi codecs
     # Tell the user that they may need to run zypper dup --from packman --allow-vendor-change
-
 fi
 
 ## Ask the user if he wants to install obsidian
