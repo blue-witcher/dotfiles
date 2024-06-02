@@ -83,7 +83,7 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
     else
         echo "Not installing packages."
     fi
-
+    ## Packman codecs
     # Ask if the user wants to install packman repo and codecs
     if ask_user "Do you want to enable the packman repo and install codecs?"; then
         # If user answers yes, install packman and codecs
