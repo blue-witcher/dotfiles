@@ -56,16 +56,16 @@ get_current_user
 
 ## Add secure github email to .gitconfig
 if ask_user 'Do you want to add the noreply github email address to your gitconfig?'; then
-        # If user answers yes, add the email to gitconfig
-        git config --global user.email '171081467+blue-witcher@users.noreply.github.com'
-        echo 'Added 171081467+blue-witcher@users.noreply.github.com to gitconfig'
+    # If user answers yes, add the email to gitconfig
+    git config --global user.email '171081467+blue-witcher@users.noreply.github.com'
+    echo 'Added 171081467+blue-witcher@users.noreply.github.com to gitconfig'
 fi
 
 # Add user to wheel group (Necessary for sudo configuration)
 if ask_user "Add user \"$CURRENT_USER\" to group \"wheel\"?"; then
-        # If user answers yes, add the email to gitconfig
-        sudo usermod -a -G wheel $CURRENT_USER
-        echo "Added user \"$CURRENT_USER\" to group \"wheel\"."
+    # If user answers yes, add the email to gitconfig
+    sudo usermod -a -G wheel $CURRENT_USER
+    echo "Added user \"$CURRENT_USER\" to group \"wheel\"."
 fi
 
 # Delete the plasma specific locale file so plasma uses the locales from /etc/locale.conf
@@ -114,17 +114,17 @@ fi
 
 ## Ask the user if he wants to install obsidian
 if ask_user "Do you want to install ObsidianMD as flatpak?"; then
-        # Yes
-        flatpak install flathub md.obsidian.Obsidian
-        echo "Installed ObsidianMD."
+    # Yes
+    flatpak install flathub md.obsidian.Obsidian
+    echo "Installed ObsidianMD."
 fi
 
 ## Ask the user if he wants to install vesktop
 if ask_user "Do you want to install Vesktop? (Alternate discord client)"; then
-        # Yes
-        flatpak install flathub dev.vencord.Vesktop
-        echo "Installed vesktop."
-        echo "Remember to import your settings."
+    # Yes
+    flatpak install flathub dev.vencord.Vesktop
+    echo "Installed vesktop."
+    echo "Remember to import your settings."
 fi
 
 ## Ask if the user wants to restart and remind him that he needs to restart for the sudo configuration to work
