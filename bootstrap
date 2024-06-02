@@ -27,8 +27,8 @@ ask_user() {
         read -p "$1 (Y/n): " yn
         yn=${yn:-yes}
         case $yn in
-            [Yy]* ) return 0;;
-            [Nn]* ) return 1;;
+            [Yy] ) return 0;;
+            [Nn] ) return 1;;
             * ) echo "Please answer yes or no.";;
         esac
     done
