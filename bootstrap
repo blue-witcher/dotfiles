@@ -96,8 +96,6 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
     if ask_user "Do you want to enable the packman repo and install codecs?"; then
         # If user answers yes, install packman and codecs
         SUSE_CODECS=true
-    else
-        echo "Skipping packman and codecs."
     fi
 
     ## vscode
@@ -105,9 +103,6 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
     if ask_user "Do you want to install vscode from the obs?"; then
             # Yes
             VSCODE_OBS=true
-            echo "vscode will be installed."
-        else
-            echo "Skipping vscode."
     fi
 fi
 
@@ -116,7 +111,6 @@ fi
 if ask_user "Do you want to install ObsidianMD as flatpak?"; then
     # Yes
     OBSIDIAN=true
-    echo "Obsidian will be installed."
 fi
 
 ## Ask the user if he wants to install vesktop
@@ -125,6 +119,8 @@ if ask_user "Do you want to install Vesktop? (Alternate discord client)"; then
     VESKTOP=true
 fi
 
+#########################################
+### Summary
 
 ######################################### 
 ### Installations
