@@ -67,6 +67,10 @@ if ask_user $'Add user \"$CURRENT_USER\" to group \"wheel\"?\nYou need to do thi
     USER_WHEEL=true
 fi
 
+# Ask if user wants to install the sudoers file
+if ask_user "Do you want to install the sudoers file?"; then
+    SUDOERS=true
+fi
 
 # Additional section for openSUSE
 if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; then
