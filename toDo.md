@@ -14,3 +14,4 @@
         - [x] Ask user
         - [x] Copy file
         - [ ] Give root file ownership and exclusive read/write access to copied file
+- [ ] Think about whether I would rather copy all files or symlink them
