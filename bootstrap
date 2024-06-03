@@ -56,17 +56,17 @@ detect_distro
 # Execute the function to detect and print the current user
 get_current_user
 
+# Ask user if they want to delete ~/.config/plasma-localerc
+if ask_user $'Do you want to delete the "~/.config/plasma-localerc" file?\nYou may need to do this so plasma uses the locale of your system, as defined in /etc/locale.conf'; then
+    DELETE_PLASMA_LOCALERC=true
+fi 
+
 # Add user to wheel group (Necessary for sudo configuration)
 if ask_user "Add user \"$CURRENT_USER\" to group \"wheel\"?"; then
     # If user answers yes, add the email to gitconfig
     sudo usermod -a -G wheel $CURRENT_USER
     echo "Added user \"$CURRENT_USER\" to group \"wheel\"."
 fi
-
-# Delete the plasma specific locale file so plasma uses the locales from /etc/locale.conf
-rm ~/.config/plasma-localerc
-echo "Deleted \"~/.config/plasma-localerc\" file."
-
 
 
 # Additional section for openSUSE
@@ -126,6 +126,14 @@ fi
 ######################################### 
 ### Installations
 
+# Delete the plasma specific locale file so plasma uses the locales from /etc/locale.conf
+if [ "$DELETE_PLASMA_LOCALERC = true" ]; then
+    echo "Deleting plasma-localerc.."
+    rm ~/.config/plasma-localerc
+    echo "Deleted plasma-localerc"
+fi
+
+# openSuse packages
 echo "Installing programs now.."
 if [ "$SUSE_INSTALL" = true ]; then
     echo "Installing openSuse packages.."
