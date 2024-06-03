@@ -10,3 +10,6 @@
     - [ ] locale.conf
     - [ ] /etc/zypp/zypp.conf
     - [ ] /etc/sudoers
+        - [x] Ask user
+        - [x] Copy file
+        - [ ] Give root file ownership and exclusive read/write access to copied file

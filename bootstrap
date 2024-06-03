@@ -136,6 +136,7 @@ if [ "$DELETE_PLASMA_LOCALERC" = true ]; then
     echo "Deleted plasma-localerc"
 fi
 
+# Add user to wheel group
 if [ "$USER_WHEEL" = true ]; then
     sudo usermod -a -G wheel $CURRENT_USER
     echo "Added user \"$CURRENT_USER\" to group \"wheel\"."
@@ -211,10 +212,20 @@ if [ "$VESKTOP" = true ]; then
     echo "Remember to import your settings."
 fi
 
+# Install sudoers file
+## This should be the last thing to be done before restarting.
+if [ "$SUDOERS" = true ]; then
+    echo "Installing sudoers file.."
+    sudo cp sudoers /etc/sudoers
+    # Maybe need to also manage file ownership after copy, like:
+    # sudo chown root (idk syntax)
+    # sudo chmod only root (idk syntax)
+fi
+
 ############################
 
 ## Ask if the user wants to restart and remind him that he needs to restart for the sudo configuration to work
-if ask_user "Do you want to reboot now?"; then
+if ask_user "Do you want to reboot now? (You need to reboot to apply the locale and sudoers configurations)"; then
         # Yes
         echo "Rebooting.."
         systemctl reboot
