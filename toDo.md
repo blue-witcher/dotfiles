@@ -8,7 +8,7 @@
         - [ ] Add driveBiSync crontab installtion to bootstrap
 - [ ] Add summary before installation
 - [ ] Add /etc/ config installations to bootstrap
-    - [ ] locale.conf
+    - [x] locale.conf
     - [ ] /etc/zypp/zypp.conf
     - [ ] /etc/sudoers
         - [x] Ask user
