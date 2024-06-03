@@ -1,5 +1,6 @@
 # ToDo list
 
+- [ ] Change usermod in accordance to the information/installation split
 - [x] Add fish config installation to bootstrap
 - [ ] Add kde config installation to bootstrap
 - [ ] Add rclone config installation to bootstrap
