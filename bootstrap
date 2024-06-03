@@ -57,7 +57,7 @@ detect_distro
 get_current_user
 
 # Ask user if they want to install the locale.conf file
-if ask_user "Do you want to install the locale.conf file?"
+if ask_user "Do you want to install the locale.conf file?"; then
     LOCALECONF=true
 fi
 
