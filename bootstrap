@@ -127,7 +127,7 @@ fi
 ### Installations
 
 # Delete the plasma specific locale file so plasma uses the locales from /etc/locale.conf
-if [ "$DELETE_PLASMA_LOCALERC = true" ]; then
+if [ "$DELETE_PLASMA_LOCALERC" = true ]; then
     echo "Deleting plasma-localerc.."
     rm ~/.config/plasma-localerc
     echo "Deleted plasma-localerc"
