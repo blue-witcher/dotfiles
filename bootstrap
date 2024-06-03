@@ -93,9 +93,6 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
             FISH_SUSE=true
         fi
     fi
-    else
-        echo "Not installing packages."
-    fi
     ## Packman codecs
     # Ask if the user wants to install packman repo and codecs
     if ask_user "Do you want to enable the packman repo and install codecs?"; then
@@ -152,7 +149,6 @@ if [ "$USER_WHEEL" = true ]; then
 fi
 
 # openSuse packages
-echo "Installing programs now.."
 if [ "$SUSE_INSTALL" = true ]; then
     echo "Installing openSuse packages.."
     sudo zypper install opi fish zoxide fzf fzf-fish-integration fastfetch steam flatpak flatpak-remote-flathub rclone yt-dlp
@@ -190,7 +186,7 @@ if [ "$SUSE_CODECS" = true ]; then
 fi
 
 # OBS vscode
-if [ "$VSCODE_OBS = true" ]; then
+if [ "$VSCODE_OBS" = true ]; then
     echo "Installing vscode.."
     if [ "$DISTRO" = "openSUSE Tumbleweed" ]; then
             echo "Installing vscode for openSuse Tumbleweed.."
