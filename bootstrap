@@ -61,11 +61,10 @@ if ask_user $'Do you want to delete the "~/.config/plasma-localerc" file?\nYou m
     DELETE_PLASMA_LOCALERC=true
 fi 
 
-# Add user to wheel group (Necessary for sudo configuration)
-if ask_user "Add user \"$CURRENT_USER\" to group \"wheel\"?"; then
-    # If user answers yes, add the email to gitconfig
-    sudo usermod -a -G wheel $CURRENT_USER
-    echo "Added user \"$CURRENT_USER\" to group \"wheel\"."
+# Ask if user wants to be in wheel group (Necessary for sudo configuration)
+if ask_user $'Add user \"$CURRENT_USER\" to group \"wheel\"?\nYou need to do this for the sudoers config to work.'; then
+    # If user answers yes, add user to wheel group later
+    USER_WHEEL=true
 fi
 
 
@@ -131,6 +130,11 @@ if [ "$DELETE_PLASMA_LOCALERC" = true ]; then
     echo "Deleting plasma-localerc.."
     rm ~/.config/plasma-localerc
     echo "Deleted plasma-localerc"
+fi
+
+if [ "$USER_WHEEL" = true ]; then
+    sudo usermod -a -G wheel $CURRENT_USER
+    echo "Added user \"$CURRENT_USER\" to group \"wheel\"."
 fi
 
 # openSuse packages
