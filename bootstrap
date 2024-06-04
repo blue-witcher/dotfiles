@@ -49,10 +49,8 @@ get_current_user() {
 
 ######################################### 
 ### Information gathering
-
 # Execute the function to detect and print the distribution
 detect_distro
-
 # Execute the function to detect and print the current user
 get_current_user
 
@@ -62,7 +60,6 @@ if ask_user "Do you want to install the locale.conf file?"; then
 fi
 
 ## KDE
-
 # Ask user if they want to install ALL kde configs
 if ask_user "Do you want to install all KDE configs?"; then
         KDE_ALL=TRUE
@@ -86,18 +83,22 @@ fi
 if ask_user $'Do you want to delete the "~/.config/plasma-localerc" file?\nYou may need to do this so plasma uses the locale of your system, as defined in /etc/locale.conf'; then
     DELETE_PLASMA_LOCALERC=true
 fi 
+##KDE end
 
+## Group management
 # Ask if user wants to be in wheel group (Necessary for sudo configuration)
 if ask_user "Add user \"$CURRENT_USER\" to group \"wheel\"? You need to do this for the sudoers config to work."; then
     # If user answers yes, add user to wheel group later
     USER_WHEEL=true
 fi
 
+## Sudo
 # Ask if user wants to install the sudoers file
 if ask_user "Do you want to install the sudoers file?"; then
     SUDOERS=true
 fi
 
+## Installations
 # Additional section for openSUSE
 if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; then
     echo "This is openSUSE. Performing openSUSE-specific tasks..."
@@ -148,66 +149,7 @@ fi
 ######################################### 
 ### Installations
 
-## KDE
-
-# Install all kde configs
-if [ "$KDE_ALL" = true ]; then
-        echo "Installing all KDE configs.."
-        cp KDE/* ~/.config
-        echo "Installed session settings."
-        echo "Installed klipper settings."
-        echo "Installed konsole settings."
-        mkdir -p ~/.local/share/konsole
-        cp KDE/.local/share/konsole/* ~/.local/share/konsole
-        echo "Installed konsole profile."
-        echo "Installed konsole colorscheme."
-fi
-
-# Install klipper config
-if [ "$KDE_KLIPPER" = true ]; then
-    echo "Installing klipper config.."
-    cp KDE/klipperrc ~/.config 
-    echo "Installed klipper config."
-fi
-
-# Install konsole config
-if [ "$KDE_KONSOLE" = true ]; then
-    echo "Installing konsole config, color-schemes and profiles.."
-    cp KDE/konsolerc ~/.config
-    Echo "Installed konsole config."
-    mkdir -p ~/.local/share/konsole
-    cp KDE/.local/share/konsole/* ~/.local/share/konsole
-    echo "Installed konsole profiles and colorschemes."
-fi
-
-# Install session config
-if [ "$KDE_SESSION" = true ]; then
-    echo "Installing KDE session settings.."
-    cp KDE/ksmserverrc ~/.config
-    echo "Installed KDE session settings."
-## KDE end    
-
-# Install new locale.conf file
-if [ "$LOCALECONF" = true ]; then
-    echo "Installing locale.conf.."
-    # -i for cp to ask for confirmation
-    sudo cp -i locale.conf /etc/locale.conf
-    echo "Installed locale.conf."
-fi
-
-# Delete the plasma specific locale file so plasma uses the locales from /etc/locale.conf
-if [ "$DELETE_PLASMA_LOCALERC" = true ]; then
-    echo "Deleting plasma-localerc.."
-    rm ~/.config/plasma-localerc
-    echo "Deleted plasma-localerc"
-fi
-
-# Add user to wheel group
-if [ "$USER_WHEEL" = true ]; then
-    sudo usermod -a -G wheel $CURRENT_USER
-    echo "Added user \"$CURRENT_USER\" to group \"wheel\"."
-fi
-
+## packages
 # openSuse packages
 if [ "$SUSE_INSTALL" = true ]; then
     echo "Installing openSuse packages.."
@@ -217,23 +159,6 @@ if [ "$SUSE_INSTALL" = true ]; then
     if [ "$GIT_CONFIG" = true ]; then
         git config --global user.email '171081467+blue-witcher@users.noreply.github.com'
         echo 'Added 171081467+blue-witcher@users.noreply.github.com to gitconfig'
-    fi
-fi
-
-# fish config
-if [ "$FISH_CONFIG" = true ]; then
-    echo "Installing fish configs.."
-    mkdir -p ~/.config/fish/functions
-    cp fish/config.fish ~/.config/fish 
-    echo "Installed fish config."
-    # Install distro-independent functions V
-    cp fish/functions/* ~/.config/fish/functions
-    echo "Installed fish functions"
-    # If on openSuse, install the openSuse-specific functions
-    if [ "$FISH_SUSE" = true ]; then
-        echo "Installing openSuse functions.."
-        cp fish/functions/openSuse/* ~/.config/fish/functions
-        echo "Installed openSuse functions."
     fi
 fi
 
@@ -276,9 +201,91 @@ if [ "$VESKTOP" = true ]; then
     echo "Installed vesktop."
     echo "Remember to import your settings."
 fi
+## packages end
 
+## configs
+# fish config
+if [ "$FISH_CONFIG" = true ]; then
+    echo "Installing fish configs.."
+    mkdir -p ~/.config/fish/functions
+    cp fish/config.fish ~/.config/fish 
+    echo "Installed fish config."
+    # Install distro-independent functions V
+    cp fish/functions/* ~/.config/fish/functions
+    echo "Installed fish functions"
+    # If on openSuse, install the openSuse-specific functions
+    if [ "$FISH_SUSE" = true ]; then
+        echo "Installing openSuse functions.."
+        cp fish/functions/openSuse/* ~/.config/fish/functions
+        echo "Installed openSuse functions."
+    fi
+fi
+
+## KDE
+# Install all kde configs
+if [ "$KDE_ALL" = true ]; then
+        echo "Installing all KDE configs.."
+        cp KDE/* ~/.config
+        echo "Installed session settings."
+        echo "Installed klipper settings."
+        echo "Installed konsole settings."
+        mkdir -p ~/.local/share/konsole
+        cp KDE/.local/share/konsole/* ~/.local/share/konsole
+        echo "Installed konsole profile."
+        echo "Installed konsole colorscheme."
+fi
+
+# Install klipper config
+if [ "$KDE_KLIPPER" = true ]; then
+    echo "Installing klipper config.."
+    cp KDE/klipperrc ~/.config 
+    echo "Installed klipper config."
+fi
+
+# Install konsole config
+if [ "$KDE_KONSOLE" = true ]; then
+    echo "Installing konsole config, color-schemes and profiles.."
+    cp KDE/konsolerc ~/.config
+    Echo "Installed konsole config."
+    mkdir -p ~/.local/share/konsole
+    cp KDE/.local/share/konsole/* ~/.local/share/konsole
+    echo "Installed konsole profiles and colorschemes."
+fi
+
+# Install session config
+if [ "$KDE_SESSION" = true ]; then
+    echo "Installing KDE session settings.."
+    cp KDE/ksmserverrc ~/.config
+    echo "Installed KDE session settings."
+## KDE end    
+
+## locale.conf
+# Install new locale.conf file
+if [ "$LOCALECONF" = true ]; then
+    echo "Installing locale.conf.."
+    # -i for cp to ask for confirmation
+    sudo cp -i locale.conf /etc/locale.conf
+    echo "Installed locale.conf."
+fi
+
+## plasma_localerc
+# Delete the plasma specific locale file so plasma uses the locales from /etc/locale.conf
+if [ "$DELETE_PLASMA_LOCALERC" = true ]; then
+    echo "Deleting plasma-localerc.."
+    rm ~/.config/plasma-localerc
+    echo "Deleted plasma-localerc"
+fi
+
+## user management
+# Add user to wheel group
+if [ "$USER_WHEEL" = true ]; then
+    sudo usermod -a -G wheel $CURRENT_USER
+    echo "Added user \"$CURRENT_USER\" to group \"wheel\"."
+fi
+
+## Sudo
 # Install sudoers file
-## This should be the last thing to be done before restarting.
+# This should be the last thing to be done before restarting.
 if [ "$SUDOERS" = true ]; then
     echo "Installing sudoers file.."
     sudo cp sudoers /etc/sudoers
