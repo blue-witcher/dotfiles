@@ -128,6 +128,10 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
         fi
         if ask_user "Do you want to install rclone config?"; then
             RCLONE_CONF=true
+            if ask_user "Do you want to install the driveSync crontab?"; then
+                CRON_SETUP=true
+                DRIVESYNC_CRON=true
+            fi
         fi
     fi
 #### Packman codecs
@@ -248,11 +252,8 @@ if [ "$FISH_CONFIG" = true ]; then
     fi
 fi
 
-## driveSync
+## rclone / driveSync
 DRIVESYNC_FOLDER=~/Documents/scripts/driveSync
-DRIVESYNC_CRON="@reboot $DRIVESYNC_FOLDER/driveBiSync.sh
-*/10 * * * * $DRIVESYNC_FOLDER/driveBiSync.sh"
-## rclone
 if [ "$RCLONE_CONF" = true ]; then
     # Rclone config
     echo "Installing rclone configuration.."
@@ -265,10 +266,13 @@ if [ "$RCLONE_CONF" = true ]; then
     mkdir -p $DRIVESYNC_FOLDER/logs
     cp rclone/driveBiSync.sh $DRIVESYNC_FOLDER
     echo "Installed driveBiSync in '$DRIVESYNC_FOLDER'."
-    # cronjob install
-    echo "Installing driveBiSync cron job.."
-    (crontab -l; echo "$DRIVESYNC_CRON") | crontab
-    echo "Installed driveBiSync cron job."
+fi
+
+## cron jobs
+if [ "$CRON_SETUP" = true ]; then
+    echo "Starting cron setup.."
+    . scripts/crontab.sh
+    echo "Cron setup done."
 fi
 
 ## KDE
@@ -276,9 +280,7 @@ fi
 if [ "$KDE_ALL" = true ]; then
         echo "Installing all KDE configs.."
         cp KDE/* ~/.config
-        echo "Installed session settings."
-        echo "Installed klipper settings."
-        echo "Installed konsole settings."
+        echo "Installed KDE settings."
         mkdir -p ~/.local/share/konsole
         cp KDE/.local/share/konsole/* ~/.local/share/konsole
         echo "Installed konsole profile."
