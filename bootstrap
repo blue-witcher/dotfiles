@@ -1,6 +1,10 @@
 #!/bin/bash
 
+#########################################
+
 # Functions
+
+
 ## Function to determine the Linux distribution
 detect_distro() {
     if [ -f /etc/os-release ]; then
@@ -48,7 +52,10 @@ get_current_user() {
 
 
 ######################################### 
+
 # Information gathering
+
+
 ## Execute the function to detect and print the distribution
 detect_distro
 ## Execute the function to detect and print the current user
@@ -99,7 +106,7 @@ if ask_user "Do you want to install the sudoers file?"; then
 fi
 
 ## Installations
-### Additional section for openSUSE
+### Section for openSUSE
 if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; then
     echo "This is openSUSE. Performing openSUSE-specific tasks..."
     # Add openSUSE-specific commands here
@@ -118,14 +125,14 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
             RCLONE_CONF=true
         fi
     fi
-    ## Packman codecs
+#### Packman codecs
     # Ask if the user wants to install packman repo and codecs
     if ask_user "Do you want to enable the packman repo and install codecs?"; then
         # If user answers yes, install packman and codecs
         SUSE_CODECS=true
     fi
 
-    ## vscode
+#### vscode
     # Ask if the user wants to install vscode from the obs
     if ask_user "Do you want to install vscode from the obs?"; then
             # Yes
@@ -133,24 +140,31 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
     fi
 fi
 
-
-## Ask the user if he wants to install obsidian
+## flatpaks
+### Ask the user if he wants to install obsidian
 if ask_user "Do you want to install ObsidianMD as flatpak?"; then
     # Yes
     OBSIDIAN=true
 fi
 
-## Ask the user if he wants to install vesktop
+### Ask the user if he wants to install vesktop
 if ask_user "Do you want to install Vesktop? (Alternate discord client)"; then
     # Yes
     VESKTOP=true
 fi
 
+
 #########################################
+
 # Summary
 
+
 ######################################### 
+
 # Installations
+
+
+## Install zypp.conf
 
 ## packages
 ### openSuse packages
