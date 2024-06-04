@@ -7,7 +7,7 @@
 - [x] Add rclone config installation to bootstrap
     - [x] Add driveBiSync.sh installation to bootstrap
         - [x] Add driveBiSync crontab installtion to bootstrap
-- [ ] Add summary before installation
+- [x] Add summary before installation
 - [ ] Add /etc/ config installations to bootstrap
     - [x] locale.conf
     - [x] /etc/zypp/zypp.conf
