@@ -3,9 +3,10 @@
 - [x] Change usermod in accordance to the information/installation split
 - [x] Add fish config installation to bootstrap
 - [x] Add kde config installation to bootstrap
-- [ ] Add rclone config installation to bootstrap
-    - [ ] Add driveBiSync.sh installation to bootstrap
-        - [ ] Add driveBiSync crontab installtion to bootstrap
+    - [ ] Add kde profile pic
+- [x] Add rclone config installation to bootstrap
+    - [x] Add driveBiSync.sh installation to bootstrap
+        - [x] Add driveBiSync crontab installtion to bootstrap
 - [ ] Add summary before installation
 - [ ] Add /etc/ config installations to bootstrap
     - [x] locale.conf

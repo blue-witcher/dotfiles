@@ -114,6 +114,9 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
             FISH_CONFIG=true
             FISH_SUSE=true
         fi
+        if ask_user "Do you want to install rclone config?"; then
+            RCLONE_CONF=true
+        fi
     fi
     ## Packman codecs
     # Ask if the user wants to install packman repo and codecs
@@ -153,7 +156,7 @@ fi
 ### openSuse packages
 if [ "$SUSE_INSTALL" = true ]; then
     echo "Installing openSuse packages.."
-    sudo zypper install opi fish zoxide fzf fzf-fish-integration fastfetch steam flatpak flatpak-remote-flathub rclone yt-dlp
+    sudo zypper install opi fish zoxide fzf fzf-fish-integration fastfetch steam flatpak flatpak-remote-flathub rclone yt-dlp cronie
     echo "Installed openSuse packages."
 
     if [ "$GIT_CONFIG" = true ]; then
@@ -219,6 +222,29 @@ if [ "$FISH_CONFIG" = true ]; then
         cp fish/functions/openSuse/* ~/.config/fish/functions
         echo "Installed openSuse functions."
     fi
+fi
+
+## driveSync
+DRIVESYNC_FOLDER=~/Documents/scripts/driveSync
+DRIVESYNC_CRON="@reboot $DRIVESYNC_FOLDER/driveBiSync.sh
+*/10 * * * * $DRIVESYNC_FOLDER/driveBiSync.sh"
+## rclone
+if [ "$RCLONE_CONF" = true ]; then
+    # Rclone config
+    echo "Installing rclone configuration.."
+    mkdir -p ~/.config/rclone
+    cp rclone/rclone.conf ~/.config/rclone
+    echo "Installed rclone conf."
+    echo "Don't forget to add your remote token using 'rclone config' command."
+    # driveBiSync install
+    echo "Installing driveBiSync.."
+    mkdir -p $DRIVESYNC_FOLDER/logs
+    cp rclone/driveBiSync.sh $DRIVESYNC_FOLDER
+    echo "Installed driveBiSync in '$DRIVESYNC_FOLDER'."
+    # cronjob install
+    echo "Installing driveBiSync cron job.."
+    (crontab -l; echo "$DRIVESYNC_CRON") | crontab
+    echo "Installed driveBiSync cron job."
 fi
 
 ## KDE
