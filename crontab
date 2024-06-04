@@ -1,0 +1,2 @@
+@reboot /home/blue/Documents/scripts/driveSync/driveBiSync.sh
+*/10 * * * * /home/blue/Documents/scripts/driveSync/driveBiSync.sh
