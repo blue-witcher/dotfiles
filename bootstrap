@@ -70,7 +70,7 @@ fi
 ### Ask user if they want to install ALL kde configs
 if ask_user "Do you want to install all KDE configs?"; then
         KDE_ALL=TRUE
-# If no, ask them for each file seperately
+    # If no, ask them for each file seperately
     elif ask_user "Do you want to install any KDE configs?"; then
         # Klipper
         if ask_user "Dou you want to install the kde klipper config? (No history)"; then
