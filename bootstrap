@@ -261,7 +261,7 @@ fi
 ### openSuse packages
 if [ "$SUSE_INSTALL" = true ]; then
     echo "Installing openSuse packages.."
-    sudo zypper install opi fish zoxide fzf fzf-fish-integration fastfetch steam flatpak flatpak-remote-flathub rclone yt-dlp cronie
+    sudo zypper install opi fish zoxide fzf fzf-fish-integration fastfetch steam flatpak rclone yt-dlp cronie
     echo "Installed openSuse packages."
 
     if [ "$GIT_CONFIG" = true ]; then
