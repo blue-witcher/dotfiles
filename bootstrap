@@ -61,6 +61,27 @@ if ask_user "Do you want to install the locale.conf file?"; then
     LOCALECONF=true
 fi
 
+## KDE
+
+# Ask user if they want to install ALL kde configs
+if ask_user "Do you want to install all KDE configs?"; then
+        KDE_ALL=TRUE
+# If no, ask them for each file seperately
+    elif ask_user "Do you want to install any KDE configs?"; then
+        # Klipper
+        if ask_user "Dou you want to install the kde klipper config? (No history)"; then
+            KDE_KLIPPER=true
+        fi
+        # Konsole
+        if ask_user "Do you want to install the konsole config, color-scheme and profile?"; then
+            KDE_KONSOLE=true
+        fi
+        # KDE Session
+        if ask_user "Do you want to install the KDE Session config? (Empty session on start & no logout confirm)"; then
+            KDE_SESSION=true
+        fi
+fi 
+
 # Ask user if they want to delete ~/.config/plasma-localerc
 if ask_user $'Do you want to delete the "~/.config/plasma-localerc" file?\nYou may need to do this so plasma uses the locale of your system, as defined in /etc/locale.conf'; then
     DELETE_PLASMA_LOCALERC=true
@@ -126,6 +147,45 @@ fi
 
 ######################################### 
 ### Installations
+
+## KDE
+
+# Install all kde configs
+if [ "$KDE_ALL" = true ]; then
+        echo "Installing all KDE configs.."
+        cp KDE/* ~/.config
+        echo "Installed session settings."
+        echo "Installed klipper settings."
+        echo "Installed konsole settings."
+        mkdir -p ~/.local/share/konsole
+        cp KDE/.local/share/konsole/* ~/.local/share/konsole
+        echo "Installed konsole profile."
+        echo "Installed konsole colorscheme."
+fi
+
+# Install klipper config
+if [ "$KDE_KLIPPER" = true ]; then
+    echo "Installing klipper config.."
+    cp KDE/klipperrc ~/.config 
+    echo "Installed klipper config."
+fi
+
+# Install konsole config
+if [ "$KDE_KONSOLE" = true ]; then
+    echo "Installing konsole config, color-schemes and profiles.."
+    cp KDE/konsolerc ~/.config
+    Echo "Installed konsole config."
+    mkdir -p ~/.local/share/konsole
+    cp KDE/.local/share/konsole/* ~/.local/share/konsole
+    echo "Installed konsole profiles and colorschemes."
+fi
+
+# Install session config
+if [ "$KDE_SESSION" = true ]; then
+    echo "Installing KDE session settings.."
+    cp KDE/ksmserverrc ~/.config
+    echo "Installed KDE session settings."
+## KDE end    
 
 # Install new locale.conf file
 if [ "$LOCALECONF" = true ]; then
