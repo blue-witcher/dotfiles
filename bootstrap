@@ -110,6 +110,11 @@ fi
 if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; then
     echo "This is openSUSE. Performing openSUSE-specific tasks..."
     # Add openSUSE-specific commands here
+#### zypp.conf
+    if ask_user "Do you want to install zypp.conf?"; then
+        ZYPP_CONF=true
+    fi
+#### opensuse packages
     if ask_user "Do you want to install packages?"; then
         # Store yes so the installations can all the done in the end
         SUSE_INSTALL=true
@@ -165,6 +170,11 @@ fi
 
 
 ## Install zypp.conf
+echo "Installing 'zypp.conf'.."
+sudo mv /etc/zypp/zypp.conf /etc/zypp/zypp.conf.BACKUP
+echo "Backup of old zypp.conf at /etc/zypp/zypp.conf.BACKUP."
+sudo cp zypp.conf /etc/zypp/zypp.conf
+echo "Installed 'zypp.conf'."
 
 ## packages
 ### openSuse packages
