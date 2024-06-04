@@ -181,11 +181,12 @@ fi
 
 
 ## Install zypp.conf
-echo "Installing 'zypp.conf'.."
-sudo mv /etc/zypp/zypp.conf /etc/zypp/zypp.conf.BACKUP
-echo "Backup of old zypp.conf at /etc/zypp/zypp.conf.BACKUP."
-sudo cp zypp.conf /etc/zypp/zypp.conf
-echo "Installed 'zypp.conf'."
+if [ "$ZYPP_CONF" = true ]; then
+    echo "Installing 'zypp.conf'.."
+    sudo mv /etc/zypp/zypp.conf /etc/zypp/zypp.conf.BACKUP
+    echo "Backup of old zypp.conf at /etc/zypp/zypp.conf.BACKUP."
+    sudo cp zypp.conf /etc/zypp/zypp.conf
+    echo "Installed 'zypp.conf'."
 
 ## packages
 ### openSuse packages
