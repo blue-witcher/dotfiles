@@ -175,6 +175,75 @@ fi
 # Summary
 
 
+## Installations
+echo "=== Installations ==="
+if [ "$ZYPP_CONF" = true ]; then
+    echo "Will install 'zypp.conf'."
+fi
+if [ "$SUSE_INSTALL" = true ]; then
+    echo "Will install openSuse packages."
+fi
+if [ "$FISH_CONFIG" = true ]; then
+    echo "Will install fish config."
+fi
+if [ "$FISH_SUSE" = true ]; then
+    echo "Will install fish openSuse-aliases."
+fi
+if [ "$RCLONE_CONF" = true ]; then
+    echo "Will install rclone configuration."
+fi
+if [ "$DRIVESYNC_CRON" = true ]; then
+    echo "Will install driveSync cron-job."
+fi
+if [ "$GIT_CONFIG" = true ]; then
+    echo "Will install gitconfig."
+fi
+if [ "$SUSE_CODECS" = true ]; then
+    echo "Will install packman codecs."
+fi
+if [ "$VSCODE_OBS" = true ]; then
+    echo "WIll install vscode."
+fi
+if [ "$OBSIDIAN" = true ]; then
+    echo "Will install Obsidian."
+fi
+if [ "$VESKTOP" = true ]; then
+    echo "Will install Vesktop."
+fi
+
+## Configurations
+echo "=== Configurations ==="
+if [ "$KDE_KLIPPER" = true ]; then
+    echo "Will install klipper config."
+fi
+if [ "$KDE_KONSOLE" = true ]; then
+    echo "Will install konsole config, color-schemes and profiles."
+fi
+if [ "$KDE_SESSION" = true ]; then
+    echo "Will install KDE Session configuration."
+fi
+if [ "$PROFILE_PIC" = true ]; then
+    echo "Will install user profile picture."
+fi
+if [ "$LOCALECONF" = true ]; then
+    echo "Will install locale."
+fi
+if [ "$DELETE_PLASMA_LOCALERC" = true ]; then
+    echo "Will delete plasma locale."
+fi
+if [ "$USER_WHEEL" = true ]; then
+    echo "Will add user "$CURRENT_USER" to \"wheel\" group."
+fi
+if [ "$SUDOERS" = true ]; then
+    echo "Will install sudoers file."
+fi
+if ask_user "Are these settings okay?"; then
+        :
+    else
+        # Exec terminates current program and starts a new one.
+        exec bootstrap
+fi
+
 ######################################### 
 
 # Installations
@@ -187,7 +256,7 @@ if [ "$ZYPP_CONF" = true ]; then
     echo "Backup of old zypp.conf at /etc/zypp/zypp.conf.BACKUP."
     sudo cp zypp.conf /etc/zypp/zypp.conf
     echo "Installed 'zypp.conf'."
-
+fi
 ## packages
 ### openSuse packages
 if [ "$SUSE_INSTALL" = true ]; then
