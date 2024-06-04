@@ -10,7 +10,7 @@
 - [ ] Add summary before installation
 - [ ] Add /etc/ config installations to bootstrap
     - [x] locale.conf
-    - [ ] /etc/zypp/zypp.conf
+    - [x] /etc/zypp/zypp.conf
     - [ ] /etc/sudoers
         - [x] Ask user
         - [x] Copy file
