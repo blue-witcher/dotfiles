@@ -347,7 +347,10 @@ if [ "$SUDOERS" = true ]; then
 fi
 
 ############################
+
 # End of script
+
+
 ## Reboot
 ## Ask if the user wants to restart and remind him that he needs to restart for the sudo configuration to work
 if ask_user "Do you want to reboot now? (You need to reboot to apply the locale and sudoers configurations)"; then
