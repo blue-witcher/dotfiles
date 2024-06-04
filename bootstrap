@@ -1,7 +1,7 @@
 #!/bin/bash
 
-###Functions
-# Function to determine the Linux distribution
+# Functions
+## Function to determine the Linux distribution
 detect_distro() {
     if [ -f /etc/os-release ]; then
         # Read the distribution information from /etc/os-release
@@ -27,7 +27,7 @@ detect_distro() {
     echo "Detected distro version: $DISTRO_VERSION"
 }
 
-# Function to ask the user a yes/no question
+## Function to ask the user a yes/no question
 ask_user() {
     while true; do
         read -p "$1 (Y/n): " yn
@@ -40,7 +40,7 @@ ask_user() {
     done
 }
 
-# Function to get the current user
+## Function to get the current user
 get_current_user() {
     CURRENT_USER=$(whoami)
     echo "Current user: $CURRENT_USER"
@@ -48,19 +48,19 @@ get_current_user() {
 
 
 ######################################### 
-### Information gathering
-# Execute the function to detect and print the distribution
+# Information gathering
+## Execute the function to detect and print the distribution
 detect_distro
-# Execute the function to detect and print the current user
+## Execute the function to detect and print the current user
 get_current_user
 
-# Ask user if they want to install the locale.conf file
+## Ask user if they want to install the locale.conf file
 if ask_user "Do you want to install the locale.conf file?"; then
     LOCALECONF=true
 fi
 
 ## KDE
-# Ask user if they want to install ALL kde configs
+### Ask user if they want to install ALL kde configs
 if ask_user "Do you want to install all KDE configs?"; then
         KDE_ALL=TRUE
 # If no, ask them for each file seperately
@@ -79,27 +79,27 @@ if ask_user "Do you want to install all KDE configs?"; then
         fi
 fi 
 
-# Ask user if they want to delete ~/.config/plasma-localerc
+### Ask user if they want to delete ~/.config/plasma-localerc
 if ask_user $'Do you want to delete the "~/.config/plasma-localerc" file?\nYou may need to do this so plasma uses the locale of your system, as defined in /etc/locale.conf'; then
     DELETE_PLASMA_LOCALERC=true
 fi 
 ##KDE end
 
 ## Group management
-# Ask if user wants to be in wheel group (Necessary for sudo configuration)
+### Ask if user wants to be in wheel group (Necessary for sudo configuration)
 if ask_user "Add user \"$CURRENT_USER\" to group \"wheel\"? You need to do this for the sudoers config to work."; then
     # If user answers yes, add user to wheel group later
     USER_WHEEL=true
 fi
 
 ## Sudo
-# Ask if user wants to install the sudoers file
+### Ask if user wants to install the sudoers file
 if ask_user "Do you want to install the sudoers file?"; then
     SUDOERS=true
 fi
 
 ## Installations
-# Additional section for openSUSE
+### Additional section for openSUSE
 if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; then
     echo "This is openSUSE. Performing openSUSE-specific tasks..."
     # Add openSUSE-specific commands here
@@ -144,13 +144,13 @@ if ask_user "Do you want to install Vesktop? (Alternate discord client)"; then
 fi
 
 #########################################
-### Summary
+# Summary
 
 ######################################### 
-### Installations
+# Installations
 
 ## packages
-# openSuse packages
+### openSuse packages
 if [ "$SUSE_INSTALL" = true ]; then
     echo "Installing openSuse packages.."
     sudo zypper install opi fish zoxide fzf fzf-fish-integration fastfetch steam flatpak flatpak-remote-flathub rclone yt-dlp
@@ -162,7 +162,7 @@ if [ "$SUSE_INSTALL" = true ]; then
     fi
 fi
 
-# openSuse packman codecs
+#### openSuse packman codecs
 if [ "$SUSE_CODECS" = true ]; then
     echo "Installing packman and codecs.."
     sudo opi codecs
@@ -170,7 +170,7 @@ if [ "$SUSE_CODECS" = true ]; then
     echo "You may need to run \"zypper dup --from packman --allow-vendor-change\""
 fi
 
-# OBS vscode
+#### OBS vscode
 if [ "$VSCODE_OBS" = true ]; then
     echo "Installing vscode.."
     if [ "$DISTRO" = "openSUSE Tumbleweed" ]; then
@@ -187,14 +187,14 @@ if [ "$VSCODE_OBS" = true ]; then
     echo "Installed vscode."
 fi
 
-# Obsidian
+### Obsidian
 if [ "$OBSIDIAN" = true ]; then
     echo "Installing Obsidian.."
     flatpak install flathub md.obsidian.Obsidian
     echo "Installed Obsidian."
 fi
 
-# Vesktop
+### Vesktop
 if [ "$VESKTOP" = true ]; then
     echo "Installing Vesktop.."
     flatpak install flathub dev.vencord.Vesktop
@@ -203,8 +203,8 @@ if [ "$VESKTOP" = true ]; then
 fi
 ## packages end
 
-## configs
-# fish config
+# configs
+## fish config
 if [ "$FISH_CONFIG" = true ]; then
     echo "Installing fish configs.."
     mkdir -p ~/.config/fish/functions
@@ -222,7 +222,7 @@ if [ "$FISH_CONFIG" = true ]; then
 fi
 
 ## KDE
-# Install all kde configs
+### Install all kde configs
 if [ "$KDE_ALL" = true ]; then
         echo "Installing all KDE configs.."
         cp KDE/* ~/.config
@@ -235,14 +235,14 @@ if [ "$KDE_ALL" = true ]; then
         echo "Installed konsole colorscheme."
 fi
 
-# Install klipper config
+### Install klipper config
 if [ "$KDE_KLIPPER" = true ]; then
     echo "Installing klipper config.."
     cp KDE/klipperrc ~/.config 
     echo "Installed klipper config."
 fi
 
-# Install konsole config
+### Install konsole config
 if [ "$KDE_KONSOLE" = true ]; then
     echo "Installing konsole config, color-schemes and profiles.."
     cp KDE/konsolerc ~/.config
@@ -252,7 +252,7 @@ if [ "$KDE_KONSOLE" = true ]; then
     echo "Installed konsole profiles and colorschemes."
 fi
 
-# Install session config
+### Install session config
 if [ "$KDE_SESSION" = true ]; then
     echo "Installing KDE session settings.."
     cp KDE/ksmserverrc ~/.config
@@ -260,7 +260,7 @@ if [ "$KDE_SESSION" = true ]; then
 ## KDE end    
 
 ## locale.conf
-# Install new locale.conf file
+## Install new locale.conf file
 if [ "$LOCALECONF" = true ]; then
     echo "Installing locale.conf.."
     # -i for cp to ask for confirmation
@@ -269,7 +269,7 @@ if [ "$LOCALECONF" = true ]; then
 fi
 
 ## plasma_localerc
-# Delete the plasma specific locale file so plasma uses the locales from /etc/locale.conf
+## Delete the plasma specific locale file so plasma uses the locales from /etc/locale.conf
 if [ "$DELETE_PLASMA_LOCALERC" = true ]; then
     echo "Deleting plasma-localerc.."
     rm ~/.config/plasma-localerc
@@ -277,15 +277,15 @@ if [ "$DELETE_PLASMA_LOCALERC" = true ]; then
 fi
 
 ## user management
-# Add user to wheel group
+### Add user to wheel group
 if [ "$USER_WHEEL" = true ]; then
     sudo usermod -a -G wheel $CURRENT_USER
     echo "Added user \"$CURRENT_USER\" to group \"wheel\"."
 fi
 
 ## Sudo
-# Install sudoers file
-# This should be the last thing to be done before restarting.
+## Install sudoers file
+## This should be the last thing to be done before restarting.
 if [ "$SUDOERS" = true ]; then
     echo "Installing sudoers file.."
     sudo cp sudoers /etc/sudoers
@@ -295,7 +295,8 @@ if [ "$SUDOERS" = true ]; then
 fi
 
 ############################
-
+# End of script
+## Reboot
 ## Ask if the user wants to restart and remind him that he needs to restart for the sudo configuration to work
 if ask_user "Do you want to reboot now? (You need to reboot to apply the locale and sudoers configurations)"; then
         # Yes
