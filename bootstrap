@@ -69,7 +69,10 @@ fi
 ## KDE
 ### Ask user if they want to install ALL kde configs
 if ask_user "Do you want to install all KDE configs?"; then
-        KDE_ALL=TRUE
+        KDE_KLIPPER=true
+        KDE_KONSOLE=true
+        KDE_SESSION=true
+        PROFILE_PIC=true
     # If no, ask them for each file seperately
     elif ask_user "Do you want to install any KDE configs?"; then
         # Klipper
@@ -83,6 +86,10 @@ if ask_user "Do you want to install all KDE configs?"; then
         # KDE Session
         if ask_user "Do you want to install the KDE Session config? (Empty session on start & no logout confirm)"; then
             KDE_SESSION=true
+        fi
+        # KDE profile pic
+        if ask_user "Do you want to install your profile picture?"; then
+            PROFILE_PIC=true
         fi
 fi 
 
@@ -276,17 +283,6 @@ if [ "$CRON_SETUP" = true ]; then
 fi
 
 ## KDE
-### Install all kde configs
-if [ "$KDE_ALL" = true ]; then
-        echo "Installing all KDE configs.."
-        cp KDE/* ~/.config
-        echo "Installed KDE settings."
-        mkdir -p ~/.local/share/konsole
-        cp KDE/.local/share/konsole/* ~/.local/share/konsole
-        echo "Installed konsole profile."
-        echo "Installed konsole colorscheme."
-fi
-
 ### Install klipper config
 if [ "$KDE_KLIPPER" = true ]; then
     echo "Installing klipper config.."
@@ -309,6 +305,15 @@ if [ "$KDE_SESSION" = true ]; then
     echo "Installing KDE session settings.."
     cp KDE/ksmserverrc ~/.config
     echo "Installed KDE session settings."
+fi
+
+### Install kde profile picture
+if [ "$PROFILE_PIC" = true ]; then
+    echo "Installing profile picture.."
+    cp blue /var/lib/AccountsService/icons/blue
+    echo "Installed profile picture."
+fi
+
 ## KDE end    
 
 ## locale.conf

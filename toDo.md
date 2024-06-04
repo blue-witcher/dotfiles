@@ -17,4 +17,4 @@
         - [ ] Give root file ownership and exclusive read/write access to copied file
 - [ ] Make /etc files owner root but everyone else can still read (except for sudoers file)
 - [ ] Think about whether I would rather copy all files or symlink them
-- [ ] Add profile pic install
+- [x] Add profile pic install
