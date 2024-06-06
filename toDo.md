@@ -19,3 +19,11 @@
 - [x] Add profile pic install
 - [ ] Make more backups
 - [ ] switch to symlinks for some usecases
+- [ ] Make the package install command read the arguments from a file instead of writing them into the script. (to make it easier to edit)
+    Could either store all packages for all distros in one file (packages.txt) like
+    ```
+    openSuse=package1, package2, package3..
+    archLinux=package1, package2, package3..
+    ```
+    _or_ make a different file for each distro. The first would give a lot better overview, but the second wouldn't be as overwhelming.
+    That being said, I think I will do the first method.
