@@ -50,7 +50,6 @@ get_current_user() {
     echo "Current user: $CURRENT_USER"
 }
 
-
 ######################################### 
 
 # Information gathering
@@ -169,7 +168,6 @@ if ask_user "Do you want to install Vesktop? (Alternate discord client)"; then
     VESKTOP=true
 fi
 
-
 #########################################
 
 # Summary
@@ -261,7 +259,7 @@ fi
 ### openSuse packages
 if [ "$SUSE_INSTALL" = true ]; then
     echo "Installing openSuse packages.."
-    sudo zypper install opi fish zoxide fzf fzf-fish-integration fastfetch steam flatpak rclone yt-dlp cronie
+    sudo zypper install opi fish zoxide fzf fzf-fish-integration fastfetch steam flatpak rclone yt-dlp cronie google-noto-sans-cjk-fonts
     echo "Installed openSuse packages."
 
     if [ "$GIT_CONFIG" = true ]; then
