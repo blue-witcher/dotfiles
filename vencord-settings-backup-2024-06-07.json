@@ -420,9 +420,6 @@
                 "enabled": false,
                 "mode": 2
             },
-            "ServerProfile": {
-                "enabled": false
-            },
             "ShikiCodeblocks": {
                 "enabled": true,
                 "theme": "https://raw.githubusercontent.com/shikijs/shiki/0b28ad8ccfbf2615f2d9d38ea8255416b8ac3043/packages/shiki/themes/dark-plus.json",
@@ -610,6 +607,22 @@
             },
             "WatchTogetherAdblock": {
                 "enabled": true
+            },
+            "ServerInfo": {
+                "enabled": true
+            },
+            "MessageUpdaterAPI": {
+                "enabled": false
+            },
+            "AppleMusicRichPresence": {
+                "enabled": false
+            },
+            "CopyEmojiMarkdown": {
+                "enabled": false,
+                "copyUnicode": true
+            },
+            "NoOnboardingDelay": {
+                "enabled": false
             }
         },
         "notifications": {
@@ -622,7 +635,7 @@
             "authenticated": false,
             "url": "https://api.vencord.dev/",
             "settingsSync": false,
-            "settingsSyncVersion": 1717194245760
+            "settingsSyncVersion": 1717726223543
         }
     },
     "quickCss": ""
