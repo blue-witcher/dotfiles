@@ -1,10 +1,9 @@
 #!/bin/bash
 
-DRIVESYNC_CRON="@reboot $DRIVESYNC_FOLDER/driveBiSync.sh
-*/10 * * * * $DRIVESYNC_FOLDER/driveBiSync.sh"
+DRIVESYNC_CRON=$(< crontabs/driveBiSync.cron)
 
 if [ "$DRIVESYNC_CRON" = true ]; then
-    echo "Installing driveSync cron jobs.."
+    echo "Installing driveBiSync cron jobs.."
     (crontab -l; echo "$DRIVESYNC_CRON") | crontab
-    echo "Installed driveSync cron jobs."
+    echo "Installed driveBiSync cron jobs."
 fi
