@@ -11,10 +11,10 @@
 - [ ] Add /etc/ config installations to bootstrap
     - [x] locale.conf
     - [x] /etc/zypp/zypp.conf
-    - [ ] /etc/sudoers
+    - [x] /etc/sudoers
         - [x] Ask user
         - [x] Copy file
-        - [ ] Give root file ownership and exclusive read/write access to copied file
+        - [x] Give root file ownership and exclusive read/write access to copied file
 - [x] Ask user if they want to install steam
 - [x] Add kde panel config install
 - [ ] Make /etc files owner root but everyone else can still read (except for sudoers file)

@@ -408,6 +408,9 @@ fi
 if [ "$SUDOERS" = true ]; then
     echo "Installing sudoers file.."
     sudo cp sudoers /etc/sudoers
+    # Permissions management
+    chmod ug=r,o= /etc/sudoers
+    sudo chown root:root /etc/sudoers
     # Maybe need to also manage file ownership after copy, like:
     # sudo chown root (idk syntax)
     # sudo chmod only root (idk syntax)
