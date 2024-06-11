@@ -385,6 +385,7 @@ if [ "$LOCALECONF" = true ]; then
     echo "Installing locale.conf.."
     # -i for cp to ask for confirmation
     sudo cp -i locale.conf /etc/locale.conf
+    sudo chown root:root /etc/locale.conf
     echo "Installed locale.conf."
 fi
 
