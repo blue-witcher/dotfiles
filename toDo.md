@@ -19,7 +19,7 @@
 - [x] Add kde panel config install
 - [x] Make /etc files owner root but everyone else can still read (except for sudoers file)
 - [x] Add profile pic install
-- [ ] Make more backups
+- [x] Make more backups
 - [x] Add diff command in information phase so the user can see if the config file defaults changed.
 - [ ] switch to symlinks for some usecases
 - [x] Make the package install command read the arguments from a file instead of writing them into the script. (to make it easier to edit)
