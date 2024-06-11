@@ -34,18 +34,22 @@ if ask_user "Do you want to install all KDE configs?"; then
     # If no, ask them for each file seperately
     elif ask_user "Do you want to install any KDE configs?"; then
         # Klipper
-        if ask_user "Dou you want to install the kde klipper config? (No history)"; then
+        diff -ys KDE/klipperrc ~/.config/klipperrc
+        if ask_user "Do you want to install the kde klipper config? (No history)"; then
             KDE_KLIPPER=true
         fi
         # Konsole
+        diff -ys KDE/konsolerc ~/.config/konsolerc
         if ask_user "Do you want to install the konsole config, color-scheme and profile?"; then
             KDE_KONSOLE=true
         fi
         # KDE Session
+        diff -ys KDE/ksmserverrc ~/.config/ksmserverrc
         if ask_user "Do you want to install the KDE Session config? (Empty session on start & no logout confirm)"; then
             KDE_SESSION=true
         fi
         # KDE panel
+        diff -ys KDE/plasma-org.kde.plasma.desktop-appletsrc ~/.config/plasma-org.kde.plasma.desktop-appletsrc
         ### Ask user if they want to install the KDE panel config
         if ask_user "Do you want to install the KDE panel config?"; then
             KDE_PANEL=true
@@ -71,6 +75,7 @@ fi
 
 ## Sudo
 ### Ask if user wants to install the sudoers file
+sudo diff -ys sudoers /etc/sudoers
 if ask_user "Do you want to install the sudoers file?"; then
     SUDOERS=true
 fi
@@ -81,6 +86,7 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
     echo "This is openSUSE. Performing openSUSE-specific tasks..."
     # Add openSUSE-specific commands here
 #### zypp.conf
+    diff -ys zypp.conf /etc/zypp/zypp.conf
     if ask_user "Do you want to install zypp.conf?"; then
         ZYPP_CONF=true
     fi
@@ -214,7 +220,7 @@ if ask_user "Are these settings okay?"; then
         :
     else
         # Exec terminates current program and starts a new one.
-        exec bootstrap
+        exec ./bootstrap
 fi
 
 
