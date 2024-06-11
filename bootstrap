@@ -64,7 +64,7 @@ fi
 
 ## Group management
 ### Ask if user wants to be in wheel group (Necessary for sudo configuration)
-if ask_user "Add user \"$CURRENT_USER\" to group \"wheel\"? You need to do this for the sudoers config to work."; then
+if ask_user "Add user \"$CURRENT_USER\" to group \"wheel\"? This is not necessary."; then
     # If user answers yes, add user to wheel group later
     USER_WHEEL=true
 fi
