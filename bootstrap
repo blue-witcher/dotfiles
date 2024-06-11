@@ -232,8 +232,8 @@ fi
 ## Install zypp.conf
 if [ "$ZYPP_CONF" = true ]; then
     echo "Installing 'zypp.conf'.."
-    sudo mv /etc/zypp/zypp.conf /etc/zypp/zypp.conf.BACKUP
-    echo "Backup of old zypp.conf at /etc/zypp/zypp.conf.BACKUP."
+    sudo mv /etc/zypp/zypp.conf /etc/zypp/zypp.conf.old
+    echo "Backup of old zypp.conf at /etc/zypp/zypp.conf.old."
     sudo cp zypp.conf /etc/zypp/zypp.conf
     sudo chown root:root /etc/zypp/zypp.conf
     echo "Installed 'zypp.conf'."
