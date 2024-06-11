@@ -15,7 +15,7 @@
         - [x] Ask user
         - [x] Copy file
         - [ ] Give root file ownership and exclusive read/write access to copied file
-- [ ] Add kde panel config install
+- [x] Add kde panel config install
 - [ ] Make /etc files owner root but everyone else can still read (except for sudoers file)
 - [x] Add profile pic install
 - [ ] Make more backups
