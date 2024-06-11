@@ -1,5 +1,5 @@
 ## sudoers file.
-##
+## 
 ## This file MUST be edited with the 'visudo' command as root.
 ## Failure to use 'visudo' may result in syntax or file permission errors
 ## that prevent sudo from running.
@@ -108,7 +108,5 @@ blue ALL=(ALL:ALL) ALL
 # %wheel ALL=(ALL:ALL) NOPASSWD: ALL
 
 ## Read drop-in files from /usr/etc/sudoers.d
-@includedir /usr/etc/sudoers.d
-@includedir /etc/sudoers.d
-# Blue comment: Maybe it's safer to comment out the two lines above?
-# Don't know if it breaks anything yet, so I won't right now.
+# @includedir /usr/etc/sudoers.d
+# @includedir /etc/sudoers.d
