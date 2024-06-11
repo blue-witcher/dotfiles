@@ -302,7 +302,6 @@ if [ "$FISH_CONFIG" = true ]; then
     echo "Installing fish configs.."
     mkdir -p ~/.config/fish/functions
     cp fish/config.fish ~/.config/fish 
-    set -Ux EDITOR nano
     echo "Installed fish config."
     # Install distro-independent functions V
     cp fish/functions/* ~/.config/fish/functions
