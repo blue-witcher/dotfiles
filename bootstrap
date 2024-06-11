@@ -119,6 +119,11 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
     fi
 fi
 
+### Steam
+if ask_user "Do you want to install steam?"; then
+    STEAM=true
+fi
+
 ## flatpaks
 ### Ask the user if he wants to install obsidian
 if ask_user "Do you want to install ObsidianMD as flatpak?"; then
@@ -166,6 +171,9 @@ if [ "$SUSE_CODECS" = true ]; then
 fi
 if [ "$VSCODE_OBS" = true ]; then
     echo "WIll install vscode."
+fi
+if [ "$STEAM" = true ]; then
+    echo "Will install Steam."
 fi
 if [ "$OBSIDIAN" = true ]; then
     echo "Will install Obsidian."
@@ -259,6 +267,17 @@ if [ "$VSCODE_OBS" = true ]; then
             zypper install code
     fi
     echo "Installed vscode."
+fi
+
+### Steam
+if [ "$STEAM" = true ]; then
+    if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; then
+            echo "Installing steam for openSuse.."
+            sudo zypper install steam
+            echo "Installed steam for openSuse."
+        else
+            :
+    fi
 fi
 
 ### Obsidian
