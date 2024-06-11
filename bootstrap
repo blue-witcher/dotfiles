@@ -105,7 +105,6 @@ if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; the
         if ask_user "Do you want to install rclone config?"; then
             RCLONE_CONF=true
             if ask_user "Do you want to install the driveSync crontab?"; then
-                CRON_SETUP=true
                 DRIVESYNC_CRON=true
             fi
         fi
@@ -228,8 +227,8 @@ fi
 
 # Installations
 
-
-## Install zypp.conf
+## openSuse
+### Install zypp.conf
 if [ "$ZYPP_CONF" = true ]; then
     echo "Installing 'zypp.conf'.."
     sudo mv /etc/zypp/zypp.conf /etc/zypp/zypp.conf.old
@@ -238,8 +237,8 @@ if [ "$ZYPP_CONF" = true ]; then
     sudo chown root:root /etc/zypp/zypp.conf
     echo "Installed 'zypp.conf'."
 fi
-## packages
-### openSuse packages
+### packages
+#### openSuse packages
 if [ "$SUSE_INSTALL" = true ]; then
     echo "Installing openSuse packages.."
     sudo zypper install $openSuse_Packages
@@ -276,7 +275,7 @@ if [ "$VSCODE_OBS" = true ]; then
     echo "Installed vscode."
 fi
 
-### Steam
+#### Steam
 if [ "$STEAM" = true ]; then
     if [ "$DISTRO" = "openSUSE Leap" ] || [ "$DISTRO" = "openSUSE Tumbleweed" ]; then
             echo "Installing steam for openSuse.."
@@ -286,6 +285,7 @@ if [ "$STEAM" = true ]; then
             :
     fi
 fi
+## end of openSuse
 
 ### Obsidian
 if [ "$OBSIDIAN" = true ]; then
@@ -338,11 +338,7 @@ if [ "$RCLONE_CONF" = true ]; then
 fi
 
 ## cron jobs
-if [ "$CRON_SETUP" = true ]; then
-    echo "Starting cron setup.."
-    . scripts/crontab.sh
-    echo "Cron setup done."
-fi
+. scripts/crontab.sh
 
 ## KDE
 ### Install klipper config
