@@ -17,7 +17,7 @@
         - [x] Give root file ownership and exclusive read/write access to copied file
 - [x] Ask user if they want to install steam
 - [x] Add kde panel config install
-- [ ] Make /etc files owner root but everyone else can still read (except for sudoers file)
+- [x] Make /etc files owner root but everyone else can still read (except for sudoers file)
 - [x] Add profile pic install
 - [ ] Make more backups
 - [ ] Add diff command in information phase so the user can see if the config file defaults changed.
