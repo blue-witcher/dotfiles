@@ -261,7 +261,8 @@
                 "ignoreSelf": false,
                 "ignoreUsers": "",
                 "ignoreChannels": "",
-                "ignoreGuilds": ""
+                "ignoreGuilds": "",
+                "collapseDeleted": false
             },
             "MessageTags": {
                 "enabled": false
@@ -608,9 +609,6 @@
                 "enabled": false,
                 "summaryExpiryThresholdDays": 3
             },
-            "WatchTogetherAdblock": {
-                "enabled": true
-            },
             "ServerInfo": {
                 "enabled": true
             },
@@ -632,6 +630,18 @@
             },
             "UserSettingsAPI": {
                 "enabled": true
+            },
+            "YoutubeAdblock": {
+                "enabled": true
+            },
+            "ConsoleJanitor": {
+                "enabled": false
+            },
+            "MentionAvatars": {
+                "enabled": true
+            },
+            "ShowAllRoles": {
+                "enabled": false
             }
         },
         "notifications": {
@@ -644,7 +654,7 @@
             "authenticated": false,
             "url": "https://api.vencord.dev/",
             "settingsSync": false,
-            "settingsSyncVersion": 1719255899032
+            "settingsSyncVersion": 1723054657109
         }
     },
     "quickCss": ""
