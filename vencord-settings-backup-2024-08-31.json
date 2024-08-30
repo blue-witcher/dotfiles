@@ -640,8 +640,20 @@
             "MentionAvatars": {
                 "enabled": true
             },
-            "ShowAllRoles": {
+            "AlwaysExpandRoles": {
                 "enabled": false
+            },
+            "NoMaskedUrlPaste": {
+                "enabled": false
+            },
+            "NoRPC": {
+                "enabled": false
+            },
+            "NoSystemBadge": {
+                "enabled": false
+            },
+            "VolumeBooster": {
+                "enabled": true
             }
         },
         "notifications": {
@@ -654,7 +666,7 @@
             "authenticated": false,
             "url": "https://api.vencord.dev/",
             "settingsSync": false,
-            "settingsSyncVersion": 1723054657109
+            "settingsSyncVersion": 1725057592347
         }
     },
     "quickCss": ""
