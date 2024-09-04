@@ -15,3 +15,5 @@
     7. Alt + F4 to kill app
 8. Install prop. nvidia drivers (From the repo, when I tried downloading from nvidias website directly and finally got it working it only worked on x11 and idk that's just too much stress, but it sucks having to use an old drivers version). 'zypper in nvidia-drivers-G06'
 9. disable kwallet
+10. make grub shorter
+11. change plymouth theme
