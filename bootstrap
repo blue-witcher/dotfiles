@@ -329,6 +329,9 @@ if [ "$RCLONE_CONF" = true ]; then
     cp rclone/rclone.conf ~/.config/rclone
     echo "Installed rclone conf."
     echo "Don't forget to add your remote token using 'rclone config' command."
+    # driveBiSync log folder/file
+    mkdir -p ~/.var/log
+    touch ~/.var/log/driveBiSync.log
 fi
 
 ## cron jobs
