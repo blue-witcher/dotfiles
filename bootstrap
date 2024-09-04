@@ -29,8 +29,6 @@ if ask_user "Do you want to install all KDE configs?"; then
         KDE_KLIPPER=true
         KDE_KONSOLE=true
         KDE_SESSION=true
-        KDE_PANEL=true
-        PROFILE_PIC=true
     # If no, ask them for each file seperately
     elif ask_user "Do you want to install any KDE configs?"; then
         # Klipper
@@ -47,16 +45,6 @@ if ask_user "Do you want to install all KDE configs?"; then
         diff -ys KDE/ksmserverrc ~/.config/ksmserverrc
         if ask_user "Do you want to install the KDE Session config? (Empty session on start & no logout confirm)"; then
             KDE_SESSION=true
-        fi
-        # KDE panel
-        diff -ys KDE/plasma-org.kde.plasma.desktop-appletsrc ~/.config/plasma-org.kde.plasma.desktop-appletsrc
-        ### Ask user if they want to install the KDE panel config
-        if ask_user "Do you want to install the KDE panel config?"; then
-            KDE_PANEL=true
-        fi
-        # KDE profile pic
-        if ask_user "Do you want to install your profile picture?"; then
-            PROFILE_PIC=true
         fi
 fi 
 
@@ -196,12 +184,6 @@ if [ "$KDE_KONSOLE" = true ]; then
 fi
 if [ "$KDE_SESSION" = true ]; then
     echo "Will install KDE Session configuration."
-fi
-if [ "$KDE_PANEL" = true ]; then
-    echo "Will install the KDE panel configuration."
-fi
-if [ "$PROFILE_PIC" = true ]; then
-    echo "Will install user profile picture."
 fi
 if [ "$LOCALECONF" = true ]; then
     echo "Will install locale."
@@ -360,20 +342,6 @@ if [ "$KDE_SESSION" = true ]; then
     echo "Installing KDE session settings.."
     cp KDE/ksmserverrc ~/.config
     echo "Installed KDE session settings."
-fi
-
-### Install kde panel config
-if [ "$KDE_PANEL" = true ]; then
-    echo "Installing KDE panel settings.."
-    cp KDE/plasma-org.kde.plasma.desktop-appletsrc ~/.config
-    echo "Installed KDE panel settings."
-fi
-
-### Install kde profile picture
-if [ "$PROFILE_PIC" = true ]; then
-    echo "Installing profile picture.."
-    cp blue /var/lib/AccountsService/icons/blue
-    echo "Installed profile picture."
 fi
 
 ## KDE end    
