@@ -8,6 +8,10 @@
 7. Set up kde hotkeys
     1. Meta + Q to close windows
     2. Meta + Up to maximize
-    3. etc.
+    3. Meta + Down to minimize
+    4. Meta + X for konsole
+    5. Ctrl + Space for kRunner
+    6. Meta + Q to close app
+    7. Alt + F4 to kill app
 8. Install prop. nvidia drivers (From the repo, when I tried downloading from nvidias website directly and finally got it working it only worked on x11 and idk that's just too much stress, but it sucks having to use an old drivers version). 'zypper in nvidia-drivers-G06'
 9. disable kwallet
