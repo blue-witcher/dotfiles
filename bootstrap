@@ -322,7 +322,6 @@ if [ "$FISH_CONFIG" = true ]; then
 fi
 
 ## rclone / driveSync
-DRIVESYNC_FOLDER=~/Documents/scripts/driveSync
 if [ "$RCLONE_CONF" = true ]; then
     # Rclone config
     echo "Installing rclone configuration.."
@@ -330,11 +329,6 @@ if [ "$RCLONE_CONF" = true ]; then
     cp rclone/rclone.conf ~/.config/rclone
     echo "Installed rclone conf."
     echo "Don't forget to add your remote token using 'rclone config' command."
-    # driveBiSync install
-    echo "Installing driveBiSync.."
-    mkdir -p $DRIVESYNC_FOLDER/logs
-    cp rclone/driveBiSync.sh $DRIVESYNC_FOLDER
-    echo "Installed driveBiSync in '$DRIVESYNC_FOLDER'."
 fi
 
 ## cron jobs

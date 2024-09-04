@@ -32,4 +32,4 @@
     _or_ make a different file for each distro. The first would give a lot better overview, but the second wouldn't be as overwhelming.
     That being said, I think I will do the first method.
 - [ ] Flesh out the wiki more
-- [ ] delete the creation of ~/Documents/scripts folder in bootstrap (since driveBiSync gets run from dotfiles directory now)
+- [x] delete the creation of ~/Documents/scripts folder in bootstrap (since driveBiSync gets run from dotfiles directory now)
