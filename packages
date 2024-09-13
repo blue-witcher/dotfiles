@@ -9,3 +9,15 @@ rclone
 cronie
 google-noto-sans-cjk-fonts
 "
+
+archlinuxPackages="
+fish
+zoxide
+fzf
+fastfetch
+flatpak
+flatpak-kcm
+cronie
+rclone
+noto-fonts-cjk
+"
