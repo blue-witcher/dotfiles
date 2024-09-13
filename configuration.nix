@@ -16,7 +16,7 @@
 
   boot.initrd.luks.devices."luks-5d736555-61a0-4b25-9a9f-49a6bbb522d3".device = "/dev/disk/by-uuid/5d736555-61a0-4b25-9a9f-49a6bbb522d3";
   networking.hostName = "blueNix"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant. Not compatible (and not needed) with networkManager
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -45,7 +45,7 @@
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = false;
+  # services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
@@ -62,7 +62,7 @@
   console.keyMap = "de";
 
   # Enable CUPS to print documents.
-  services.printing.enable = false;
+  # services.printing.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
