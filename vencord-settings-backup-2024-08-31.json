@@ -139,7 +139,8 @@
             "Dearrow": {
                 "enabled": true,
                 "hideButton": false,
-                "replaceElements": 0
+                "replaceElements": 0,
+                "dearrowByDefault": true
             },
             "Decor": {
                 "enabled": false
@@ -262,7 +263,8 @@
                 "ignoreUsers": "",
                 "ignoreChannels": "",
                 "ignoreGuilds": "",
-                "collapseDeleted": false
+                "collapseDeleted": false,
+                "inlineEdits": true
             },
             "MessageTags": {
                 "enabled": false
@@ -567,7 +569,7 @@
                 "enabled": true
             },
             "VoiceDownload": {
-                "enabled": false
+                "enabled": true
             },
             "WebScreenShareFixes": {
                 "enabled": true
@@ -638,7 +640,8 @@
                 "enabled": false
             },
             "MentionAvatars": {
-                "enabled": true
+                "enabled": true,
+                "showAtSymbol": true
             },
             "AlwaysExpandRoles": {
                 "enabled": false
@@ -654,6 +657,16 @@
             },
             "VolumeBooster": {
                 "enabled": true
+            },
+            "AccountPanelServerProfile": {
+                "enabled": false,
+                "prioritizeServerProfile": false
+            },
+            "CopyFileContents": {
+                "enabled": false
+            },
+            "StickerPaste": {
+                "enabled": false
             }
         },
         "notifications": {
@@ -666,7 +679,7 @@
             "authenticated": false,
             "url": "https://api.vencord.dev/",
             "settingsSync": false,
-            "settingsSyncVersion": 1725057592347
+            "settingsSyncVersion": 1726241399822
         }
     },
     "quickCss": ""
