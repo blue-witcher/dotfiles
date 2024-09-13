@@ -22,7 +22,7 @@
 - [x] Make more backups
 - [x] Add diff command in information phase so the user can see if the config file defaults changed.
 - [ ] switch to symlinks for some usecases  
-      Nah, I can't of any good usecase
+	- [ ] Fish.config
 - [x] Make the package install command read the arguments from a file instead of writing them into the script. (to make it easier to edit)
     Could either store all packages for all distros in one file (packages.txt) like
     ```
