@@ -11,6 +11,7 @@ google-noto-sans-cjk-fonts
 "
 
 archlinuxPackages="
+git
 fish
 zoxide
 fzf
