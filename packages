@@ -8,6 +8,7 @@ flatpak
 rclone
 cronie
 google-noto-sans-cjk-fonts
+micro-editor
 "
 
 archlinuxPackages="
@@ -21,4 +22,5 @@ flatpak-kcm
 cronie
 rclone
 noto-fonts-cjk
+micro
 "
