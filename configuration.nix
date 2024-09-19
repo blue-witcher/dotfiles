@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-5d736555-61a0-4b25-9a9f-49a6bbb522d3".device = "/dev/disk/by-uuid/5d736555-61a0-4b25-9a9f-49a6bbb522d3";
+  boot.initrd.luks.devices."luks-5d736555-61a0-4b25-9a9f-49a6bbb522d3".device = "/dev/disk/by-uuid/5d736555-61a0-4b25-9a9f-49a6bbb522d3"; # put in hardware-conf?
   networking.hostName = "blueNix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant. Not compatible (and not needed) with networkManager
 
@@ -90,7 +90,10 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       discord
+      libreoffice-fresh
+      hunspellDicts.de_DE # german dictionary for libreoffice
     #  thunderbird
+    #  vesktop?
     ];
   };
 
