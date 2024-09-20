@@ -9,6 +9,7 @@ rclone
 cronie
 google-noto-sans-cjk-fonts
 micro-editor
+bat
 "
 
 archlinuxPackages="
@@ -23,4 +24,5 @@ cronie
 rclone
 noto-fonts-cjk
 micro
+bat
 "
