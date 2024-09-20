@@ -9,6 +9,7 @@ rclone
 cronie
 google-noto-sans-cjk-fonts
 micro-editor
+wl-clipboard
 bat
 "
 
@@ -24,5 +25,6 @@ cronie
 rclone
 noto-fonts-cjk
 micro
+wl-clipboard
 bat
 "
