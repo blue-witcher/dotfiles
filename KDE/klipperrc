@@ -1,5 +1,5 @@
 [General]
 IgnoreImages=false
 KeepClipboardContents=false
-MaxClipItems=1
+MaxClipItems=20
 Version=6.0.4
