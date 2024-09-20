@@ -130,6 +130,7 @@
     git
     fastfetch
     kdePackages.kate
+    bat
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
