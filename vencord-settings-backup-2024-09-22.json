@@ -6,7 +6,7 @@
         "themeLinks": [
             "https://raw.githubusercontent.com/DiscordStyles/HorizontalServerList/deploy/HorizontalServerList.theme.css",
             "https://raw.githubusercontent.com/DiscordStyles/RadialStatus/deploy/RadialStatus.theme.css",
-            "https://refact0r.github.io/midnight-discord/midnight.css"
+            "https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/midnight.css"
         ],
         "enabledThemes": [],
         "enableReactDevtools": false,
@@ -342,7 +342,8 @@
                 "spotify": true,
                 "steam": true,
                 "epic": true,
-                "tidal": true
+                "tidal": true,
+                "itunes": true
             },
             "OverrideForumDefaults": {
                 "enabled": false
@@ -411,9 +412,6 @@
                 "memberList": true,
                 "voiceUsers": true,
                 "reactorsList": true
-            },
-            "SearchReply": {
-                "enabled": false
             },
             "SecretRingToneEnabler": {
                 "enabled": false
@@ -593,7 +591,9 @@
                 "enabled": false
             },
             "CustomIdle": {
-                "enabled": false
+                "enabled": true,
+                "idleTimeout": 10,
+                "remainInIdle": false
             },
             "DontRoundMyTimestamps": {
                 "enabled": false
@@ -667,6 +667,9 @@
             },
             "StickerPaste": {
                 "enabled": false
+            },
+            "FullSearchContext": {
+                "enabled": true
             }
         },
         "notifications": {
@@ -679,7 +682,7 @@
             "authenticated": false,
             "url": "https://api.vencord.dev/",
             "settingsSync": false,
-            "settingsSyncVersion": 1726241399822
+            "settingsSyncVersion": 1727006797077
         }
     },
     "quickCss": ""
