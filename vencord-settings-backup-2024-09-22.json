@@ -6,9 +6,11 @@
         "themeLinks": [
             "https://raw.githubusercontent.com/DiscordStyles/HorizontalServerList/deploy/HorizontalServerList.theme.css",
             "https://raw.githubusercontent.com/DiscordStyles/RadialStatus/deploy/RadialStatus.theme.css",
-            "https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/midnight.css"
+            "# https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/midnight.css"
         ],
-        "enabledThemes": [],
+        "enabledThemes": [
+            "midnight-catppuccin-mocha-moon.theme.css"
+        ],
         "enableReactDevtools": false,
         "frameless": false,
         "transparent": false,
@@ -452,7 +454,8 @@
             "SilentTyping": {
                 "enabled": true,
                 "isEnabled": true,
-                "showIcon": false
+                "showIcon": false,
+                "contextMenu": true
             },
             "SortFriendRequests": {
                 "enabled": false
@@ -592,7 +595,7 @@
             },
             "CustomIdle": {
                 "enabled": true,
-                "idleTimeout": 10,
+                "idleTimeout": 0,
                 "remainInIdle": false
             },
             "DontRoundMyTimestamps": {
@@ -682,7 +685,7 @@
             "authenticated": false,
             "url": "https://api.vencord.dev/",
             "settingsSync": false,
-            "settingsSyncVersion": 1727006797077
+            "settingsSyncVersion": 1727011070823
         }
     },
     "quickCss": ""
