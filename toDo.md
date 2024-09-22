@@ -21,8 +21,7 @@
 - [x] Add profile pic install
 - [x] Make more backups
 - [x] Add diff command in information phase so the user can see if the config file defaults changed.
-- [ ] switch to symlinks for some usecases  
-	- [ ] Fish.config
+
 - [x] Make the package install command read the arguments from a file instead of writing them into the script. (to make it easier to edit)
     Could either store all packages for all distros in one file (packages.txt) like
     ```
@@ -31,6 +30,12 @@
     ```
     _or_ make a different file for each distro. The first would give a lot better overview, but the second wouldn't be as overwhelming.
     That being said, I think I will do the first method.
-- [ ] Flesh out the wiki more
 - [x] delete the creation of ~/Documents/scripts folder in bootstrap (since driveBiSync gets run from dotfiles directory now)
+- [ ] Flesh out the wiki more
+
+# Bootstrap
 - [ ] don't make one big bootstrap script, instead make multiple small scripts that can be executed independently
+- [ ] switch to symlinks for some usecases  
+	- [ ] fish
+	- [ ] micro
+	- [ ] kde folder
