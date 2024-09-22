@@ -1,3 +1,5 @@
+# original function location was /usr/share/fish/functions/fish_greeting
+# changes made: added fastfetch to greeting
 function fish_greeting
     if not set -q fish_greeting
         set -l line1 (_ 'Welcome to fish, the friendly interactive shell')
