@@ -33,3 +33,4 @@
     That being said, I think I will do the first method.
 - [ ] Flesh out the wiki more
 - [x] delete the creation of ~/Documents/scripts folder in bootstrap (since driveBiSync gets run from dotfiles directory now)
+- [ ] don't make one big bootstrap script, instead make multiple small scripts that can be executed independently
