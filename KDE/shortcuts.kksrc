@@ -1,6 +1,6 @@
 [StandardShortcuts]
 Clear=
-Copy=Ctrl+C; Ctrl+Ins
+Copy=Ctrl+Ins; Ctrl+C
 Cut=Ctrl+X
 DeleteWordBack=Ctrl+Backspace
 DeleteWordForward=Ctrl+Del
@@ -9,7 +9,7 @@ Find=Ctrl+F
 FindNext=F3
 FindPrev=Shift+F3
 NextCompletion=Ctrl+Down
-Paste=Shift+Ins; Ctrl+V
+Paste=Ctrl+V; Shift+Ins
 Paste Selection=Ctrl+Shift+Ins
 PrevCompletion=Ctrl+Up
 Redo=Ctrl+Shift+Z
@@ -34,7 +34,7 @@ Cycle Overview Opposite=
 Decrease Opacity=
 Edit Tiles=Meta+T
 Expose=Ctrl+F9
-ExposeAll=Launch (C); Ctrl+F10
+ExposeAll=Ctrl+F10; Launch (C)
 ExposeClass=Ctrl+F7
 ExposeClassCurrentDesktop=
 Grid View=Meta+G
@@ -181,6 +181,9 @@ Window to Screen 7=
 view_actual_size=Meta+0
 view_zoom_in=Meta++; Meta+=
 view_zoom_out=Meta+-
+
+[org.kde.kclock.desktop][Global Shortcuts]
+_launch=Meta+C
 
 [org.kde.konsole.desktop][Global Shortcuts]
 NewTab=
