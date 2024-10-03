@@ -6,7 +6,7 @@ CursorShape=1
 
 [General]
 Command=/bin/fish
-Name=Profile 1
+Name=blueProfile
 Parent=FALLBACK/
 
 [Terminal Features]
