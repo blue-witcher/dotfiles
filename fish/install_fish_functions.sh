@@ -15,7 +15,9 @@ if [ -f /etc/os-release ]; then
 	elif [ "$ID_LIKE" = *"suse"* ]; then
 		echo "Detected suse-like distro."
 		ln -s ~/dotfiles/fish/functions/openSuse/*.fish ~/.config/fish/functions/
+	else
+		echo "No distro-specific functions present."
 	fi
 else
-	echo "Either couldn't detect distro or no distro-specific functions present."
+	echo "Couldn't detect distribution."
 fi
