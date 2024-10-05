@@ -1,10 +1,19 @@
 #!/bin/bash
 
+source ~/dotfiles/scripts/functions.sh
+
 # make '~/.config/micro/' folder and parent folders if not exist already
 mkdir -p ~/.config/fish/functions
 
 # copy general functions
 ln -s ~/dotfiles/fish/functions/*.fish ~/.config/fish/functions/
+
+# copy ls or eza functions
+if ask_user $'Do you use eza on this system?'; then
+	ln -s ~/dotfiles/fish/functions/eza/* ~/.config/fish/functions
+else
+	ln -s ~/dotfiles/fish/functions/ls/* ~/.config/fish/functions
+fi
 
 # copy distribution specifig functions
 if [ -f /etc/os-release ]; then
