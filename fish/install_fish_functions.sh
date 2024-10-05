@@ -10,9 +10,9 @@ ln -s ~/dotfiles/fish/functions/*.fish ~/.config/fish/functions/
 
 # copy ls or eza functions
 if ask_user $'Do you use eza on this system?'; then
-	ln -s ~/dotfiles/fish/functions/eza/* ~/.config/fish/functions
+	ln -s ~/dotfiles/fish/conf.d/eza/* ~/.config/fish/conf.d/
 else
-	ln -s ~/dotfiles/fish/functions/ls/* ~/.config/fish/functions
+	ln -s ~/dotfiles/fish/conf.d/ls/* ~/.config/fish/conf.d/
 fi
 
 # copy distribution specifig functions
