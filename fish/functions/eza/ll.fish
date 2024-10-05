@@ -1,4 +1,4 @@
-function ll --wraps=ls --wraps='eza -al --color=always --group-directories-first --icons' --description 'alias ll=eza -al --color=always --group-directories-first --icons'
-  eza -al --color=always --group-directories-first --icons $argv
+function ll --wraps='ls -al' --description 'alias ll=ls -al'
+  ls -al $argv
         
 end

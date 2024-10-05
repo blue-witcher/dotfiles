@@ -1,4 +1,4 @@
-function lsa --wraps='eza -a --color=always --group-directories-first --icons' --description 'alias lsa=eza -a --color=always --group-directories-first --icons'
-  eza -a --color=always --group-directories-first --icons $argv
+function lsa --wraps='ls -a' --description 'alias lsa=ls -a'
+  ls -a $argv
         
 end

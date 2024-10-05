@@ -1,4 +1,4 @@
-function lta --wraps='eza -aT --color=always --group-directories-first --icons' --description 'alias lt=eza -aT --color=always --group-directories-first --icons'
-  eza -aT --color=always --group-directories-first --icons $argv
+function lta --wraps='lt -a' --description 'alias lta=lt -a'
+  lt -a $argv
         
 end
