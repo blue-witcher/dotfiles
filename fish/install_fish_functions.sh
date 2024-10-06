@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source ~/dotfiles/scripts/functions.sh
-
 # make necessary folders and parent folders if not exist already
 mkdir -p ~/.config/fish/functions
 mkdir -p ~/.config/fish/conf.d
