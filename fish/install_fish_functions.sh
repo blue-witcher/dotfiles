@@ -15,6 +15,9 @@ if ls ~/dotfiles/fish/conf.d/*.fish; then
     ln -s ~/dotfiles/fish/conf.d/*.fish ~/.config/fish/conf.d/
 fi
 
+# download autols plugin
+wget -qP ~/.config/fish/conf.d/ https://raw.githubusercontent.com/rstacruz/fish-autols/6d704c0e33522335539bf6844ce9f7009b2ee6a2/conf.d/autols.fish
+
 # if bat is installed
 if bat -V; then
     ln -s ~/dotfiles/fish/conf.d/bat/* ~/.config/fish/conf.d/
