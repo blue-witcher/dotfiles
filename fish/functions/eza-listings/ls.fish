@@ -1,3 +1,3 @@
-function ls --wraps='eza --color=always --group-directories-first --icons' --description 'alias ls=eza --color=always --group-directories-first --icons'
-    eza --color=always --group-directories-first --icons $argv
+function ls --wraps='eza --color=always --group-directories-first --icons --smart-group --git' --description 'alias ls=eza --color=always --group-directories-first --icons --smart-group --git'
+    eza --color=always --group-directories-first --icons --smart-group --git $argv
 end
