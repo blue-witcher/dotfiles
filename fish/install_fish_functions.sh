@@ -11,7 +11,7 @@ ln -s ~/dotfiles/fish/functions/*.fish ~/.config/fish/functions/
 
 # copy general drop-in configurations
 ## if statement because bash is dumb
-if ls ~/dotfiles/conf.d/*.fish; then
+if ls ~/dotfiles/fish/conf.d/*.fish; then
     ln -s ~/dotfiles/fish/conf.d/*.fish ~/.config/fish/conf.d/
 fi
 
