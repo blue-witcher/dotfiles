@@ -2,17 +2,29 @@
 
 source ~/dotfiles/scripts/functions.sh
 
-# make '~/.config/micro/' folder and parent folders if not exist already
+# make necessary folders and parent folders if not exist already
 mkdir -p ~/.config/fish/functions
+mkdir -p ~/.config/fish/conf.d
 
 # copy general functions
 ln -s ~/dotfiles/fish/functions/*.fish ~/.config/fish/functions/
 
+# copy general drop-in configurations
+## if statement because bash is dumb
+if ls ~/dotfiles/conf.d/*.fish; then
+    ln -s ~/dotfiles/fish/conf.d/*.fish ~/.config/fish/conf.d/
+fi
+
+# if bat is installed
+if bat -V; then
+    ln -s ~/dotfiles/fish/conf.d/bat/* ~/.config/fish/conf.d/
+fi
+
 # copy ls or eza functions
-if ask_user $'Do you use eza on this system?'; then
-	ln -s ~/dotfiles/fish/conf.d/eza/* ~/.config/fish/conf.d/
+if eza --version; then
+	ln -s ~/dotfiles/fish/functions/eza-listings/* ~/.config/fish/functions/
 else
-	ln -s ~/dotfiles/fish/conf.d/ls/* ~/.config/fish/conf.d/
+	ln -s ~/dotfiles/fish/functions/listings/* ~/.config/fish/functions/
 fi
 
 # copy distribution specifig functions
