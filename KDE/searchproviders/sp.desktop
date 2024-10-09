@@ -2,6 +2,6 @@
 Charset=
 Hidden=false
 Keys=sp
-Name=STartpage
+Name=Startpage
 Query=https://www.startpage.com/do/dsearch?q=\\{@}
 Type=Service
