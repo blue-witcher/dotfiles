@@ -15,6 +15,8 @@ if status is-interactive
     abbr -a ... 'cd ../..'
     abbr -a .... 'cd ../../..'
     abbr -a ..... 'cd ../../../..'
+# Readlink
+    abbr -a name 'readlink -f'
 # grep case insensitive
     abbr -a se 'grep -i'
 end
