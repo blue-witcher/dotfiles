@@ -27,6 +27,7 @@ fi
 # copy ls or eza functions
 if eza --version; then
 	ln -s ~/dotfiles/fish/functions/eza-listings/* ~/.config/fish/functions/
+	ln -s ~/dotfiles/fish/conf.d/eza/* ~/.config/fish/conf.d/
 else
 	ln -s ~/dotfiles/fish/functions/listings/* ~/.config/fish/functions/
 fi
