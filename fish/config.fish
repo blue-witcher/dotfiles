@@ -15,8 +15,8 @@ if status is-interactive
     abbr -a ... 'cd ../..'
     abbr -a .... 'cd ../../..'
     abbr -a ..... 'cd ../../../..'
-# Readlink
-    abbr -a name 'readlink -f'
+# print full file path
+    abbr -a name 'realpath -s'
 # grep case insensitive
     abbr -a se 'grep -i'
 end
