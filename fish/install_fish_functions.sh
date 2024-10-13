@@ -9,7 +9,9 @@ ln -s ~/dotfiles/fish/functions/*.fish ~/.config/fish/functions/
 
 # copy general drop-in configurations
 ## if statement because bash is dumb
-if ls ~/dotfiles/fish/conf.d/*.fish; then
+## if there are no *.fish files in the directory, this command makes a symlink to ~/dotfiles/fish/conf.d/*.fish.
+## Because of that, we need to check if there is a *.fish file first and only execute the symlinking if there is
+if ls ~/dotfiles/fish/conf.d/*.fish 2> /dev/null; then
     ln -s ~/dotfiles/fish/conf.d/*.fish ~/.config/fish/conf.d/
 fi
 
