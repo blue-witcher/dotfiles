@@ -1,0 +1,2 @@
+@reboot ~/dotfiles/rclone/obsidian_vaults/driveBiSync_obsidian-vaults.sh
+*/10 * * * * ~/dotfiles/rclone/obsidian_vaults/driveBiSync_obsidian-vaults.sh

@@ -1,2 +1,0 @@
-@reboot ~/dotfiles/rclone/driveBiSync.sh
-*/10 * * * * ~/dotfiles/rclone/driveBiSync.sh
