@@ -19,8 +19,8 @@ else
 	touch ~/.config/rclone/wallpapers
 
 	# create driveBiSync log file
-	mkdir -p ~/.var/log/
-	touch ~/.var/log/driveBiSync_wallpapers.log
+	mkdir -p ~/.local/var/log/
+	touch ~/.local/var/log/driveBiSync_wallpapers.log
 	
 	# create RCLONE_TEST file
 	mkdir -p ~/Pictures/wallpapers/
@@ -32,7 +32,7 @@ else
 
 	# first run with --resync flag
 	echo "Running driveBiSync for the first time, please don't interrupt the process"
-	/usr/bin/rclone bisync 'wallpapers:' "$HOME/Pictures/wallpapers/" --create-empty-src-dirs --compare size,modtime --check-filename '.RCLONE_WALLPAPERS' --check-access  --recover --remove-empty-dirs --verbose --log-file="$HOME/.var/log/driveBiSync_wallpapers.log" --conflict-resolve newer --conflict-suffix 'conflict.md' --delete-after --resync
+	/usr/bin/rclone bisync 'wallpapers:' "$HOME/Pictures/wallpapers/" --create-empty-src-dirs --compare size,modtime --check-filename '.RCLONE_WALLPAPERS' --check-access  --recover --remove-empty-dirs --verbose --log-file="$HOME/.local/var/log/driveBiSync_wallpapers.log" --conflict-resolve newer --conflict-suffix 'conflict.md' --delete-after --resync
 	echo "First run complete. rclone obsidian vaults setup complete."
 fi
 

@@ -19,8 +19,8 @@ else
 	touch ~/.config/rclone/obsidian_vaults
 
 	# create driveBiSync log file
-	mkdir -p ~/.var/log/
-	touch ~/.var/log/driveBiSync_obsidian-vaults.log
+	mkdir -p ~/.local/var/log/
+	touch ~/.local/var/log/driveBiSync_obsidian-vaults.log
 	
 	# create RCLONE_TEST file
 	mkdir -p ~/Documents/Obsidian\ Vaults/
@@ -32,7 +32,7 @@ else
 
 	# first run with --resync flag
 	echo "Running driveBiSync for the first time, please don't interrupt the process"
-	/usr/bin/rclone bisync 'obsidianVaults:' "$HOME/Documents/Obsidian Vaults/" --create-empty-src-dirs --compare size,modtime --check-filename=RCLONE_OBSIDIAN-VAULTS --check-access  --recover --remove-empty-dirs --verbose --log-file="$HOME/.var/log/driveBiSync.log" --conflict-resolve newer --conflict-suffix 'conflict.md' --delete-after --resync
+	/usr/bin/rclone bisync 'obsidianVaults:' "$HOME/Documents/Obsidian Vaults/" --create-empty-src-dirs --compare size,modtime --check-filename=RCLONE_OBSIDIAN-VAULTS --check-access  --recover --remove-empty-dirs --verbose --log-file="$HOME/.local/var/log/driveBiSync.log" --conflict-resolve newer --conflict-suffix 'conflict.md' --delete-after --resync
 	echo "First run complete. rclone obsidian vaults setup complete."
 fi
 
