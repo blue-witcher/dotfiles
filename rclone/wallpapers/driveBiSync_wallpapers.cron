@@ -1,1 +1,1 @@
-@hourly anacron -s -t "$HOME/dotfiles/rclone/wallpapers/driveBiSync_wallpapers.anacron" -S "$HOME/.local/var/spool/anacron"
+@reboot anacron -s -t "$HOME/dotfiles/rclone/wallpapers/driveBiSync_wallpapers.anacron" -S "$HOME/.local/var/spool/anacron"
