@@ -3,7 +3,7 @@
 DRIVESYNC_CRON=$(< ~/dotfiles/rclone/wallpapers/driveBiSync_wallpapers.cron)
 
 echo "Creating anacron spool directory.."
-mdir -p ~/.local/var/spool/anacron
+mkdir -p ~/.local/var/spool/anacron
 echo "Anacron directory created."
 
 echo "Installing driveBiSync wallpapers cron job.."
