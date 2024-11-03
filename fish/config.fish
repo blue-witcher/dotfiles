@@ -19,4 +19,6 @@ if status is-interactive
     abbr -a name 'realpath -s'
 # grep case insensitive
     abbr -a se 'grep -i'
+# file size command
+    abbr -a du 'du -hs'
 end
