@@ -22,5 +22,5 @@ if status is-interactive
 # file size command
     abbr -a du 'du -hs'
 # copy to clipboard
-    abbr -a cb 'fish_clipboard_copy'
+    abbr -a cb 'wl-copy'
 end
