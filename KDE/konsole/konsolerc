@@ -8,7 +8,7 @@ ConfigVersion=1
 
 [KonsoleWindow]
 FocusFollowsMouse=true
-ShowWindowTitleOnTitleBar=true
+RemoveWindowTitleBarAndFrame=true
 
 [MainWindow]
 ToolBarsMovable=Disabled
