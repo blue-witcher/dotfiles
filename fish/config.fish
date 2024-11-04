@@ -21,4 +21,6 @@ if status is-interactive
     abbr -a se 'grep -i'
 # file size command
     abbr -a du 'du -hs'
+# copy to clipboard
+    abbr -a cb 'fish_clipboard_copy'
 end
