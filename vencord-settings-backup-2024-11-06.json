@@ -6,13 +6,12 @@
         "themeLinks": [
             "https://raw.githubusercontent.com/DiscordStyles/HorizontalServerList/deploy/HorizontalServerList.theme.css",
             "https://raw.githubusercontent.com/DiscordStyles/RadialStatus/deploy/RadialStatus.theme.css",
-            "https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/midnight.css"
+            "#https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/midnight.css",
+            "https://raw.githubusercontent.com/KillYoy/DiscordNight/master/DiscordNight.theme.css"
         ],
-        "enabledThemes": [
-            "midnight-catppuccin-mocha-moon.theme.css"
-        ],
+        "enabledThemes": [],
         "enableReactDevtools": false,
-        "frameless": false,
+        "frameless": true,
         "transparent": false,
         "winCtrlQ": false,
         "disableMinSize": false,
@@ -212,7 +211,7 @@
             "ImageZoom": {
                 "enabled": true,
                 "size": 829.4871794871794,
-                "zoom": 2,
+                "zoom": 2.0000000000000004,
                 "nearestNeighbour": false,
                 "square": false,
                 "saveZoomValues": true,
@@ -378,9 +377,6 @@
             "PreviewMessage": {
                 "enabled": false
             },
-            "PronounDB": {
-                "enabled": false
-            },
             "QuickMention": {
                 "enabled": false
             },
@@ -413,7 +409,8 @@
                 "chatMentions": true,
                 "memberList": true,
                 "voiceUsers": true,
-                "reactorsList": true
+                "reactorsList": true,
+                "colorChatMessages": false
             },
             "SecretRingToneEnabler": {
                 "enabled": false
@@ -659,7 +656,8 @@
                 "enabled": false
             },
             "VolumeBooster": {
-                "enabled": true
+                "enabled": true,
+                "multiplier": 2
             },
             "AccountPanelServerProfile": {
                 "enabled": false,
@@ -673,6 +671,15 @@
             },
             "FullSearchContext": {
                 "enabled": true
+            },
+            "UserMessagesPronouns": {
+                "enabled": false
+            },
+            "DynamicImageModalAPI": {
+                "enabled": true
+            },
+            "FixImagesQuality": {
+                "enabled": false
             }
         },
         "notifications": {
@@ -685,7 +692,7 @@
             "authenticated": false,
             "url": "https://api.vencord.dev/",
             "settingsSync": false,
-            "settingsSyncVersion": 1727011070823
+            "settingsSyncVersion": 1730919579319
         }
     },
     "quickCss": ""
