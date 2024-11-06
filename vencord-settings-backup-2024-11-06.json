@@ -211,7 +211,7 @@
             "ImageZoom": {
                 "enabled": true,
                 "size": 829.4871794871794,
-                "zoom": 2.0000000000000004,
+                "zoom": 2,
                 "nearestNeighbour": false,
                 "square": false,
                 "saveZoomValues": true,
@@ -372,7 +372,7 @@
                 "colorMobileIndicator": true,
                 "list": true,
                 "badges": true,
-                "messages": true
+                "messages": false
             },
             "PreviewMessage": {
                 "enabled": false
