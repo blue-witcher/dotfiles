@@ -1,8 +1,8 @@
 [Background]
-Color=35,38,39
+Color=0,0,0
 
 [BackgroundFaint]
-Color=49,54,59
+Color=0,0,0
 
 [BackgroundIntense]
 Color=0,0,0
