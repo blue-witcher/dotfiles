@@ -1,7 +1,8 @@
 # my personalized "darken" colorscheme
 
 color-link default "#DBDBDB,#0E0E12"
-color-link comment "#9399b2"
+color-link comment "#637777"
+#color-link comment "#9399b2"
 color-link identifier "#FF79C6"
 color-link constant "#AE81FF"
 color-link constant.string "#E6DB74"
