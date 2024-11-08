@@ -39,3 +39,5 @@
 	- [ ] fish
 	- [ ] micro
 	- [ ] kde folder
+
+- [ ] Make micro colorscheme install script
