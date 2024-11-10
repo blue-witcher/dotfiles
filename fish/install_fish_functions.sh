@@ -15,12 +15,6 @@ if ls ~/dotfiles/fish/conf.d/*.fish 2> /dev/null; then
     ln -s ~/dotfiles/fish/conf.d/*.fish ~/.config/fish/conf.d/
 fi
 
-# # download autols plugin
-# if ! [[ -f ~/.config/fish/conf.d/autols.fish ]]; then
-# # don't download the file again if it is already there
-# 	wget -qP ~/.config/fish/conf.d/ https://raw.githubusercontent.com/rstacruz/fish-autols/6d704c0e33522335539bf6844ce9f7009b2ee6a2/conf.d/autols.fish
-# fi
-
 # if bat is installed
 if bat -V; then
     ln -s ~/dotfiles/fish/conf.d/bat/* ~/.config/fish/conf.d/
@@ -33,6 +27,23 @@ if eza --version; then
 else
 	ln -s ~/dotfiles/fish/functions/listings/* ~/.config/fish/functions/
 fi
+
+# clipboard abbreviation
+echo "Are you using Wayland or X11? w for Wayland or x for X11 "
+read display
+case $display in
+	"w") 
+		ln -s ~/dotfiles/fish/conf.d/clipboard/wl-clipboard_copy.fish ~/.config/fish/conf.d/
+		;;
+esac
+
+echo "Are you using Wayland or X11? w for Wayland or x for X11 "
+read display
+case $display in
+	"x")
+		ln -s ~/dotfiles/fish/conf.d/clipboard/wl-clipboard_copy.fish
+		;;
+esac
 
 # copy distribution specifig functions
 if [ -f /etc/os-release ]; then
