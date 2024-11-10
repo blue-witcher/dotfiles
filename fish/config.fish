@@ -11,10 +11,10 @@ if status is-interactive
       ⠀⠠⠊⠀⠀⠀⠀⠙⠂⣴⠒⠒⣲⢔⠉⠉⣹⣞⣉⣈⠿⢦⣀⣀⣀⣠⡴⠟'
     zoxide init fish | source
 # Navigation
-    abbr -a .. 'cd ..'
-    abbr -a ... 'cd ../..'
-    abbr -a .... 'cd ../../..'
-    abbr -a ..... 'cd ../../../..'
+    abbr -a .. 'cd ../'
+    abbr -a ... 'cd ../../'
+    abbr -a .... 'cd ../../../'
+    abbr -a ..... 'cd ../../../../'
 # print full file path
     abbr -a name 'realpath -s'
 # grep case insensitive
