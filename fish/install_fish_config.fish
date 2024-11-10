@@ -4,6 +4,12 @@
 mkdir -p ~/.config/fish/functions
 mkdir -p ~/.config/fish/conf.d
 
+# move existing settings.json file out of the way if it exists
+mv ~/.config/fish/config.fish ~/.config/fish/config.fish.backup
+
+# symlink settings file
+ln -s ~/dotfiles/fish/config.fish ~/.config/fish/
+
 # copy general functions
 ln -s ~/dotfiles/fish/functions/*.fish ~/.config/fish/functions/
 
