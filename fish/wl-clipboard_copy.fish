@@ -1,1 +1,0 @@
-/home/blue/dotfiles/fish/conf.d/clipboard/wl-clipboard_copy.fish
