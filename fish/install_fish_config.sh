@@ -10,6 +10,9 @@ mv ~/.config/fish/config.fish ~/.config/fish/config.fish.backup
 # symlink settings file
 ln -s ~/dotfiles/fish/config.fish ~/.config/fish/
 
+# set theme
+fish -c 'fish_config theme save Dracula'
+
 # copy general functions
 ln -s ~/dotfiles/fish/functions/*.fish ~/.config/fish/functions/
 
