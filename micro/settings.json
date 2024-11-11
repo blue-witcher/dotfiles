@@ -1,5 +1,6 @@
 {
     "colorscheme": "my_darken",
+    "diffgutter": true,
     "softwrap": true,
     "wordwrap": true
 }
