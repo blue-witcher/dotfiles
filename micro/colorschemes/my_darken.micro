@@ -25,10 +25,13 @@ color-link statusline "#cdd6f4,#181825"
 color-link indent-char "#505050,#282828"
 color-link line-number "#45475a,#0E0E12"
 # color-link line-number "#679480,#0E0E12" # default
-color-link current-line-number "#AE81FF,#0E0E12"
+color-link current-line-number "#b4befe" # from catppuccin
+# color-link current-line-number "#AE81FF,#0E0E12"
 # color-link current-line-number "#67FF80,#0E0E12" # default
-color-link gutter-error "#CB4B16"
-color-link gutter-warning "#E6DB74"
+# color-link gutter-error "#f38ba8" # catppuccin
+# color-link gutter-warning "#f9e2af" # catppuccin
+color-link gutter-error "#CB4B16" # darken
+color-link gutter-warning "#E6DB74" # darken
 color-link cursor-line "#0E1E22"
 color-link color-column "#0E0E12"
 color-link tabbar "#cdd6f4,#181825"
