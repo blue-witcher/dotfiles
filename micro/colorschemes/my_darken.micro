@@ -31,8 +31,10 @@ color-link todo "bold #D33682"
 color-link statusline "#cdd6f4,#181825"
 color-link tabbar "#cdd6f4,#181825"
 color-link indent-char "#505050,#282828"
+
 color-link line-number "#45475a,#0E0E12"
 # color-link line-number "#679480,#0E0E12" # default
+
 # color-link current-line-number "#b4befe" # from catppuccin
 color-link current-line-number "#AE81FF"
 # color-link current-line-number "#67FF80,#0E0E12" # default
