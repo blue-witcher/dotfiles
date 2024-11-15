@@ -1,6 +1,7 @@
 {
     "colorscheme": "my_darken",
     "diffgutter": true,
+    "hlsearch": true,
     "mkparents": true,
     "scrollbar": true,
     "softwrap": true,
