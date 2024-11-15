@@ -28,6 +28,8 @@ color-link underlined "#D33682"
 color-link error "bold #CB4B16"
 color-link todo "bold #D33682"
 
+color-link scrollbar "#DBDBDB,#0E0E12"
+color-link divider "#181825,#181825"
 color-link statusline "#cdd6f4,#181825"
 color-link tabbar "#cdd6f4,#181825"
 color-link indent-char "#505050,#282828"
@@ -52,4 +54,3 @@ color-link diff-added "#a6e3a1" # default
 color-link diff-modified "#f9e2af"
 color-link diff-deleted "#f38ba8"
 
-color-link scrollbar "#DBDBDB,#0E0E12"
