@@ -4,6 +4,7 @@
     "hlsearch": true,
     "mkparents": true,
     "scrollbar": true,
+    "scrollbarchar": "▕",
     "softwrap": true,
     "wordwrap": true
 }
