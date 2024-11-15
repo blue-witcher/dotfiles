@@ -6,7 +6,7 @@ CursorShape=1
 
 [General]
 Command=/bin/fish
-LocalTabTitleFormat=%D - %n
+LocalTabTitleFormat=%w
 Name=blueProfile
 Parent=FALLBACK/
 
