@@ -51,3 +51,5 @@ color-link color-column "#0E0E12"
 color-link diff-added "#a6e3a1" # default
 color-link diff-modified "#f9e2af"
 color-link diff-deleted "#f38ba8"
+
+color-link scrollbar "#DBDBDB,#0E0E12"
