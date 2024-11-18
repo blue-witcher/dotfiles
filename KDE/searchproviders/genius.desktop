@@ -1,0 +1,7 @@
+[Desktop Entry]
+Charset=
+Hidden=false
+Keys=genius
+Name=genius
+Query=https://genius.com/search?q=\\{@}
+Type=Service
