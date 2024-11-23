@@ -12,6 +12,7 @@ Parent=FALLBACK/
 
 [Scrolling]
 HighlightScrolledLines=false
+HistoryMode=2
 
 [Terminal Features]
 BlinkingCursorEnabled=true
