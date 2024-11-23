@@ -20,6 +20,7 @@ color-link statement "#E96379"
 color-link preproc "#F92672"
 
 color-link type "#4B98FA"
+color-link type.keyword "#f9e2af"
 
 color-link symbol "#E1E1E6"
 color-link symbol.brackets "#E7BE79"
