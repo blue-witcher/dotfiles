@@ -10,5 +10,8 @@ LocalTabTitleFormat=%w
 Name=blueProfile
 Parent=FALLBACK/
 
+[Scrolling]
+HighlightScrolledLines=false
+
 [Terminal Features]
 BlinkingCursorEnabled=true
