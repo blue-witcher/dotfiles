@@ -49,4 +49,4 @@ rules:
         rules: []
 
       # marked
-    - underlined: "==.*=="
+    - underlined: "==.+=="
