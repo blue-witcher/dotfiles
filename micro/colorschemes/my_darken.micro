@@ -1,7 +1,7 @@
 # my personalized "darken" colorscheme
 
 color-link default "#DBDBDB,#0E0E12"
-color-link comment "#637777"
+color-link comment "#7c7f93"
 # color-link comment "#9399b2" # catppuccin
 # color-link comment "#483C67" # darken
 
