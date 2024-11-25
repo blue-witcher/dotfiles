@@ -52,7 +52,7 @@ color-link cursor-line "#0E1E22"
 color-link color-column "#0E0E12"
 
 # color-link diff-added "#BDE6AD"
-color-link diff-added "#a6e3a1" # default
-color-link diff-modified "#f9e2af"
-color-link diff-deleted "#f38ba8"
+color-link diff-added "#40a02b" # default
+color-link diff-modified "#df8e1d"
+color-link diff-deleted "#d20f39"
 
