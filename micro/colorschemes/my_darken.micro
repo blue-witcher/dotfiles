@@ -43,11 +43,6 @@ color-link line-number "#45475a,#0E0E12"
 color-link current-line-number "#AE81FF"
 # color-link current-line-number "#67FF80,#0E0E12" # default
 
-color-link gutter-error "#CB4B16" # darken
-# color-link gutter-error "#f38ba8" # catppuccin
-# color-link gutter-warning "#f9e2af" # catppuccin
-color-link gutter-warning "#E6DB74" # darken
-
 color-link cursor-line "#0E1E22"
 color-link color-column "#0E0E12"
 
@@ -56,3 +51,5 @@ color-link diff-added "#40a02b" # default
 color-link diff-modified "#df8e1d"
 color-link diff-deleted "#d20f39"
 
+color-link gutter-error "#d20f39"
+color-link gutter-warning "#df8e1d"
