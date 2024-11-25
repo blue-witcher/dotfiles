@@ -21,11 +21,11 @@ color-link preproc "#F92672"
 color-link type "#4B98FA"
 color-link type.keyword "#f9e2af"
 
-color-link symbol "#D33682"
 # color-link symbol "#f5c2e7" # catppuccin
-# color-link symbol "#E1E1E6" # default
+color-link symbol "#E1E1E6" # default
 color-link symbol.brackets "#E7BE79"
 color-link symbol.tag "#FF79D6"
+color-link symbol.operator "#E6DB74"
 
 color-link underlined "#D33682"
 color-link error "bold #CB4B16"
