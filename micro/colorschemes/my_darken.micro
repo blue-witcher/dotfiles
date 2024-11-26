@@ -10,7 +10,7 @@ color-link constant.string "#67FF80"
 color-link constant.string.char "#BDE6AD"
 color-link constant.number "#AE81FF"
 
-color-link special "#f5c2e7"
+color-link special "#ea76cb"
 # color-link special "#A6E22E" # default
 color-link statement "#E96379"
 color-link preproc "#F92672"
