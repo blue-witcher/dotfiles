@@ -39,7 +39,7 @@ color-link line-number "#45475a,#0E0E12"
 # color-link line-number "#679480,#0E0E12" # default
 
 # color-link current-line-number "#b4befe" # from catppuccin
-color-link current-line-number "#AE81FF"
+color-link current-line-number "#8839ef"
 # color-link current-line-number "#67FF80,#0E0E12" # default
 
 color-link cursor-line "#0E1E22"
