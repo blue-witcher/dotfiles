@@ -20,7 +20,7 @@ color-link preproc "#F92672"
 color-link type "#4B98FA"
 color-link type.keyword "#f9e2af"
 
-color-link symbol "#E1E1E6" # default
+color-link symbol "#A6E22E" # default
 color-link symbol.brackets "#E6DB74"
 color-link symbol.tag "#FF79D6"
 color-link symbol.operator "#1ebfc8"
