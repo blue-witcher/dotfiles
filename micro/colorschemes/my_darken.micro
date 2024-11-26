@@ -14,7 +14,7 @@ color-link constant.number "#AE81FF"
 
 color-link special "#ea76cb"
 # color-link special "#A6E22E" # default, nice color
-color-link statement "#E96379"
+color-link statement "#e64553"
 color-link preproc "#F92672"
 
 color-link type "#4B98FA"
