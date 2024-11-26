@@ -7,7 +7,7 @@ color-link identifier "#ea76cb"
 # color-link identifier.class "#"
 # color-link identifier.var "#"
 
-color-link constant "#8839ef"
+color-link constant "#AE81FF"
 color-link constant.string "#67FF80"
 color-link constant.string.char "#BDE6AD"
 color-link constant.number "#AE81FF"
