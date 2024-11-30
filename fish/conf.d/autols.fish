@@ -8,9 +8,9 @@ function __autols_hook --description "Auto ls including hidden files" --on-event
   end
 
   if test "$AUTO_LS_ALL" = 1            # test if auto_ls -all flag is set
-    echo; ls -a
+    ls -a
   else
-    echo; ls
+    ls
   end
 
   set -g __autols_last (pwd)            # set new directory in variable
