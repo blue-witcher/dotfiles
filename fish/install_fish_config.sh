@@ -49,14 +49,6 @@ case $display in
 		;;
 esac
 
-echo "Are you using Wayland or X11? w for Wayland or x for X11 "
-read display
-case $display in
-	"x")
-		ln -s ~/dotfiles/fish/conf.d/clipboard/wl-clipboard_copy.fish
-		;;
-esac
-
 # copy distribution specifig functions
 if [ -f /etc/os-release ]; then
 	. /etc/os-release
