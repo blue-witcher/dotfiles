@@ -1,0 +1,1 @@
+defaults, noatime, compress=zstd, space_cache=v2, (maybe) nodatacow (to only use cow for snapshots)
