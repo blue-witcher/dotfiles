@@ -1,5 +1,6 @@
 [Appearance]
 ColorScheme=myBreeze
+Font=Hack,11
 
 [Cursor Options]
 CursorShape=1
