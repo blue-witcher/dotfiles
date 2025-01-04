@@ -40,15 +40,6 @@ else
 	ln -s ~/dotfiles/fish/functions/listings/* ~/.config/fish/functions/
 fi
 
-# clipboard abbreviation
-echo "Are you using Wayland or X11? w for Wayland or x for X11 "
-read display
-case $display in
-	"w") 
-		ln -s ~/dotfiles/fish/conf.d/clipboard/wl-clipboard_copy.fish ~/.config/fish/conf.d/
-		;;
-esac
-
 # copy distribution specifig functions
 if [ -f /etc/os-release ]; then
 	. /etc/os-release
