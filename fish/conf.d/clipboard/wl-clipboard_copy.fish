@@ -1,4 +1,8 @@
 if status is-interactive
-    abbr -a cb 'wl-copy'
-    abbr -a pst 'wl-paste'
+    if test $TERM = 'xterm-kitty'
+        abbr -a cb 'kitten clipboard'
+    else
+        abbr -a cb 'fish_clipboard_copy'
+        abbr -a pst 'fish_clipboard_paste'
+    end
 end
