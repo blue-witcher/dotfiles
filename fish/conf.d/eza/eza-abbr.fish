@@ -1,6 +1,7 @@
 if status is-interactive
     abbr -a lsa 'ls -a'
-    abbr -a llt 'lt -l'
-    abbr -a lta 'lt -a'
-    abbr -a llta 'lt -la'
+    abbr -a lt 'ls -T'
+    abbr -a llt 'ls -lT'
+    abbr -a lta 'ls -Ta'
+    abbr -a llta 'll -T'
 end
