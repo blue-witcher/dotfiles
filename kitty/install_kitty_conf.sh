@@ -16,3 +16,8 @@ ln -s ~/dotfiles/kitty/kitty.conf ~/.config/kitty/
 if ls ~/dotfiles/kitty/themes/* 2> /dev/null; then
 	ln -s ~/dotfiles/kitty/themes/* ~/.config/kitty/
 fi
+
+# download whiskers icon from https://github.com/igrmk/whiskers
+wget -P ~/.config/kitty/ 'https://raw.githubusercontent.com/igrmk/whiskers/refs/heads/main/whiskers_256x256.png'
+# install icon
+sed -i 's/Icon=.*/Icon=\/home\/blue\/\.config\/kitty\/whiskers_256x256\.png/' ~/.local/share/applications/kitty.desktop
