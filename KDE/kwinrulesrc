@@ -1,0 +1,19 @@
+[General]
+count=2
+rules=a9750a34-3c49-4dfe-bd55-0e3a1034770c,451c1a43-c111-43e7-9e75-3df4e944f914
+[451c1a43-c111-43e7-9e75-3df4e944f914]
+
+Description=Application settings for Obsidian
+desktopfile=md.obsidian.Obsidian.desktop
+desktopfilerule=3
+wmclass=obsidian
+wmclasscomplete=true
+wmclassmatch=1
+
+[a9750a34-3c49-4dfe-bd55-0e3a1034770c]
+Description=Application settings for vesktop
+desktopfile=dev.vencord.Vesktop.desktop
+desktopfilerule=3
+wmclass=\svesktop
+wmclasscomplete=true
+wmclassmatch=1
