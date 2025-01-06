@@ -12,5 +12,5 @@ ln -s ~/dotfiles/micro/settings.json ~/.config/micro/
 # symlink colorschemes
 ## if statement because bash is dumb
 if ls ~/dotfiles/micro/colorschemes/* 2> /dev/null; then
-    ln -s ~/dotfiles/micro/colorschemes ~/.config/micro/colorschemes/
+    ln -s ~/dotfiles/micro/colorschemes/* ~/.config/micro/colorschemes/
 fi
