@@ -16,9 +16,12 @@ if status is-interactive
     abbr -a .... 'cd ../../../'
     abbr -a ..... 'cd ../../../../'
 # print full file path
-    abbr -a name 'realpath -s'
+    abbr -a name 'realpath -zs' # doesn't resolve symlinks
+    abbr -a copy 'realpath -z' # resolves symlinks
 # grep case insensitive
     abbr -a se 'grep -i'
 # file size command
     abbr -a du 'du -hs'
+# clear screen and scrollback
+    abbr -a clears 'printf "\e[H\e[3J"'
 end
