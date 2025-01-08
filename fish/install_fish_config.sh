@@ -1,4 +1,5 @@
 #!/bin/bash
+SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # make necessary folders and parent folders if not exist already
 mkdir -p ~/.config/fish/functions
@@ -41,17 +42,16 @@ else
 fi
 
 # copy distribution specifig functions
-if [ -f /etc/os-release ]; then
-	. /etc/os-release
-	if [ "$ID_LIKE" = "arch" ]; then
-		echo "ArchLinux detected."
-		ln -s ~/dotfiles/fish/functions/ArchLinux/*.fish ~/.config/fish/functions/
-	elif [ "$ID_LIKE" = *"suse"* ]; then
-		echo "Detected suse-like distro."
-		ln -s ~/dotfiles/fish/functions/openSuse/*.fish ~/.config/fish/functions/
-	else
-		echo "No distro-specific functions present."
-	fi
+. "$SCRIPT_DIR"/../scripts/functions.sh
+detect_distro
+if [ "$DISTRO_FAMILY" = "arch" ]; then
+	echo "Installing functions for ArchLinux."
+	ln -s "$SCRIPT_DIR"/functions/ArchLinux/*.fish ~/.config/fish/functions/
+elif [ "$DISTRO_FAMILY" = *"suse"* ]; then
+	echo "Installing functions for OpenSuse distributions."
+	ln -s "$SCRIPT_DIR"/functions/openSuse/*.fish ~/.config/fish/functions/
+elif [ "$DISTRO" = "Unknown" ]; then
+	echo "Couldn't detect distro."
 else
-	echo "Couldn't detect distribution."
+	echo "No distro-specific functions present."
 fi
