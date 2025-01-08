@@ -1,4 +1,5 @@
 #!/bin/bash
+SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # make rclone folder if not exist already
 mkdir -p ~/.config/rclone
@@ -15,7 +16,7 @@ else
 	cp ~/.config/rclone/rclone.conf ~/.config/rclone/rclone.conf.backup
 
 	# append rclone_obsidian-vaults.conf to rclone.conf
-	cat ~/dotfiles/rclone/obsidian_vaults/rclone_obsidian-vaults.conf >> ~/.config/rclone/rclone.conf
+	cat "$SCRIPT_DIR"/obsidian_vaults/rclone_obsidian-vaults.conf >> ~/.config/rclone/rclone.conf
 	touch ~/.config/rclone/obsidian_vaults
 
 	# create driveBiSync log file

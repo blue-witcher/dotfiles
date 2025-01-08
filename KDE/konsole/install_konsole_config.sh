@@ -1,4 +1,5 @@
 #!/bin/bash
+SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # make directories if not already exist
 mkdir -p ~/.config
@@ -8,5 +9,5 @@ mkdir -p ~/.local/share/konsole
 mv ~/.config/konsolerc ~/.config/konsolerc.backup
 
 # symlink files
-ln -s ~/dotfiles/KDE/konsole/konsolerc ~/.config/
-ln -s ~/dotfiles/KDE/konsole/colorschemesAndProfiles/* ~/.local/share/konsole/
+ln -s "$SCRIPT_DIR"/konsolerc ~/.config/
+ln -s "$SCRIPT_DIR"/colorschemesAndProfiles/* ~/.local/share/konsole/

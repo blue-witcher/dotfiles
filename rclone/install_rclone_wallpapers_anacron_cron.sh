@@ -1,13 +1,14 @@
 #!/bin/bash
+SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-DRIVESYNC_CRON=$(< ~/dotfiles/rclone/wallpapers/driveBiSync_wallpapers.cron)
+. "$SCRIPT_DIR"/wallpapers/driveBiSync_wallpapers.anacron
 
 echo "Creating anacron spool directory.."
 mkdir -p ~/.local/var/spool/anacron
 echo "Anacron directory created."
 
 echo "Installing driveBiSync wallpapers cron job.."
-(crontab -l; echo "$DRIVESYNC_CRON") | crontab
+(crontab -l; echo "$WALLPAPER_CRON") | crontab
 echo "Installed driveBiSync obsidian vaults cron jobs."
 
 # enable cronie service

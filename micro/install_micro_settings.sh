@@ -1,4 +1,5 @@
 #!/bin/bash
+SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # make '~/.config/micro/colorschemes' folder and parent folders if not exist already
 mkdir -p ~/.config/micro/colorschemes
@@ -7,10 +8,10 @@ mkdir -p ~/.config/micro/colorschemes
 mv ~/.config/micro/settings.json ~/.config/micro/settings.json.backup 
 
 # symlink settings file
-ln -s ~/dotfiles/micro/settings.json ~/.config/micro/
+ln -s "$SCRIPT_DIR"/settings.json ~/.config/micro/
 
 # symlink colorschemes
 ## if statement because bash is dumb
-if ls ~/dotfiles/micro/colorschemes/* 2> /dev/null; then
-    ln -s ~/dotfiles/micro/colorschemes/* ~/.config/micro/colorschemes/
+if ls "$SCRIPT_DIR"/colorschemes/* 2> /dev/null; then
+    ln -s "$SCRIPT_DIR"/colorschemes/* ~/.config/micro/colorschemes/
 fi

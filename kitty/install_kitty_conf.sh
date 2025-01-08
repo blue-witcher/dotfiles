@@ -1,4 +1,5 @@
 #!/bin/bash
+SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # make directory
 mkdir -p ~/.config/kitty
@@ -7,14 +8,14 @@ mkdir -p ~/.config/kitty
 mv ~/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf.bakup 
 
 # symlink main settings file
-ln -s ~/dotfiles/kitty/kitty.conf ~/.config/kitty/
+ln -s "$SCRIPT_DIR"/kitty.conf ~/.config/kitty/
 
 # symlink the themes
 ## if statement because bash is dumb
 ## if there are no *.fish files in the directory, this command makes a symlink to ~/dotfiles/fish/conf.d/*.fish.
 ## Because of that, we need to check if there is a *.fish file first and only execute the symlinking if there is
-if ls ~/dotfiles/kitty/themes/* 2> /dev/null; then
-	ln -s ~/dotfiles/kitty/themes/* ~/.config/kitty/
+if ls "$SCRIPT_DIR"/themes/* 2> /dev/null; then
+	ln -s "$SCRIPT_DIR"/themes/* ~/.config/kitty/
 fi
 
 # download whiskers icon from https://github.com/igrmk/whiskers

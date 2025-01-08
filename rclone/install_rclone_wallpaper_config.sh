@@ -1,4 +1,5 @@
 #!/bin/bash
+SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # make rclone folder if not exist already
 mkdir -p ~/.config/rclone
@@ -15,7 +16,7 @@ else
 	cp ~/.config/rclone/rclone.conf ~/.config/rclone/rclone.conf.backup
 
 	# append rclone_wallpapers.conf to rclone.conf
-	cat "$HOME/dotfiles/rclone/wallpapers/rclone_wallpapers.conf" >> "$HOME/.config/rclone/rclone.conf"
+	cat "$SCRIPT_DIR/rclone/wallpapers/rclone_wallpapers.conf" >> "$HOME/.config/rclone/rclone.conf"
 	touch ~/.config/rclone/wallpapers
 
 	# create driveBiSync log file

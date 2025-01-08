@@ -1,2 +1,3 @@
-@reboot ~/dotfiles/rclone/obsidian_vaults/driveBiSync_obsidian-vaults.sh
-*/15 * * * * ~/dotfiles/rclone/obsidian_vaults/driveBiSync_obsidian-vaults.sh
+#!/usr/bin/env bash
+OBSIDIAN_CRON=$"@reboot $SCRIPT_DIR/obsidian_vaults/driveBiSync_obsidian-vaults.sh
+*/15 * * * * $SCRIPT_DIR/obsidian_vaults/driveBiSync_obsidian-vaults.sh"
