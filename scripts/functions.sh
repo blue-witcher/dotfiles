@@ -7,6 +7,7 @@ detect_distro() {
         . /etc/os-release
         DISTRO=$NAME
         DISTRO_VERSION=$VERSION_ID
+        DISTRO_FAMILY=$ID_LIKE
     elif [ -f /etc/lsb-release ]; then
         # Read the distribution information from /etc/lsb-release
         . /etc/lsb-release
@@ -15,6 +16,7 @@ detect_distro() {
     elif [ -f /etc/debian_version ]; then
         DISTRO="Debian"
         DISTRO_VERSION=$(cat /etc/debian_version)
+        DISTRO_FAMILY="Debian"
     elif [ -f /etc/redhat-release ]; then
         DISTRO=$(cat /etc/redhat-release)
         DISTRO_VERSION=$(cat /etc/redhat-release | grep -oP '\d+(\.\d+)?')
