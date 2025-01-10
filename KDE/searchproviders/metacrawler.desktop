@@ -1,0 +1,7 @@
+[Desktop Entry]
+Charset=
+Hidden=false
+Keys=meta,metacrawler
+Name=MetaCrawler
+Query=https://www.metacrawler.com/info.metac.cloud.other/search/web?q=\\{@}
+Type=Service

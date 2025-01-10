@@ -1,0 +1,7 @@
+[Desktop Entry]
+Charset=
+Hidden=false
+Keys=mc
+Name=Minecraft Wiki
+Query=https://minecraft.wiki/?search=\\{@}
+Type=Service
