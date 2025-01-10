@@ -16,8 +16,8 @@ if status is-interactive
     abbr -a .... 'cd ../../../'
     abbr -a ..... 'cd ../../../../'
 # print full file path
-    abbr -a name 'realpath -zs' # doesn't resolve symlinks
-    abbr -a copy 'realpath -z' # resolves symlinks
+    abbr -a loc 'realpath -zs' # doesn't resolve symlinks
+    abbr -a name 'realpath -z' # resolves symlinks
 # grep case insensitive
     abbr -a se 'grep -i'
 # file size command
