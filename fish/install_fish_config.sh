@@ -19,6 +19,10 @@ fish -c 'fish_config prompt save astronaut'
 
 # copy general functions
 ln -s "$SCRIPT_DIR"/functions/*.fish ~/.config/fish/functions/
+# link bashrun if run is present
+if ls "$SCRIPT_DIR"/functions/run.fish 2> /dev/null; then
+	ln -s "$SCRIPT_DIR"/../scripts/run.sh ~/.config/fish/functions/
+fi
 
 # copy general drop-in configurations
 ## if statement because bash is dumb
