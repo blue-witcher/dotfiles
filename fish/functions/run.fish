@@ -1,8 +1,3 @@
-#!/usr/bin/env fish
-
 function run
-    for program in $argv
-        $program > /dev/null 2>&1 & ;disown
-    end
-
+    bash ~/.config/fish/functions/run.sh $argv
 end
