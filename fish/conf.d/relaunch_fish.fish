@@ -1,3 +1,3 @@
 if status is-interactive
-    abbr -a relaunch 'clear && fish_greeting && ls'
+    abbr -a relaunch 'clear && exec fish'
 end
