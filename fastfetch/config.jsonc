@@ -19,9 +19,9 @@
     "memory",
     "swap",
     "disk",
-    "localIp",
-    "battery",
     "poweradapter",
+    "battery",
+    "localIp",
     "break",
     "colors"
   ]
