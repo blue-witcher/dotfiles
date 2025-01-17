@@ -30,4 +30,7 @@ bat
 qt6-imageformats
 ttf-hack-nerd
 trash-cli
+kitty
+eza
+rsync
 "
