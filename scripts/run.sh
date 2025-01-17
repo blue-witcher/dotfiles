@@ -6,4 +6,4 @@ function run {
 		$arg > /dev/null 2>&1 &
 	done
 }
-run $@
+run "$@"
