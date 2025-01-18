@@ -159,7 +159,18 @@
                 "enabled": false
             },
             "FakeNitro": {
-                "enabled": false
+                "enabled": true,
+                "enableEmojiBypass": true,
+                "emojiSize": 32,
+                "transformEmojis": true,
+                "enableStickerBypass": true,
+                "stickerSize": 160,
+                "transformStickers": true,
+                "transformCompoundSentence": true,
+                "enableStreamQualityBypass": false,
+                "useHyperLinks": true,
+                "hyperLinkText": "{{NAME}}",
+                "disableEmbedPermissionCheck": false
             },
             "FakeProfileThemes": {
                 "enabled": false
@@ -211,7 +222,7 @@
             "ImageZoom": {
                 "enabled": true,
                 "size": 829.4871794871794,
-                "zoom": 2,
+                "zoom": 1.9,
                 "nearestNeighbour": false,
                 "square": false,
                 "saveZoomValues": true,
@@ -410,7 +421,8 @@
                 "memberList": true,
                 "voiceUsers": true,
                 "reactorsList": true,
-                "colorChatMessages": false
+                "colorChatMessages": false,
+                "pollResults": true
             },
             "SecretRingToneEnabler": {
                 "enabled": false
@@ -437,7 +449,9 @@
                 "enabled": false
             },
             "ShowHiddenChannels": {
-                "enabled": false
+                "enabled": true,
+                "showMode": 0,
+                "hideUnreads": true
             },
             "ShowHiddenThings": {
                 "enabled": false
@@ -524,7 +538,18 @@
                 "enabled": false
             },
             "VcNarrator": {
-                "enabled": false
+                "enabled": false,
+                "volume": 1,
+                "rate": 1,
+                "sayOwnName": false,
+                "latinOnly": false,
+                "joinMessage": "{{USER}} joined",
+                "leaveMessage": "{{USER}} left",
+                "moveMessage": "{{USER}} moved to {{CHANNEL}}",
+                "muteMessage": "{{USER}} Muted",
+                "unmuteMessage": "{{USER}} unmuted",
+                "deafenMessage": "{{USER}} deafened",
+                "undeafenMessage": "{{USER}} undeafened"
             },
             "VencordToolbox": {
                 "enabled": false
@@ -533,7 +558,8 @@
                 "enabled": false
             },
             "ViewRaw": {
-                "enabled": false
+                "enabled": true,
+                "clickMethod": "Left"
             },
             "VoiceMessages": {
                 "enabled": true
@@ -680,6 +706,9 @@
             },
             "FixImagesQuality": {
                 "enabled": false
+            },
+            "FullUserInChatbox": {
+                "enabled": true
             }
         },
         "notifications": {
@@ -692,7 +721,7 @@
             "authenticated": false,
             "url": "https://api.vencord.dev/",
             "settingsSync": false,
-            "settingsSyncVersion": 1730919579319
+            "settingsSyncVersion": 1737207745020
         }
     },
     "quickCss": ""
