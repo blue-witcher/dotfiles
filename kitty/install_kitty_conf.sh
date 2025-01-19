@@ -20,6 +20,7 @@ fi
 
 # download whiskers icon from https://github.com/igrmk/whiskers
 wget -P ~/.config/kitty/ 'https://raw.githubusercontent.com/igrmk/whiskers/refs/heads/main/whiskers_256x256.png'
+wget -P ~/.config/kitty/ 'https://raw.githubusercontent.com/igrmk/whiskers/refs/heads/main/whiskers_1024x1024.png'
 wget -P ~/.config/kitty/ 'https://raw.githubusercontent.com/igrmk/whiskers/refs/heads/main/whiskers.svg'
-# install icon
-sed -i 's/Icon=.*/Icon=\/home\/blue\/\.config\/kitty\/whiskers\.svg/' ~/.local/share/applications/kitty.desktop
+# install icon (.png variant because .svg support for application icons still seems a bit shaky)
+sed -i 's/Icon=.*/Icon=\/home\/blue\/\.config\/kitty\/whiskers_1024x1024\.png/' ~/.local/share/applications/kitty.desktop
