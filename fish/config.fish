@@ -9,7 +9,6 @@ if status is-interactive
       ⠀⣀⠤⠒⠒⢺⠒⠀⠀⠀⠀⠀⠀⠀⠀⠤⠊⠀⢸⠀⡿⠀⡀⠀⣀⡟⠀⠀⠀⠀⢸⡇
       ⠈⠀⠀⣠⠴⠚⢯⡀⠐⠒⠚⠉⠀⢶⠂⠀⣀⠜⠀⢿⡀⠉⠚⠉⠀⠀⠀⠀⣠⠟
       ⠀⠠⠊⠀⠀⠀⠀⠙⠂⣴⠒⠒⣲⢔⠉⠉⣹⣞⣉⣈⠿⢦⣀⣀⣀⣠⡴⠟'
-    zoxide init fish | source
 # Navigation
     abbr -a .. 'cd ../'
     abbr -a ... 'cd ../../'
@@ -24,4 +23,7 @@ if status is-interactive
     abbr -a du 'du -hs'
 # clear screen and scrollback
     abbr -a clears 'printf "\e[H\e[3J"'
+
+    fzf --fish | source
+    zoxide init fish | source
 end
