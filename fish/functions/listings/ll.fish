@@ -1,5 +1,5 @@
 if type -q eza
-    function ll --wraps='ls -al' --description 'alias ll=ls -al'
+    function ll --wraps='eza --color=always --group-directories-first --icons --smart-group --git --links --no-quotes --hyperlink -al' --description 'alias ll=ls -al'
         ls -al $argv
             
     end
