@@ -68,7 +68,11 @@
                 "enabled": false
             },
             "AnonymiseFileNames": {
-                "enabled": false
+                "enabled": true,
+                "anonymiseByDefault": true,
+                "method": 0,
+                "randomisedLength": 7,
+                "consistent": "image"
             },
             "WebRichPresence (arRPC)": {
                 "enabled": false
@@ -721,7 +725,7 @@
             "authenticated": false,
             "url": "https://api.vencord.dev/",
             "settingsSync": false,
-            "settingsSyncVersion": 1737207745020
+            "settingsSyncVersion": 1737473450947
         }
     },
     "quickCss": ""
