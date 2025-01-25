@@ -1,7 +1,7 @@
 #!/bin/bash
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-. "$SCRIPT_DIR"/wallpapers/driveBiSync_wallpapers.anacron
+. "$SCRIPT_DIR"/wallpapers/driveBiSync_wallpapers.cron
 
 echo "Creating anacron spool directory.."
 mkdir -p ~/.local/var/spool/anacron
