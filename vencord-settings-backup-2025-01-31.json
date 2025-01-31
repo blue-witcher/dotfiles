@@ -5,13 +5,13 @@
         "useQuickCss": true,
         "themeLinks": [
             "https://raw.githubusercontent.com/DiscordStyles/HorizontalServerList/deploy/HorizontalServerList.theme.css",
-            "https://raw.githubusercontent.com/DiscordStyles/RadialStatus/deploy/RadialStatus.theme.css",
+            "#https://raw.githubusercontent.com/DiscordStyles/RadialStatus/deploy/RadialStatus.theme.css",
             "#https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/midnight.css",
             "https://raw.githubusercontent.com/KillYoy/DiscordNight/master/DiscordNight.theme.css"
         ],
         "enabledThemes": [],
         "enableReactDevtools": false,
-        "frameless": true,
+        "frameless": false,
         "transparent": false,
         "winCtrlQ": false,
         "disableMinSize": false,
@@ -271,7 +271,7 @@
             },
             "MessageLogger": {
                 "enabled": true,
-                "deleteStyle": "text",
+                "deleteStyle": "overlay",
                 "logDeletes": true,
                 "logEdits": true,
                 "ignoreBots": false,
@@ -455,7 +455,8 @@
             "ShowHiddenChannels": {
                 "enabled": true,
                 "showMode": 0,
-                "hideUnreads": true
+                "hideUnreads": true,
+                "defaultAllowedUsersAndRolesDropdownState": true
             },
             "ShowHiddenThings": {
                 "enabled": false
@@ -476,13 +477,16 @@
                 "enabled": false
             },
             "SpotifyControls": {
-                "enabled": false
+                "enabled": true,
+                "hoverControls": true
             },
             "SpotifyCrack": {
-                "enabled": false
+                "enabled": true,
+                "noSpotifyAutoPause": true,
+                "keepSpotifyActivityOnIdle": true
             },
             "SpotifyShareCommands": {
-                "enabled": false
+                "enabled": true
             },
             "StartupTimings": {
                 "enabled": false
@@ -713,6 +717,11 @@
             },
             "FullUserInChatbox": {
                 "enabled": true
+            },
+            "IrcColors": {
+                "enabled": false,
+                "lightness": 70,
+                "memberListColors": true
             }
         },
         "notifications": {
@@ -725,7 +734,7 @@
             "authenticated": false,
             "url": "https://api.vencord.dev/",
             "settingsSync": false,
-            "settingsSyncVersion": 1737473450947
+            "settingsSyncVersion": 1738342982730
         }
     },
     "quickCss": ""
