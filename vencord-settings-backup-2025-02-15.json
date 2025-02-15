@@ -145,7 +145,7 @@
                 "enabled": true,
                 "hideButton": false,
                 "replaceElements": 0,
-                "dearrowByDefault": true
+                "dearrowByDefault": false
             },
             "Decor": {
                 "enabled": false
@@ -214,9 +214,6 @@
             "GreetStickerPicker": {
                 "enabled": false
             },
-            "HideAttachments": {
-                "enabled": true
-            },
             "iLoveSpam": {
                 "enabled": true
             },
@@ -226,7 +223,7 @@
             "ImageZoom": {
                 "enabled": true,
                 "size": 829.4871794871794,
-                "zoom": 1.9,
+                "zoom": 2.8,
                 "nearestNeighbour": false,
                 "square": false,
                 "saveZoomValues": true,
@@ -478,7 +475,9 @@
             },
             "SpotifyControls": {
                 "enabled": true,
-                "hoverControls": true
+                "hoverControls": true,
+                "useSpotifyUris": true,
+                "previousButtonRestartsTrack": true
             },
             "SpotifyCrack": {
                 "enabled": true,
@@ -722,6 +721,9 @@
                 "enabled": false,
                 "lightness": 70,
                 "memberListColors": true
+            },
+            "HideMedia": {
+                "enabled": true
             }
         },
         "notifications": {
@@ -734,7 +736,7 @@
             "authenticated": false,
             "url": "https://api.vencord.dev/",
             "settingsSync": false,
-            "settingsSyncVersion": 1738342982730
+            "settingsSyncVersion": 1739648953749
         }
     },
     "quickCss": ""
