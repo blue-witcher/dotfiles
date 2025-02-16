@@ -1,0 +1,22 @@
+[StandardShortcuts]
+Clear=
+Copy=Ctrl+C; Ctrl+Ins
+Cut=Ctrl+X
+DeleteWordBack=Ctrl+Backspace
+DeleteWordForward=Ctrl+Del
+Deselect=Ctrl+Shift+A
+Find=Ctrl+F
+FindNext=F3
+FindPrev=Shift+F3
+NextCompletion=Ctrl+Down
+Paste=Ctrl+V; Shift+Ins
+Paste Selection=Ctrl+Shift+Ins
+PrevCompletion=Ctrl+Up
+Redo=Ctrl+Shift+Z
+Replace=Ctrl+R
+Revert=
+SelectAll=Ctrl+A
+Spelling=
+SubstringCompletion=Ctrl+T
+TextCompletion=Ctrl+E
+Undo=Ctrl+Z

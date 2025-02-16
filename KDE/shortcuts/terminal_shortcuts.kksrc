@@ -1,0 +1,7 @@
+[kitty.desktop][Global Shortcuts]
+_launch=Meta+X
+
+[org.kde.konsole.desktop][Global Shortcuts]
+NewTab=
+NewWindow=
+_launch=

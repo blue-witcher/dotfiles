@@ -1,0 +1,11 @@
+[org.kde.spectacle.desktop][Global Shortcuts]
+ActiveWindowScreenShot=
+CurrentMonitorScreenShot=Print
+FullScreenScreenShot=Shift+Print
+OpenWithoutScreenshot=
+RecordRegion=
+RecordScreen=
+RecordWindow=
+RectangularRegionScreenShot=Meta+Shift+S
+WindowUnderCursorScreenShot=
+_launch=
