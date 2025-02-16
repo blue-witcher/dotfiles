@@ -15,6 +15,7 @@ bat
 
 archlinuxPackages="
 git
+ksshaskpass
 fish
 zoxide
 fzf

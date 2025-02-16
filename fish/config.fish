@@ -30,3 +30,4 @@ end
 
 # Environment variables
 set -x MICRO_TRUECOLOR 1 # settings micro_truecolor to 0 is also cool, makes catppuccin mocha a "true" dark theme
+set -x GIT_ASKPASS '/usr/bin/ksshaskpass'
