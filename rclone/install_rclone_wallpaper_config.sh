@@ -16,7 +16,7 @@ else
 	cp ~/.config/rclone/rclone.conf ~/.config/rclone/rclone.conf.backup
 
 	# append rclone_wallpapers.conf to rclone.conf
-	cat "$SCRIPT_DIR/rclone/wallpapers/rclone_wallpapers.conf" >> "$HOME/.config/rclone/rclone.conf"
+	cat "$SCRIPT_DIR"/wallpapers/rclone_wallpapers.conf >> ~/.config/rclone/rclone.conf
 	touch ~/.config/rclone/wallpapers
 
 	# create driveBiSync log file
