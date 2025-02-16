@@ -1,4 +1,5 @@
 Colors = Breeze Blacker (https://store.kde.org/p/2014700)
+OR Colors = Xela's Breeze Darker (https://store.kde.org/p/2182130)
 fish colorscheme = dracula
 
 # My collection of nice looking accent colors
