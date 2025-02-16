@@ -1,7 +1,6 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
     set -x EDITOR micro
-    set -x MICRO_TRUECOLOR 1 # settings micro_truecolor to 0 is also cool, makes catppuccin mocha a "true" dark theme
     set -g fish_greeting '                ⠀⠀⠀⢠⠏⡆⠀⠀⠀⠀⠀⢀⣀⣤⣤⣤⣀⡀
       ⠀⠀⠀⠀⠀⡟⢦⡀ ⠀⠀⣀⠞⠀⠀⠘⡀⢀⡠⠚⣉⠤⠂⠀⠀⠀⠈⠙⢦⡀
 ⠀⠀  ⠀⠀    ⠀⡇⠀⠉⠒⠊⠁⠀⠀⠀⠀⠀⠘⢧⠔⣉⠤⠒⠒⠉⠉⠀⠀⠀⠀⠹⣆
@@ -24,6 +23,10 @@ if status is-interactive
 # clear screen and scrollback
     abbr -a clears 'printf "\e[H\e[3J"'
 
+# init commands
     fzf --fish | source
     zoxide init fish | source
 end
+
+# Environment variables
+set -x MICRO_TRUECOLOR 1 # settings micro_truecolor to 0 is also cool, makes catppuccin mocha a "true" dark theme
