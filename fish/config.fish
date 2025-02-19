@@ -1,6 +1,8 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+# Environment variable for use only in interactive shell or processes called from interactive shell
     set -x EDITOR micro
+    set -x GIT_ASKPASS '/usr/bin/ksshaskpass'
     set -g fish_greeting \
 '                ⠀⠀⠀⢠⠏⡆⠀⠀⠀⠀⠀⢀⣀⣤⣤⣤⣀⡀
       ⠀⠀⠀⠀⠀⡟⢦⡀ ⠀⠀⣀⠞⠀⠀⠘⡀⢀⡠⠚⣉⠤⠂⠀⠀⠀⠈⠙⢦⡀
@@ -31,4 +33,3 @@ end
 
 # Environment variables
 set -x MICRO_TRUECOLOR 1 # settings micro_truecolor to 0 is also cool, makes catppuccin mocha a "true" dark theme
-set -x GIT_ASKPASS '/usr/bin/ksshaskpass'
