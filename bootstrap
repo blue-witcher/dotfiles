@@ -1,5 +1,9 @@
 #!/bin/bash
-
+#########################################
+#                                       #
+# This script is deprecated in favor of #
+# the multiple smaller, more focused    #
+# scripts in this repository            #
 #########################################
 
 # Functions
