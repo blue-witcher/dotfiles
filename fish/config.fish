@@ -12,7 +12,6 @@ if status is-interactive
       ⠈⠀⠀⣠⠴⠚⢯⡀⠐⠒⠚⠉⠀⢶⠂⠀⣀⠜⠀⢿⡀⠉⠚⠉⠀⠀⠀⠀⣠⠟
       ⠀⠠⠊⠀⠀⠀⠀⠙⠂⣴⠒⠒⣲⢔⠉⠉⣹⣞⣉⣈⠿⢦⣀⣀⣀⣠⡴⠟'
 # Navigation
-    abbr -a .. 'cd ../'
     abbr -a ... 'cd ../../'
     abbr -a .... 'cd ../../../'
     abbr -a ..... 'cd ../../../../'
