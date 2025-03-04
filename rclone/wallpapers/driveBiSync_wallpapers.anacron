@@ -10,4 +10,4 @@ PATH=/sbin:/bin:/usr/sbin:/usr/bin
 # START_HOURS_RANGE=3-22
 
 #period in days   delay in minutes   job-identifier   command
-1	0	wallpaper_sync		$SCRIPT_DIR/wallpapers/driveBiSync_wallpapers.sh
+1	0	wallpaper_sync		~/.local/anacron/driveBiSync_wallpapers.sh
