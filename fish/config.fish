@@ -5,7 +5,7 @@ set -x SSH_ASKPASS '/usr/bin/ksshaskpass'
 set -x SSH_ASKPASS_REQUIRE 'prefer'
 
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+# Commands to run in interactive sessions can go here
 # Environment variable for use only in interactive shell or processes called from interactive shell
     set -x EDITOR micro
     set -g fish_greeting \
@@ -25,8 +25,9 @@ if status is-interactive
     abbr -a name 'realpath -zs' # resolves symlinks
 # grep case insensitive
     abbr -a se 'grep -i'
-# file size command
+# file size commands
     abbr -a du 'du -hs'
+    abbr -a df 'df -h /'
 # clear screen and scrollback
     abbr -a clears 'printf "\e[H\e[3J"'
 
