@@ -1,8 +1,8 @@
 # Environment variables
 set -x MICRO_TRUECOLOR 1 # settings micro_truecolor to 0 is also cool, makes catppuccin mocha a "true" dark theme
 set -x GIT_ASKPASS '/usr/bin/ksshaskpass'
-set -x SSH_ASKPASS '/usr/bin/ksshaskpass'
-set -x SSH_ASKPASS_REQUIRE 'prefer'
+# set -x SSH_ASKPASS '/usr/bin/ksshaskpass'
+# set -x SSH_ASKPASS_REQUIRE 'prefer'
 
 if status is-interactive
 # Commands to run in interactive sessions can go here
@@ -27,7 +27,7 @@ if status is-interactive
     abbr -a se 'grep -i'
 # file size commands
     abbr -a du 'du -hs'
-    abbr -a df 'df -h /'
+    abbr -a df 'df -h'
 # clear screen and scrollback
     abbr -a clears 'printf "\e[H\e[3J"'
 
