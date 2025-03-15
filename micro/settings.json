@@ -2,6 +2,7 @@
     "colorscheme": "my_darken",
     "diffgutter": true,
     "hlsearch": true,
+    "indentchar": "│",
     "mkparents": true,
     "scrollbar": true,
     "scrollbarchar": "▕",
