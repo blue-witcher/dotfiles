@@ -14,11 +14,11 @@ if [ -f ~/.config/rclone/obsidian_vaults ]; then
 else
 	# backup old rclone.conf if already exist
 	cp ~/.config/rclone/rclone.conf ~/.config/rclone/rclone.conf.backup
-
+	
 	# append rclone_obsidian-vaults.conf to rclone.conf
 	cat "$SCRIPT_DIR"/obsidian_vaults/rclone_obsidian-vaults.conf >> ~/.config/rclone/rclone.conf
 	touch ~/.config/rclone/obsidian_vaults
-
+	
 	# create driveBiSync log file
 	mkdir -p ~/.local/var/log/
 	touch ~/.local/var/log/driveBiSync_obsidian-vaults.log
@@ -26,14 +26,14 @@ else
 	# create RCLONE_TEST file
 	mkdir -p ~/Documents/Obsidian\ Vaults/
 	touch ~/Documents/Obsidian\ Vaults/RCLONE_OBSIDIAN-VAULTS
-
+	
 	# tell the user to configure their token
 	echo "Please complete your rclone remote setup (you just need to authorize with your google account)."
 	rclone config reconnect obsidianVaults:
-
+	
 	# first run with --resync flag
 	echo "Running driveBiSync for the first time, please don't interrupt the process"
-	/usr/bin/rclone bisync 'obsidianVaults:' "$HOME/Documents/Obsidian Vaults/" --create-empty-src-dirs --compare size,modtime --check-filename=RCLONE_OBSIDIAN-VAULTS --check-access  --recover --remove-empty-dirs --verbose --log-file="$HOME/.local/var/log/driveBiSync.log" --conflict-resolve newer --conflict-suffix 'conflict.md' --delete-after --resync
+	/usr/bin/rclone bisync 'obsidianVaults:' "$HOME/Documents/Obsidian Vaults/" --create-empty-src-dirs --compare size,modtime --check-filename=RCLONE_OBSIDIAN-VAULTS --check-access  --recover --remove-empty-dirs --verbose --log-file="$HOME/.local/var/log/driveBiSync_obsidian-vaults.log" --conflict-resolve newer --conflict-suffix 'conflict.md' --delete-after --resync
 	echo "First run complete. rclone obsidian vaults setup complete."
 fi
 
