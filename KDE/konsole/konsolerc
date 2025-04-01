@@ -11,7 +11,7 @@ FocusFollowsMouse=true
 ShowWindowTitleOnTitleBar=true
 
 [MainWindow]
-ToolBarsMovable=Disabled
+ToolBarsMovable=Enabled
 
 [TabBar]
 CloseTabOnMiddleMouseButton=true
