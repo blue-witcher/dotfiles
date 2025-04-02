@@ -11,5 +11,13 @@ if status is-interactive
         abbr -a llr 'll -R'
         abbr -a lsar 'ls -aR'
         abbr -a lsr1 'ls -R1'
+    else
+        abbr -a lsa 'ls -a'
+        abbr -a ls1 'ls -1'
+        abbr -a lsa1 'ls -a1'
+        abbr -a lsr 'ls -R'
+        abbr -a llr 'll -R'
+        abbr -a lsar 'ls -aR'
+        abbr -a lsr1 'ls -R1'
     end
 end
