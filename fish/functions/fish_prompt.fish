@@ -28,10 +28,20 @@ function fish_prompt --description 'Write out the prompt'
 
     # Format $CMD_DURATION
     if test $CMD_DURATION -ge 5000; and test "$cmd_dur_off" != 1
-        set cmd_dur (math round $CMD_DURATION / 1000)'s'
+        if test $CMD_DURATION -ge 3600000
+            set cmd_dur_hours (math floor $CMD_DURATION / 3600000)'h'
+        end
+        if test (math $CMD_DURATION % 3600000) -ge 60000
+            set cmd_dur_mins (math floor (math $CMD_DURATION % 3600000) / 60000)'m'
+        end
+        if test (math $CMD_DURATION % 60000) -ge 1000 -a (math $CMD_DURATION % 60000) -lt 59500
+            set cmd_dur_secs (math round (math $CMD_DURATION % 60000) / 1000)'s '
+        else if test (math $CMD_DURATION % 60000) -ge 59500
+            set cmd_dur_secs (math floor (math $CMD_DURATION % 60000) / 1000)'s '
+        end
     end
-        
+    
 
-    echo -s (prompt_login) ' ' $cwd_color (prompt_pwd) $vcs_color (fish_vcs_prompt) $normal ' ' $prompt_status $duration_color "$cmd_dur"
+    echo -s (prompt_login) ' ' $cwd_color (prompt_pwd) $vcs_color (fish_vcs_prompt) $normal ' ' $prompt_status $duration_color $cmd_dur_hours $cmd_dur_mins $cmd_dur_secs
     echo -n -s $status_color $suffix ' ' $normal
 end
