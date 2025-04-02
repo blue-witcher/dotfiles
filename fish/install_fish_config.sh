@@ -17,9 +17,6 @@ ln -s "$SCRIPT_DIR"/config.fish ~/.config/fish/
 # set theme
 fish -c 'fish_config theme save Dracula'
 
-# set prompt
-fish -c 'fish_config prompt save astronaut'
-
 # copy general functions
 ln -s "$SCRIPT_DIR"/functions/**/*.fish ~/.config/fish/functions/
 
