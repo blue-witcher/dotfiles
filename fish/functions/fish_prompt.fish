@@ -27,7 +27,7 @@ function fish_prompt --description 'Write out the prompt'
     end
 
     # Format $CMD_DURATION
-    if test $CMD_DURATION -ge 5000; and test "$cmd_dur_off" != 1
+    if test $CMD_DURATION -ge 2000; and test "$cmd_dur_off" != 1
         if test $CMD_DURATION -ge 3600000
             set cmd_dur_hours (math floor $CMD_DURATION / 3600000)'h'
         end
