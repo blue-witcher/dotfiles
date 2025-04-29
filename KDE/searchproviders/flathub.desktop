@@ -1,0 +1,7 @@
+[Desktop Entry]
+Charset=
+Hidden=false
+Keys=flat,flathub
+Name=Flathub
+Query=https://flathub.org/apps/search?q=\\{@}
+Type=Service
