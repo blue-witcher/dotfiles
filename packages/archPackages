@@ -1,7 +1,9 @@
 git
 ksshaskpass
-fish zoxide
-fzf fastfetch
+fish
+zoxide
+fzf
+fastfetch
 flatpak
 flatpak-kcm
 discover
