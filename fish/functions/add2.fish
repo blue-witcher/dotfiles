@@ -7,7 +7,7 @@ function add2 --wraps='set -a' --description='add values to variable if not alre
         end
     end
 
-    if test $present = 1
+    if test "$present" = 1
         return 1
     end
         
