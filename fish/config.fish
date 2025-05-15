@@ -26,9 +26,6 @@ meow :3⠀⢰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⣤⠶⠶⢶⡄⠀�
     abbr -a name 'realpath -s' # resolves symlinks
 # grep case insensitive
     abbr -a se 'grep -i'
-# file size commands
-    abbr -a du 'du -hs'
-    abbr -a df 'df -h'
 # clear screen and scrollback
     abbr -a clears 'printf "\e[H\e[3J"'
 
