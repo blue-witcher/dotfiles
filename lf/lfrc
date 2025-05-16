@@ -1,6 +1,22 @@
 set ignorecase true
 set icons true
 
+
+# kitty + pistol
+set previewer ~/.config/lf/previewer
+set cleaner ~/.config/lf/cleaner
+
+# ctpv
+# set previewer ctpv
+# set cleaner ctpvclear
+# &ctpv -s $id
+# &ctpvquit $id
+
+# bat pager
+cmd batpage ${{
+	bat --color always --paging=always $f
+}}
+
 # create directory
 cmd mkdir %{{
 	printf "Directory name: "
@@ -36,12 +52,14 @@ cmd icat !{{
 map ac mkdir
 map az zo
 map <enter> shell-pipe
+map <c-space> shell
 map d
 map t
+map i batpage
 map x cut
 map y clear
 map c copy
-map <delete> %trash-put $f
+map R %trash-put $f
 map <s-delete> delete
 map w $fish
 map as icat
