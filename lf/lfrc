@@ -1,6 +1,7 @@
 set ignorecase true
 set icons true
 set info size
+set shell fish
 
 # kitty + pistol
 # set previewer ~/.config/lf/previewer
@@ -24,24 +25,10 @@ cmd mkdir %{{
 	mkdir $ans
 }}
 
-# zoxide command (z)
-cmd z %{{
-	result="$(zoxide query --exclude "$PWD" "$@" | sed 's/\\/\\\\/g;s/"/\\"/g')"
-	lf -remote "send $id cd \"$result\""
-}}
-
 # zoxide ask
-	cmd zo %{{
-	printf "Zoxide: "
-	read ans
-	result="$(zoxide query --exclude "$PWD" "$ans" | sed 's/\\/\\\\/g;s/"/\\"/g')"
-	lf -remote "send $id cd \"$result\""
+cmd zo %{{
+	~/.config/lf/zoxide.sh
 }}
-
-# eza in bottom left corner
-#cmd on-select &{{
-#    lf -remote "send $id set statfmt \"$(eza -ld --git --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\""
-#}}
 
 # kitten icat (as)
 cmd icat !{{

@@ -10,6 +10,7 @@ ln -s "$SCRIPT_DIR"/lfrc       ~/.config/lf/
 ln -s "$SCRIPT_DIR"/lf.fish    ~/.config/fish/functions/
 ln -s "$SCRIPT_DIR"/cleaner    ~/.config/lf/
 ln -s "$SCRIPT_DIR"/previewer  ~/.config/lf/
+ln -s "$SCRIPT_DIR"/zoxide.sh  ~/.config/lf/
 
 # download icons and colors
 wget https://github.com/gokcehan/lf/raw/refs/heads/master/etc/icons.example -O ~/.config/lf/icons
