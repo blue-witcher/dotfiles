@@ -1,0 +1,21 @@
+set ignorecase true
+set shell fish
+
+# create directory
+cmd mkdir %{{
+	printf "Directory name: "
+	read ans
+	mkdir $ans
+}}
+
+# mappings
+map ac mkdir
+map <enter> shell-pipe
+map d
+map t
+map x cut
+map y clear
+map c copy
+map <delete> %trash-put $f
+map <s-delete> delete
+map w $fish
