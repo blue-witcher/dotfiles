@@ -1,5 +1,5 @@
 set ignorecase true
-set shell fish
+set icons true
 
 # create directory
 cmd mkdir %{{
@@ -8,8 +8,33 @@ cmd mkdir %{{
 	mkdir $ans
 }}
 
+# zoxide command (z)
+cmd z %{{
+    result="$(zoxide query --exclude "$PWD" "$@" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    lf -remote "send $id cd \"$result\""
+}}
+
+# zoxide ask
+cmd zo %{{
+    printf "Zoxide: "
+    read ans
+    result="$(zoxide query --exclude "$PWD" "$ans" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    lf -remote "send $id cd \"$result\""
+}}
+
+# eza in bottom left corner
+#cmd on-select &{{
+#    lf -remote "send $id set statfmt \"$(eza -ld --git --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\""
+#}}
+
+# kitten icat (as)
+cmd icat !{{
+	kitten icat $f
+}}
+
 # mappings
 map ac mkdir
+map az zo
 map <enter> shell-pipe
 map d
 map t
@@ -19,3 +44,4 @@ map c copy
 map <delete> %trash-put $f
 map <s-delete> delete
 map w $fish
+map as icat
