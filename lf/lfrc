@@ -42,6 +42,8 @@ map <enter> shell-pipe
 map <c-space> shell
 map d
 map t
+map f filter
+map F find
 map i batpage
 map x cut
 map y clear
