@@ -1,20 +1,20 @@
 set ignorecase true
 set icons true
-
+set info size
 
 # kitty + pistol
-set previewer ~/.config/lf/previewer
-set cleaner ~/.config/lf/cleaner
+# set previewer ~/.config/lf/previewer
+# set cleaner ~/.config/lf/cleaner
 
 # ctpv
-# set previewer ctpv
-# set cleaner ctpvclear
-# &ctpv -s $id
-# &ctpvquit $id
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
 
 # bat pager
 cmd batpage ${{
-	bat --color always --paging=always $f
+	bat --color always --paging=always $fx
 }}
 
 # create directory
@@ -26,16 +26,16 @@ cmd mkdir %{{
 
 # zoxide command (z)
 cmd z %{{
-    result="$(zoxide query --exclude "$PWD" "$@" | sed 's/\\/\\\\/g;s/"/\\"/g')"
-    lf -remote "send $id cd \"$result\""
+	result="$(zoxide query --exclude "$PWD" "$@" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+	lf -remote "send $id cd \"$result\""
 }}
 
 # zoxide ask
-cmd zo %{{
-    printf "Zoxide: "
-    read ans
-    result="$(zoxide query --exclude "$PWD" "$ans" | sed 's/\\/\\\\/g;s/"/\\"/g')"
-    lf -remote "send $id cd \"$result\""
+	cmd zo %{{
+	printf "Zoxide: "
+	read ans
+	result="$(zoxide query --exclude "$PWD" "$ans" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+	lf -remote "send $id cd \"$result\""
 }}
 
 # eza in bottom left corner
@@ -59,7 +59,7 @@ map i batpage
 map x cut
 map y clear
 map c copy
-map R %trash-put $f
+map R %trash-put $fx
 map <s-delete> delete
 map w $fish
 map as icat
