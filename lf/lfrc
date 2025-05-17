@@ -49,6 +49,6 @@ map x cut
 map y clear
 map c copy
 map R %trash-put $fx
-map <s-delete> delete
+map S delete
 map w $fish
 map as icat
