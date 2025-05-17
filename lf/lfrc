@@ -30,6 +30,10 @@ cmd zo %{{
 	~/.config/lf/zoxide.sh
 }}
 
+cmd on-cd &{{
+    zoxide add "$PWD"
+}}
+
 # kitten icat (as)
 cmd icat !{{
 	kitten icat $f
@@ -38,6 +42,7 @@ cmd icat !{{
 # mappings
 map ac mkdir
 map az zo
+map zz zo
 map <enter> shell-pipe
 map <c-space> shell
 map d
