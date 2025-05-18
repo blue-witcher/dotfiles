@@ -1,6 +1,6 @@
 if status is-interactive
     if type -q rsync
-        abbr -a cpp 'rsync --info=progress2 -ha'
-        abbr -a mvp 'rsync --remove-source-files --info=progress2 -ha'
+        abbr -a cpp 'rsync --human-readable --info=progress2 -a'
+        abbr -a mvp 'rsync --human-readable --remove-source-files --info=progress2 -a'
     end
 end
