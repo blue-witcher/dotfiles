@@ -3,6 +3,9 @@ set icons true
 set info size
 set ifs "\n"
 
+# show warning when in nested instance
+&[ "$LF_LEVEL" -eq 1 ] || lf -remote "send $id echoerr \"Warning: You're in a nested lf instance!\""
+
 # kitty + pistol
 # set previewer ~/.config/lf/previewer
 # set cleaner ~/.config/lf/cleaner
@@ -35,15 +38,13 @@ cmd zo %{{
 
 cmd on-cd &{{
     zoxide add "$PWD"
+    lf -remote "send $id tty-write \"\033]0;lf $(pwd | sed "s|^$HOME|~|")\007\""
 }}
+
 
 # kitten icat (as)
 cmd icat !{{
 	kitten icat $fx
-}}
-
-cmd on-cd &{{
-    lf -remote "send $id tty-write \"\033]0;lf $(pwd | sed "s|^$HOME|~|")\007\""
 }}
 
 # mappings
