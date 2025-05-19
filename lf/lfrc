@@ -119,19 +119,34 @@ cmd bulk-rename ${{
 
 
 # mappings
+
+## navitagion
+map n updir
+map e up
+map i down
+map o open
+map h high
+map m middle
+map l low
+map <tab> half-down
+map <c-e> half-up
+map <c-n> top
+map <c-o> bottom
+
+## utilities
+map I batpage
+map E $$EDITOR "$f"
 # map ac mkdir
 map ac push %mkdir<space>
 map az zo
 map zz zo
+map Z zo
 map <enter> shell-pipe
 map <c-space> shell
-map d
-map t
 map f filter
 map F find
-map i batpage
 map x cut
-map y clear
+map d clear
 map c copy
 map X cut-toggle
 map C copy-toggle
@@ -141,3 +156,11 @@ map R bulk-rename
 map w $fish
 map as icat
 map Q %lf -remote "send $id :cd \"$OLDPWD\"; quit"
+ # unbound keys
+map y
+map t
+map k
+map j 
+map L
+map M
+map H
