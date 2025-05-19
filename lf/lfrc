@@ -1,7 +1,7 @@
 set ignorecase true
 set icons true
 set info size
-set shell fish
+set ifs "\n"
 
 # kitty + pistol
 # set previewer ~/.config/lf/previewer
@@ -27,7 +27,10 @@ cmd mkdir %{{
 
 # zoxide ask
 cmd zo %{{
-	~/.config/lf/zoxide.sh
+	printf "Zoxide: "
+	read ans
+	result="$(zoxide query --exclude "$PWD" "$ans" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+	lf -remote "send $id cd \"$result\""
 }}
 
 cmd on-cd &{{
@@ -36,7 +39,7 @@ cmd on-cd &{{
 
 # kitten icat (as)
 cmd icat !{{
-	kitten icat $f
+	kitten icat $fx
 }}
 
 # mappings
@@ -57,3 +60,4 @@ map R %trash-put $fx
 map S delete
 map w $fish
 map as icat
+map Q %lf -remote "send $id :cd \"$OLDPWD\"; quit"
