@@ -25,7 +25,7 @@ cmd batpage ${{
 cmd mkdir %{{
 	printf "Directory name: "
 	read ans
-	mkdir $ans
+	mkdir "$ans"
 }}
 
 # zoxide ask
@@ -41,14 +41,86 @@ cmd on-cd &{{
     lf -remote "send $id tty-write \"\033]0;lf $(pwd | sed "s|^$HOME|~|")\007\""
 }}
 
+# better cut controls
+cmd cut-add %{{
+    sed -i '1s/.*/move/' ~/.local/share/lf/files
+    printf '%s\n' "$fx" >> ~/.local/share/lf/files
+    lf -remote "send $id :unselect; sync"
+}}
+
+cmd cut-remove %{{
+    sed -i '1s/.*/move/' ~/.local/share/lf/files
+    printf '%s\n' "$fx" | while IFS= read -r file; do
+        sed -i "\|$file|d" ~/.local/share/lf/files
+    done
+    lf -remote "send $id :unselect; sync"
+}}
+
+cmd cut-toggle %{{
+    files="$(comm --output-delimiter= -3 \
+        <(tail -n+2 ~/.local/share/lf/files | sort) \
+        <(printf '%s\n' "$fx" | sort) | tr -d '\0')"
+    printf 'move\n%s\n' "$files" > ~/.local/share/lf/files
+    lf -remote "send $id :unselect; sync"
+}}
+
+# better copy controls
+cmd copy-add %{{
+    sed -i '1s/.*/copy/' ~/.local/share/lf/files
+    printf '%s\n' "$fx" >> ~/.local/share/lf/files
+    lf -remote "send $id :unselect; sync"
+}}
+
+cmd copy-remove %{{
+    sed -i '1s/.*/copy/' ~/.local/share/lf/files
+    printf '%s\n' "$fx" | while IFS= read -r file; do
+        sed -i "\|$file|d" ~/.local/share/lf/files
+    done
+    lf -remote "send $id :unselect; sync"
+}}
+
+cmd copy-toggle %{{
+    files="$(comm --output-delimiter= -3 \
+        <(tail -n+2 ~/.local/share/lf/files | sort) \
+        <(printf '%s\n' "$fx" | sort) | tr -d '\0')"
+    printf 'copy\n%s\n' "$files" > ~/.local/share/lf/files
+    lf -remote "send $id :unselect; sync"
+}}
 
 # kitten icat (as)
 cmd icat !{{
 	kitten icat $fx
 }}
 
+# bulk rename
+cmd bulk-rename ${{
+    old="$(mktemp)"
+    new="$(mktemp)"
+    if [ -n "$fs" ]; then
+        fs="$(basename -a -- $fs)"
+    else
+        fs="$(ls)"
+    fi
+    printf '%s\n' "$fs" > "$old"
+    printf '%s\n' "$fs" > "$new"
+    $EDITOR "$new"
+    [ "$(wc -l < "$new")" -ne "$(wc -l < "$old")" ] && exit
+    paste "$old" "$new" | while IFS= read -r names; do
+        src="$(printf '%s' "$names" | cut -f1)"
+        dst="$(printf '%s' "$names" | cut -f2)"
+        if [ "$src" = "$dst" ] || [ -e "$dst" ]; then
+            continue
+        fi
+        mv -- "$src" "$dst"
+    done
+    rm -- "$old" "$new"
+    lf -remote "send $id unselect"
+}}
+
+
 # mappings
-map ac mkdir
+# map ac mkdir
+map ac push %mkdir<space>
 map az zo
 map zz zo
 map <enter> shell-pipe
@@ -61,8 +133,11 @@ map i batpage
 map x cut
 map y clear
 map c copy
-map R %trash-put $fx
-map S delete
+map X cut-toggle
+map C copy-toggle
+map t %trash-put $fx
+map T delete
+map R bulk-rename
 map w $fish
 map as icat
 map Q %lf -remote "send $id :cd \"$OLDPWD\"; quit"
