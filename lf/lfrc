@@ -42,6 +42,10 @@ cmd icat !{{
 	kitten icat $fx
 }}
 
+cmd on-cd &{{
+    lf -remote "send $id tty-write \"\033]0;lf $(pwd | sed "s|^$HOME|~|")\007\""
+}}
+
 # mappings
 map ac mkdir
 map az zo
