@@ -1,6 +1,12 @@
--- enable line numbers
-vim.opt.number = true
-vim.opt.relativenumber = true
+--enable features
+local set = vim.opt
+set.hlsearch = true
+set.ignorecase = true
+set.cursorline = true
+
+--- enable line numbers
+set.number = true
+set.relativenumber = true
 
 -- cursor remappings
 vim.keymap.set({'n', 'v'}, 'n', '<left>')
