@@ -122,8 +122,8 @@ cmd bulk-rename ${{
 
 ## navitagion
 map n updir
-map e up
-map i down
+map e down
+map i up
 map o open
 map h high
 map m middle
