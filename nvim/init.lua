@@ -3,7 +3,7 @@ local set = vim.opt
 set.hlsearch = true
 set.ignorecase = true
 set.cursorline = true
-
+set.mouse = ''
 --- enable line numbers
 set.number = true
 set.relativenumber = true
