@@ -19,9 +19,13 @@ set.relativenumber = true
 
 -- cursor remappings
 vim.keymap.set({'n', 'v'}, 'n', '<left>')
+vim.keymap.set({'n', 'v'}, 'N', 'H')
 vim.keymap.set({'n', 'v'}, 'e', '<down>')
+vim.keymap.set({'n', 'v'}, 'E', 'J')
 vim.keymap.set({'n', 'v'}, 'i', '<up>')
+vim.keymap.set({'n', 'v'}, 'I', 'K')
 vim.keymap.set({'n', 'v'}, 'o', '<right>')
-vim.keymap.set({'n', 'v'}, 'k', '<insert>')
-vim.keymap.set('n', 'K', 'I')
+vim.keymap.set({'n', 'v'}, 'O', 'L')
+vim.keymap.set({'n', 'v'}, 'l', '<insert>')
+vim.keymap.set({'n', 'v'}, 'L', 'I')
 
