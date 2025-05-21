@@ -128,8 +128,8 @@ map o open
 map h high
 map m middle
 map l low
-map <tab> half-down
-map <c-e> half-up
+map <tab> half-up
+map <c-e> half-down
 map <c-n> top
 map <c-o> bottom
 
