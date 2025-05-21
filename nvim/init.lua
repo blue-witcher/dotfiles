@@ -34,3 +34,6 @@ vim.keymap.set({'n', 'v'}, 'l', 'i')
 vim.keymap.set({'n', 'v'}, 'L', 'I')
 vim.keymap.set({'n', 'v'}, 'k', 'o')
 vim.keymap.set({'n', 'v'}, 'K', 'O')
+
+--other remaps
+vim.keymap.set({'n', 'v'}, ';', ':')
