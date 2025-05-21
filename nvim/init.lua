@@ -1,4 +1,4 @@
-# package manager
+-- package manager
 require("config.lazy")
 
 -- pretty colors
@@ -26,6 +26,11 @@ vim.keymap.set({'n', 'v'}, 'i', '<up>')
 vim.keymap.set({'n', 'v'}, 'I', 'K')
 vim.keymap.set({'n', 'v'}, 'o', '<right>')
 vim.keymap.set({'n', 'v'}, 'O', 'L')
-vim.keymap.set({'n', 'v'}, 'l', '<insert>')
+vim.keymap.set({'n', 'v'}, 'h', 'n')
+vim.keymap.set({'n', 'v'}, 'H', 'N')
+vim.keymap.set({'n', 'v'}, 'j', 'e')
+vim.keymap.set({'n', 'v'}, 'J', 'E')
+vim.keymap.set({'n', 'v'}, 'l', 'i')
 vim.keymap.set({'n', 'v'}, 'L', 'I')
-
+vim.keymap.set({'n', 'v'}, 'k', 'o')
+vim.keymap.set({'n', 'v'}, 'K', 'O')
