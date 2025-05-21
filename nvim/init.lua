@@ -1,6 +1,9 @@
 # package manager
 require("config.lazy")
 
+-- pretty colors
+vim.cmd.colorscheme "catppuccin"
+
 --enable features
 local set = vim.opt
 set.hlsearch = true
