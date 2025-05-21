@@ -8,7 +8,7 @@ if status is-interactive
 # Commands to run in interactive sessions can go here
 # Environment variable for use only in interactive shell or processes called from interactive shell
     fish_add_path ~/.local/bin
-    set -x EDITOR micro
+    set -x EDITOR nvim
     set -g fish_greeting \
 '              ⠀⠀⠀⢠⠏⡆⠀⠀⠀⠀⠀⢀⣀⣤⣤⣤⣀⡀
     ⠀⠀⠀⠀⠀⡟⢦⡀ ⠀⠀⣀⠞⠀⠀⠘⡀⢀⡠⠚⣉⠤⠂⠀⠀⠀⠈⠙⢦⡀
@@ -17,6 +17,8 @@ meow :3⠀⢰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⣤⠶⠶⢶⡄⠀�
    ⠀⣀⠤⠒⠒⢺⠒⠀⠀⠀⠀⠀⠀⠀⠀⠤⠊⠀⢸⠀⡿⠀⡀⠀⣀⡟⠀⠀⠀⠀⢸⡇
    ⠈⠀⠀⣠⠴⠚⢯⡀⠐⠒⠚⠉⠀⢶⠂⠀⣀⠜⠀⢿⡀⠉⠚⠉⠀⠀⠀⠀⣠⠟
    ⠀⠠⠊⠀⠀⠀⠀⠙⠂⣴⠒⠒⣲⢔⠉⠉⣹⣞⣉⣈⠿⢦⣀⣀⣀⣠⡴⠟'
+# edit files
+	abbr -a e "$EDITOR"
 # Navigation
     abbr -a ... 'cd ../../'
     abbr -a .... 'cd ../../../'
