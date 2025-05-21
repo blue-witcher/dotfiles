@@ -4,7 +4,10 @@ set.hlsearch = true
 set.ignorecase = true
 set.cursorline = true
 set.mouse = ''
+
 --- enable line numbers
+set.tabstop = 4
+set.shiftwidth = 4
 set.number = true
 set.relativenumber = true
 
