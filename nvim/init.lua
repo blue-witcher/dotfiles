@@ -1,3 +1,6 @@
+# package manager
+require("config.lazy")
+
 --enable features
 local set = vim.opt
 set.hlsearch = true
