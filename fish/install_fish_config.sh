@@ -14,6 +14,9 @@ mv ~/.config/fish/config.fish ~/.config/fish/config.fish.backup
 # symlink settings file
 ln -s "$SCRIPT_DIR"/config.fish ~/.config/fish/
 
+# set keybinds
+fish_hybrid_key_bindings
+
 # set theme
 fish -c 'fish_config theme save Dracula'
 
