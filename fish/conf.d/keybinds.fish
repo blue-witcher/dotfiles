@@ -13,7 +13,7 @@ if status is-interactive
 	# displaced binds from cursor rebinds
 	## displaced i
 	bind -s -m insert l repaint-mode
-	bind -s -m insert l beginning-of-line repaint-mode
+	bind -s -m insert L beginning-of-line repaint-mode
 	bind -s -M visual -m insert l end-selection repaint-mode
 	bind -s -M visual -m insert L end-selection beginning-of-line repaint-mode
 	## displaced o
