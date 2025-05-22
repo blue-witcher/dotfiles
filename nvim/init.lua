@@ -1,5 +1,5 @@
 -- package manager
-require("config.lazy")
+require("manager.lazy")
 
 -- pretty colors
 vim.cmd.colorscheme "catppuccin"
@@ -36,4 +36,6 @@ vim.keymap.set({'n', 'v'}, 'k', 'o')
 vim.keymap.set({'n', 'v'}, 'K', 'O')
 
 --other remaps
+vim.keymap.set({'n', 'v'}, '<leader>y', '"+y')
+vim.keymap.set({'n', 'v'}, '<leader>p', '"+p')
 vim.keymap.set({'n', 'v'}, ';', ':')
