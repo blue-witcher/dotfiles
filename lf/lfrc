@@ -158,7 +158,6 @@ map as icat
 map Q %lf -remote "send $id :cd \"$OLDPWD\"; quit"
  # unbound keys
 map y
-map t
 map k
 map j 
 map L
