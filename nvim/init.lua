@@ -28,5 +28,6 @@ vim.keymap.set({'n', 'v'}, ';', ':')
 
 -- reset cursor on exit
 -- not needed in kitty, but in other terminals
-require 'cursor'
-
+if os.getenv('TERM') ~= 'xterm-kitty' then
+	require('cursor')
+end
