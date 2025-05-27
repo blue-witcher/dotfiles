@@ -1,6 +1,6 @@
 [Appearance]
 ColorScheme=myBreeze
-Font=Hack,11
+Font=FiraCode Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [Cursor Options]
 CursorShape=1
