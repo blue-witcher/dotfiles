@@ -22,10 +22,10 @@ if status is-interactive
 		bind -s -m insert K 'set fish_cursor_end_mode exclusive' insert-line-over repaint-mode
 		bind -s -M visual k swap-selection-start-stop repaint-mode
 		## displaced e
-		bind -s --preset h 'set fish_cursor_end_mode exclusive' forward-single-char forward-word backward-char 'set fish_cursor_end_mode inclusive'
-		bind -s --preset H 'set fish_cursor_end_mode exclusive' forward-single-char forward-bigword backward-char 'set fish_cursor_end_mode inclusive'
-		bind -s --preset -M visual h 'set fish_cursor_end_mode exclusive' forward-single-char forward-word backward-char 'set fish_cursor_end_mode inclusive'
-		bind -s --preset -M visual H 'set fish_cursor_end_mode exclusive' forward-single-char forward-bigword backward-char 'set fish_cursor_end_mode inclusive'
+		bind -s h 'set fish_cursor_end_mode exclusive' forward-single-char forward-word backward-char 'set fish_cursor_end_mode inclusive'
+		bind -s H 'set fish_cursor_end_mode exclusive' forward-single-char forward-bigword backward-char 'set fish_cursor_end_mode inclusive'
+		bind -s -M visual h 'set fish_cursor_end_mode exclusive' forward-single-char forward-word backward-char 'set fish_cursor_end_mode inclusive'
+		bind -s -M visual H 'set fish_cursor_end_mode exclusive' forward-single-char forward-bigword backward-char 'set fish_cursor_end_mode inclusive'
 		## displaced n
 		   
 		# token history search
