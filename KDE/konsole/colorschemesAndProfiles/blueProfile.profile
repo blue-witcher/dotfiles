@@ -1,6 +1,9 @@
 [Appearance]
 ColorScheme=myBreeze
-Font=FiraCode Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+Font=Fira Code,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+UseFontLineChararacters=false
+WordMode=true
+WordModeAscii=true
 
 [Cursor Options]
 CursorShape=1
