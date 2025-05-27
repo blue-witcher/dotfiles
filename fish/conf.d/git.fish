@@ -6,5 +6,6 @@ if status is-interactive
         abbr -a gitl 'git log HEAD origin/HEAD'
 		abbr -a gitc --set-cursor 'git commit -m\'%\''
 		abbr -a gitr 'git restore'
+		abbr -a gitd 'git diff'
     end
 end
