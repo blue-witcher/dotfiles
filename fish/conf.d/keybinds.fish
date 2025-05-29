@@ -33,6 +33,14 @@ if status is-interactive
 		bind -s -M insert alt-i history-token-search-backward 
 		bind -s -M default alt-e history-token-search-forward
 		bind -s -M insert alt-e history-token-search-forward
+
+		# other stuff
+		bind -s -M default  alt-o   nextd-or-forward-word
+		bind -s -M insert   alt-o   nextd-or-forward-word
+		bind -s -M visual   alt-o   nextd-or-forward-word
+		bind -s -M default  alt-o   backward-word
+		bind -s -M insert   alt-o   backward-word
+		bind -s -M visual   alt-o   backward-word
 	end
 
 end
