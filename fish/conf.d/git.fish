@@ -7,5 +7,6 @@ if status is-interactive
 		abbr -a gitc --set-cursor 'git commit -m\'%\''
 		abbr -a gitr 'git restore'
 		abbr -a gitd 'git diff'
+		abbr -a gita 'git add'
     end
 end
