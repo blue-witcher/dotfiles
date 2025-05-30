@@ -23,4 +23,10 @@ wget -P ~/.config/kitty/ 'https://raw.githubusercontent.com/igrmk/whiskers/refs/
 wget -P ~/.config/kitty/ 'https://raw.githubusercontent.com/igrmk/whiskers/refs/heads/main/whiskers_1024x1024.png'
 wget -P ~/.config/kitty/ 'https://raw.githubusercontent.com/igrmk/whiskers/refs/heads/main/whiskers.svg'
 # install icon (.png variant because .svg support for application icons still seems a bit shaky)
-sed -i 's/Icon=.*/Icon=\/home\/blue\/\.config\/kitty\/whiskers_1024x1024\.png/' ~/.local/share/applications/kitty.desktop
+echo '[Desktop Entry]
+Categories=System;TerminalEmulator;
+Comment=Fast, feature-rich, GPU based terminal
+Exec=kitty
+GenericName=Terminal emulator
+Icon=/home/blue/.config/kitty/whiskers_1024x1024.png
+Name=kitty' > /home/blue/.local/share/applications/kitty.desktop
