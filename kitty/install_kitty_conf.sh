@@ -11,12 +11,7 @@ mv ~/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf.bakup
 ln -s "$SCRIPT_DIR"/kitty.conf ~/.config/kitty/
 
 # symlink the themes
-## if statement because bash is dumb
-## if there are no *.fish files in the directory, this command makes a symlink to ~/dotfiles/fish/conf.d/*.fish.
-## Because of that, we need to check if there is a *.fish file first and only execute the symlinking if there is
-if ls "$SCRIPT_DIR"/themes/* 2> /dev/null; then
-	ln -s "$SCRIPT_DIR"/themes/* ~/.config/kitty/
-fi
+ln -s "$SCRIPT_DIR"/themes ~/.config/kitty/
 
 # download whiskers icon from https://github.com/igrmk/whiskers
 wget -P ~/.config/kitty/ 'https://raw.githubusercontent.com/igrmk/whiskers/refs/heads/main/whiskers_256x256.png'
