@@ -15,13 +15,14 @@ curl https://raw.githubusercontent.com/jarun/advcpmv/master/install.sh --create-
 and begin
     cd advcpmv
     and sh install.sh
+
 end
 
 # place files
 read -c 'y' -P 'Place binaries in "~/.local/bin"? [y/n]: ' -l q1
 if test (string sub -l 1 $q1) = y
     mkdir --parents ~/.local/bin
-    and cp advcp ~/.local/bin/acp; cp advmv ~/.local/bin/amv
+    and cp advcp advmv ~/.local/bin/
 end
 
 # delete working dir
