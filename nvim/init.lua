@@ -13,7 +13,8 @@ set.mouse = ''
 
 --- enable line numbers
 set.tabstop = 4
-set.shiftwidth = 4
+set.shiftwidth = 0 -- 0 means using the value from tabstop
+set.expandtab = true
 set.number = true
 set.relativenumber = true
 
