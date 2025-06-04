@@ -26,9 +26,10 @@ vim.keymap.set({'n', 'v'}, '<leader>y', '"+y')
 vim.keymap.set({'n', 'v'}, '<leader>p', '"+p')
 vim.keymap.set({'n', 'v'}, '<leader>x', '"+x')
 vim.keymap.set({'n', 'v'}, ';', ':')
+vim.keymap.set('i', '<s-tab>', '<bs>')
 
 -- reset cursor on exit
 -- not needed in kitty, but in other terminals
 if os.getenv('TERM') ~= 'xterm-kitty' then
-	require('cursor')
+    require('cursor')
 end
