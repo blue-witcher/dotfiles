@@ -25,7 +25,7 @@ function gpgedit --description "Edit encrypted gpg message-files." --wraps=gpg
     if set -ql _flag_help
         echo -se "Flags:\n"                                             '\n' \
             "-f/--file - file to edit"                             '\n' '\n' \
-            "-r/--recipients"                                           '\n' \
+            "-r/--recipient"                                            '\n' \
             "OR -R/--hidden-recipient"                             '\n' '\n' \
             "-o/--output"                                               '\n' \
             "OR -O/--override - to override input file"                 '\n' \
