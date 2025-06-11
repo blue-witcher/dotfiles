@@ -29,7 +29,7 @@ function gpgedit --description "Edit encrypted gpg message-files."
             "OR -R/--hidden-recipient"                             '\n' '\n' \
             "-o/--output"                                               '\n' \
             "OR -O/--override - to override input file"                 '\n' \
-            "no output flag outputs as ascii files to terminal"
+            "no output flag outputs as ascii characters to terminal"
         
         return
 
