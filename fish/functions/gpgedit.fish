@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-function gpgedit --description "Edit encrypted gpg message-files." --wraps=gpg
+function gpgedit --description "Edit encrypted gpg message-files."
     # check dependencies
     set -f _dependencies gpg vipe
 
