@@ -22,15 +22,15 @@ function gpgedit --description "Edit encrypted gpg message-files."
     argparse $options $exlusive_options -- $argv
 
     # help flag
+    set -f help_text "Flags:" '\n'\
+        "-f/--file - file to edit" '\n''\n'\
+        "-r/--recipient" '\n'\
+        "OR -R/--hidden-recipient" '\n''\n'\
+        "-o/--output" '\n'\
+        "OR -O/--override - to override input file" '\n'\
+        "no output flag outputs as ascii characters to terminal"
     if set -ql _flag_help
-        echo -se "Flags:\n"                                             '\n' \
-            "-f/--file - file to edit"                             '\n' '\n' \
-            "-r/--recipient"                                            '\n' \
-            "OR -R/--hidden-recipient"                             '\n' '\n' \
-            "-o/--output"                                               '\n' \
-            "OR -O/--override - to override input file"                 '\n' \
-            "no output flag outputs as ascii characters to terminal"
-        
+        echo -se $_help_text
         return
 
     end
