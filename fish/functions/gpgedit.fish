@@ -29,8 +29,8 @@ function gpgedit --description "Edit encrypted gpg message-files."
         "-o/--output" '\n'\
         "OR -O/--override - to override input file" '\n'\
         "no output flag outputs as ascii characters to terminal"
-    if set -ql _flag_help
-        echo -se $_help_text
+    if set -ql _flag_help ;or not set -ql _flag_file ;and not set -ql _flag_r ;and not set -ql _flag_R
+        echo -se $help_text
         return
 
     end
