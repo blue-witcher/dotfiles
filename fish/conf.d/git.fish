@@ -1,5 +1,5 @@
 if status is-interactive
-    if type -q git
+    if command -q git
         abbr -a gits 'git status'
         abbr -a gitf 'git fetch'
         abbr -a gitfs 'git fetch ; git status'

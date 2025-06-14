@@ -1,5 +1,5 @@
 if status is-interactive
-    if type -q trash
+    if command -q trash
         abbr -a tr 'trash'
     end
 end
