@@ -1,6 +1,5 @@
 if status is-interactive
     if type -q trash
-        # experimental trash abbr
-        abbr -a rt 'trash'
+        abbr -a tr 'trash'
     end
 end
