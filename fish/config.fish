@@ -34,5 +34,4 @@ meow :3⠀⢰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⣤⠶⠶⢶⡄⠀�
 
 # init commands
     fzf --fish | source
-    zoxide init fish | source
 end
