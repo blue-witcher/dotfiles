@@ -32,6 +32,4 @@ meow :3⠀⢰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⣤⠶⠶⢶⡄⠀�
 # clear screen and scrollback
     abbr -a clears 'printf "\e[H\e[3J"'
 
-# init commands
-    fzf --fish | source
 end
