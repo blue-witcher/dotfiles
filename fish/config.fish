@@ -27,8 +27,6 @@ meow :3⠀⢰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⣤⠶⠶⢶⡄⠀�
 # print full file path
     abbr -a loc 'realpath' # doesn't resolve symlinks
     abbr -a name 'realpath -s' # resolves symlinks
-# grep case insensitive
-    abbr -a se 'grep -i'
 # clear screen and scrollback
     abbr -a clears 'printf "\e[H\e[3J"'
 
