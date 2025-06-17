@@ -11,8 +11,10 @@
 #
 # You may put this in a function called fish_user_key_bindings.
 
-function lf --wraps="lf" --description="lf - Terminal file manager (changing directory on exit)"
-    # `command` is needed in case `lfcd` is aliased to `lf`.
-    # Quotes will cause `cd` to not change directory if `lf` prints nothing to stdout due to an error.
-    cd "$(command lf -print-last-dir $argv)"
+if command -q lf
+    function lf --wraps="lf" --description="lf - Terminal file manager (changing directory on exit)"
+        # `command` is needed in case `lfcd` is aliased to `lf`.
+        # Quotes will cause `cd` to not change directory if `lf` prints nothing to stdout due to an error.
+        cd "$(command lf -print-last-dir $argv)"
+    end
 end
