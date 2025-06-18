@@ -1,7 +1,15 @@
 if command -q eza
     function ls --wraps='eza --color=always --group-directories-first --icons --smart-group --git --links --no-quotes --hyperlink' --description 'alias ls=eza --color=always --group-directories-first --icons --smart-group --git --links --no-quotes --hyperlink'
         eza --color=always --group-directories-first --icons --smart-group --git --links --no-quotes --hyperlink $argv
+
     end
+
+else if command -q exa
+    function ls --wraps='exa --color=always --group-directories-first --icons --git --links' --description 'alias ls=eza --color=always --group-directories-first --icons --git --links'
+        exa --color=always --group-directories-first --icons --git --links $argv
+
+    end
+
 else
     function ls --description "List contents of directory"
     # original function from /usr/share/fish/functions/ls.fish
@@ -54,5 +62,7 @@ else
         and set -lx CLICOLOR 1
     
         command $__fish_ls_command $__fish_ls_color_opt $indicators_opt --group-directories-first $argv
+
     end
+
 end
