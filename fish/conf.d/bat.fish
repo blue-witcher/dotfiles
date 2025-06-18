@@ -3,6 +3,11 @@ if status is-interactive
         # replace cat with plain bat
         abbr -a cat     'bat -p'
         abbr -a catp    'bat -pp'
+
+    else if command -q batcat
+        abbr -a bat     'batcat'
+        abbr -a cat     'batcat -p'
+        abbr -a catp    'batcat -pp'
     end
 
     if command -q batman
