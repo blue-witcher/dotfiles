@@ -1,5 +1,5 @@
 if status is-interactive
-    if test "$(kitten query-terminal name)" = 'name: kitty'
+    if test "$(kitten query-terminal name)" = 'name: kitty'; and command -q kitten
         abbr -a icat    'kitten icat'
         abbr -a kb      'kitten clipboard'
         abbr -a kps     'kitten clipboard -g'
