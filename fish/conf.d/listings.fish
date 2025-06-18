@@ -1,5 +1,5 @@
 if status is-interactive
-    if command -q eza
+    if command -q eza; or command -q exa
         abbr -a ls1 'ls -1'
         abbr -a lsa 'ls -a'
         abbr -a lsa1 'ls -a1'
@@ -11,6 +11,7 @@ if status is-interactive
         abbr -a llr 'll -R'
         abbr -a lsar 'ls -aR'
         abbr -a lsr1 'ls -R1'
+
     else
         abbr -a lsa 'ls -a'
         abbr -a ls1 'ls -1'
