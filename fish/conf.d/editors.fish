@@ -8,8 +8,9 @@ if status is-interactive
 
     end
 
-    if command -q ms-edit
-        abbr -a edit ms-edit
-
+    for i in ms-edit msedit
+        if command -q $i
+            abbr -a edit $i
+        end
     end
 end
