@@ -3,11 +3,14 @@
 function gpgedit --description "Edit encrypted gpg message-files."
     # check dependencies
     set -f _dependencies gpg vipe
-
     for i in $_dependencies
         if not command -q $i
             echo "$i not found."
-            set -f _missing_dependency 1
+            set -f _missing_dependency
+            switch $i
+                case 'vipe'
+                    echo "Vipe is part of the more-utils collection."
+            end
         end
     end
 
