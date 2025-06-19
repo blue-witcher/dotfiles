@@ -11,9 +11,8 @@ function gpgedit --description "Edit encrypted gpg message-files."
         end
     end
 
-    switch $_missing_dependency
-        case 1
-            return 1
+    if set -q $_missing_dependency
+        return 1
     end
 
     # parse arguments
