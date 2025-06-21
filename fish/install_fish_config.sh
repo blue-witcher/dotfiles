@@ -16,3 +16,15 @@ fish -c 'fish_hybrid_key_bindings'
 
 # set theme
 fish -c 'fish_config theme save Dracula'
+
+# set keyboard layout
+fish -c "
+read -P 'Which keyboard layout do you use? Colemak-(D)H or (q)werty?' layout
+switch \"\$(string lower \$layout)\"
+    case 'c*'
+        set -U kb_layout 'qwerty'
+    case 'd*'
+        set -U kb_layout 'colemak-dh'
+    case '*'
+        echo 'No keyboard layout set.'
+end"

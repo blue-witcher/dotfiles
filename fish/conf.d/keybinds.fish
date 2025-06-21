@@ -1,5 +1,5 @@
 if status is-interactive
-	if test "$fish_key_bindings" = 'fish_hybrid_key_bindings' ;or test "$fish_key_bindings" = 'fish_vi_key_bindings'
+	if test "$fish_key_bindings" = 'fish_hybrid_key_bindings' ;or test "$fish_key_bindings" = 'fish_vi_key_bindings' ;and test "$kb_layout" = 'colemak-dh'
 		# cursor movement
 		bind -s -M default o forward-char
 		bind -s -M visual o forward-char
