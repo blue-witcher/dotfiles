@@ -8,6 +8,7 @@ if status is-interactive
         abbr -a gitco               'git commit'
         abbr -a gitr                'git restore'
         abbr -a gitd                'git diff'
+        abbr -a gitds               'git diff --staged'
         abbr -a gita                'git add'
     end
 end
