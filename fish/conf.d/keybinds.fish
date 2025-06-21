@@ -41,6 +41,19 @@ if status is-interactive
 		bind -s -M default  alt-n   backward-word
 		bind -s -M insert   alt-n   backward-word
 		bind -s -M visual   alt-n   backward-word
-	end
+    else if test "$fish_key_bindings" = 'fish_hybrid_key_bindings' ;or test "$fish_key_bindings" = 'fish_vi_key_bindings' ;and test "$kb_layout" = 'qwerty' -o "$kb_layout" = ''
+		# token history search
+		bind -s -M default  alt-k history-token-search-backward
+		bind -s -M insert   alt-k history-token-search-backward
+		bind -s -M default  alt-j history-token-search-forward
+		bind -s -M insert   alt-j history-token-search-forward
 
+		# move cursor words
+		bind -s -M default  alt-l   nextd-or-forward-word
+		bind -s -M insert   alt-l   nextd-or-forward-word
+		bind -s -M visual   alt-l   nextd-or-forward-word
+		bind -s -M default  alt-h   backward-word
+		bind -s -M insert   alt-h   backward-word
+		bind -s -M visual   alt-h   backward-word
+    end
 end
