@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ## Function to determine the Linux distribution
 detect_distro() {
