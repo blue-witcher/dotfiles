@@ -22,7 +22,7 @@ function mm --description "mass move"
         read -P "Set \$$_flag_name to 01? y/n: " ans
         switch (string lower "$ans")
             case 'y*'
-                set $_flag_name 01
+                set -g $_flag_name 01
             case 'n*'
                 read -P "Enter value for \$$_flag_name: " value
                 # check if value is a number
@@ -30,7 +30,7 @@ function mm --description "mass move"
                     echo 'Forbidden value.'
                     return
                 else
-                    set $_flag_name $value
+                    set -g $_flag_name $value
                 end
             case '*'
                 echo 'stopping function'
