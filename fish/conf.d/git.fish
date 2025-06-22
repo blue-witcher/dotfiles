@@ -5,11 +5,14 @@ if status is-interactive
         abbr -a gitfs               'git fetch ; echo ;  git status'
         abbr -a gitl                'git log HEAD origin/HEAD'
         abbr -a gitc --set-cursor   'git commit -m"%"'
+        abbr -a gitcp --set-cursor  'git commit -p -m"%"'
         abbr -a gitco               'git commit'
+        abbr -a gitcop              'git commit -p'
         abbr -a gitr                'git restore'
         abbr -a gitrs               'git restore --staged'
         abbr -a gitd                'git diff'
         abbr -a gitds               'git diff --staged'
         abbr -a gita                'git add'
+        abbr -a gitap               'git add -p'
     end
 end
