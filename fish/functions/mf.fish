@@ -18,7 +18,7 @@ function mf --description "mass file move/copy"
     end
 
     # return if needed vars not set
-    if not set -q _flag_name ;or test "$_flag_name" = ''
+    if not set -q _flag_name
         echo "n/name argument not set."
         return 1
     else if not set -q _flag_copy ;and not set -q _flag_move
