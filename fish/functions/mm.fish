@@ -18,7 +18,7 @@ function mm --description "mass move"
     end
 
     # check if counter for name already exists, set counter otherwise
-    if not set -q $$_flag_name
+    if not set -q $_flag_name
         read -P "Set \$$_flag_name to 01? y/n: " ans
         switch (string lower "$ans")
             case 'y*'
