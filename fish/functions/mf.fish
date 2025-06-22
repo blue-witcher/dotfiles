@@ -26,20 +26,23 @@ function mf --description "mass file move/copy"
         return 1
     end
 
+    # create counter var
+    set -f _countervar $_flag_name'_counter'
+
     # check if counter for name already exists, set counter otherwise
-    if not set -q $_flag_name
-        read -P "Set starting counter value for \$$_flag_name to 01? y/n: " ans
+    if not set -q $_countervar
+        read -P "Set starting counter value for \$$_countervar to 01? y/n: " ans
         switch (string lower "$ans")
             case 'y*'
-                set -g $_flag_name 01
+                set -g $_countervar 01
             case 'n*'
-                read -P "Enter starting value for \$$_flag_name counter: " value
+                read -P "Enter starting value for \$$_countervar: " value
                 # check if value is a number
                 if not test "$value" -gt '0'
                     echo 'Forbidden value.'
                     return
                 else
-                    set -g $_flag_name $value
+                    set -g $_countervar $value
                 end
             case '*'
                 echo 'stopping function'
@@ -51,11 +54,11 @@ function mf --description "mass file move/copy"
     for i in $argv
         set ext (string split -rm1 -f2 . $i)
         if set -q _flag_move
-            mv -iv $i "$_flag_name""-$$_flag_name"".$ext"
-            and set $_flag_name (string pad -c0 -w2 (math $$_flag_name +1))
+            mv -iv $i "$_flag_name""-$$_countervar"".$ext"
+            and set $_countervar (string pad -c0 -w2 (math $$_countervar +1))
         else if set -q _flag_copy
-            cp -iv $i "$_flag_name""-$$_flag_name"".$ext"
-            and set $_flag_name (string pad -c0 -w2 (math $$_flag_name +1))
+            cp -iv $i "$_flag_name""-$$_countervar"".$ext"
+            and set $_countervar (string pad -c0 -w2 (math $$_countervar +1))
         end
     end
 end
