@@ -14,5 +14,6 @@ if status is-interactive
         abbr -a gitds               'git diff --staged'
         abbr -a gita                'git add'
         abbr -a gitap               'git add -p'
+        abbr -a gitsh               'git show'
     end
 end
