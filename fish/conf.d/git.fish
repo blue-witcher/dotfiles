@@ -8,6 +8,7 @@ if status is-interactive
         abbr -a gitcp --set-cursor  'git commit -p -m"%"'
         abbr -a gitco               'git commit'
         abbr -a gitcop              'git commit -p'
+        abbr -a gitca               'git commit --amend'
         abbr -a gitr                'git restore'
         abbr -a gitrs               'git restore --staged'
         abbr -a gitd                'git diff'
