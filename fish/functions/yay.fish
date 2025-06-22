@@ -13,6 +13,11 @@ else if command -q zypper
       zypper $argv
     end
 
+else if command -q nala
+    function yay --wraps=nala --description 'alias yay=nala'
+        nala $argv
+    end
+
 else
     function yay
         echo 'Function not applicable.'
