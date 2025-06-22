@@ -5,7 +5,8 @@ function mm --description "mass move"
     set _help \
     'Usage: mm $Destination_file_name $FilesToMove\n' \
     'Example: \'mm our_trip ~/Downloads/*.jpg\' or \'mm our_trip ~/Downloads/one.jpg ~/Downloads/two.jpg\'\n' \
-    'Destination folder is current working directory.'
+    'Destination folder is current working directory.\n' \
+    'Counter is padded with zeros to two characters.'
     if set -q _flag_help
         echo -es $_help
         return
@@ -19,12 +20,12 @@ function mm --description "mass move"
 
     # check if counter for name already exists, set counter otherwise
     if not set -q $_flag_name
-        read -P "Set \$$_flag_name to 01? y/n: " ans
+        read -P "Set starting counter value for \$$_flag_name to 01? y/n: " ans
         switch (string lower "$ans")
             case 'y*'
                 set -g $_flag_name 01
             case 'n*'
-                read -P "Enter value for \$$_flag_name: " value
+                read -P "Enter starting value for \$$_flag_name counter: " value
                 # check if value is a number
                 if not test "$value" -gt '0'
                     echo 'Forbidden value.'
