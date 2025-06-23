@@ -4,7 +4,7 @@
         "autoUpdateNotification": true,
         "useQuickCss": true,
         "themeLinks": [
-            "https://raw.githubusercontent.com/DiscordStyles/HorizontalServerList/deploy/HorizontalServerList.theme.css",
+            "#https://raw.githubusercontent.com/DiscordStyles/HorizontalServerList/deploy/HorizontalServerList.theme.css",
             "#https://raw.githubusercontent.com/DiscordStyles/RadialStatus/deploy/RadialStatus.theme.css",
             "#https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/midnight.css",
             "https://raw.githubusercontent.com/KillYoy/DiscordNight/master/DiscordNight.theme.css"
@@ -153,9 +153,6 @@
             "DisableCallIdle": {
                 "enabled": false
             },
-            "EmoteCloner": {
-                "enabled": false
-            },
             "Experiments": {
                 "enabled": false
             },
@@ -190,7 +187,8 @@
                 "enabled": false
             },
             "FixSpotifyEmbeds": {
-                "enabled": true
+                "enabled": true,
+                "volume": 10
             },
             "FixYoutubeEmbeds": {
                 "enabled": true
@@ -223,7 +221,7 @@
             "ImageZoom": {
                 "enabled": true,
                 "size": 829.4871794871794,
-                "zoom": 2.8,
+                "zoom": 2.1999999999999984,
                 "nearestNeighbour": false,
                 "square": false,
                 "saveZoomValues": true,
@@ -724,6 +722,12 @@
             },
             "HideMedia": {
                 "enabled": true
+            },
+            "ExpressionCloner": {
+                "enabled": false
+            },
+            "DisableDeepLinks": {
+                "enabled": true
             }
         },
         "notifications": {
@@ -736,8 +740,9 @@
             "authenticated": false,
             "url": "https://api.vencord.dev/",
             "settingsSync": false,
-            "settingsSyncVersion": 1739648953749
-        }
+            "settingsSyncVersion": 1750641378210
+        },
+        "eagerPatches": false
     },
     "quickCss": ""
 }
