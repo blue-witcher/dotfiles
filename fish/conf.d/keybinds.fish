@@ -57,4 +57,12 @@ if status is-interactive
 		bind -s -M insert   alt-h   backward-word
 		bind -s -M visual   alt-h   backward-word
     end
+
+    # move history with alt '<'/'>'
+    bind -s -M default      alt-comma   up-or-search
+    bind -s -M visual       alt-comma   up-line
+    bind -s -M insert       alt-comma   up-or-search
+    bind -s -M default      alt-.       down-or-search
+    bind -s -M visual       alt-.       down-line
+    bind -s -M insert       alt-.       down-or-search
 end
