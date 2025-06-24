@@ -25,8 +25,9 @@ meow :3⠀⢰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⣤⠶⠶⢶⡄⠀�
     abbr -a .... 'cd ../../../'
     abbr -a ..... 'cd ../../../../'
 # print full file path
-    abbr -a loc 'realpath' # doesn't resolve symlinks
-    abbr -a name 'realpath -s' # resolves symlinks
+    abbr -a loc 'realpath' # resolves symlinks
+    abbr -a lame 'realpath -s' # resolves previous symlinks but not file if file is a symlink
+    abbr -a name 'print_filepath' # doesn't resolve symlinks
 # clear screen and scrollback
     abbr -a clears 'printf "\e[H\e[3J"'
 
