@@ -27,7 +27,7 @@ meow :3⠀⢰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⣤⠶⠶⢶⡄⠀�
 # print full file path
     abbr -a loc 'realpath' # resolves symlinks
     abbr -a lame 'realpath -s' # resolves previous symlinks but not file if file is a symlink
-    abbr -a name 'print_filepath' # doesn't resolve symlinks
+    abbr -a name 'print_name' # doesn't resolve symlinks
 # clear screen and scrollback
     abbr -a clears 'printf "\e[H\e[3J"'
 
