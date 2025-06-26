@@ -34,3 +34,8 @@ vim.keymap.set('i', '<s-tab>', '<bs>')
 if os.getenv('TERM') ~= 'xterm-kitty' then
     require('cursor')
 end
+
+-- colors
+if vim.fn.has("termguicolors") then
+  vim.opt.termguicolors = true
+end
