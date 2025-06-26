@@ -62,31 +62,3 @@ vim.cmd('highlight DiagnosticVirtualTextInfo guibg=#091d28 guifg=#00ccff')
 vim.cmd('highlight DiagnosticHint guifg=#813d9c')
 vim.cmd('highlight DiagnosticVirtualTextHint guibg=#160f1e guifg=#813d9c')
 vim.cmd('highlight DiagnosticOk guifg=#40a02b')
-
--- diffs (intented for lewis6991/gitsigns.nvim
--- vim.cmd('highlight DiffAdd guifg=#40a02b')
--- vim.cmd('highlight GitSignsAdd guifg=#40a02b')
--- vim.cmd('highlight DiffChange guifg=#df8e1d')
--- vim.cmd('highlight GitSignsChange guifg=#df8e1d')
--- vim.cmd('highlight DiffDelete guifg=#d20f39')
--- vim.cmd('highlight GitSignsDelete guifg=#d20f39')
-
--- diffs (intented for lewis6991/gitsigns.nvim
-local DiffAddHl     = {'DiffAdd', 'GitSignsAdd'}
-local DiffChangeHl  = {'DiffChange', 'GitSignsChange'}
-local DiffDeleteHl  = {'DiffDelete', 'GitSignsDelete'}
-local DiffAdd       = '#40a02b'
-local DiffChange    = '#df8e1d'
-local DiffDelete    = '#d20f39'
-
-for i, DiffAddHighlights in ipairs(DiffAddHl) do
-    vim.cmd('highlight ' .. DiffAddHighlights .. ' guifg=' .. DiffAdd)
-end
-
-for i, DiffChangeHighlights in ipairs(DiffChangeHl) do
-    vim.cmd('highlight ' .. DiffChangeHighlights .. ' guifg=' .. DiffChange)
-end
-
-for i, DiffDeleteHighlights in ipairs(DiffDeleteHl) do
-    vim.cmd('highlight ' .. DiffDeleteHighlights .. ' guifg=' .. DiffDelete)
-end
