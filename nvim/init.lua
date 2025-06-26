@@ -10,6 +10,7 @@ set.hlsearch = true
 set.ignorecase = true
 set.cursorline = true
 set.mouse = ''
+vim.o.showtabline = 2
 
 --- enable line numbers
 set.tabstop = 4
