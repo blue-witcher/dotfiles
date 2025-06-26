@@ -101,3 +101,5 @@ function M.setup()
   hi("LspSignatureActiveParameter", { fg = colors.yellow, bold = true })
 
 end
+
+M.setup()
