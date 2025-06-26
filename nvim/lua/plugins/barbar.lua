@@ -26,6 +26,7 @@ return {
                 changed = {enabled = true, icon = '~'},
                 deleted = {enabled = true, icon = '-'},
             },
+            button = ' ',
         },
     },},
 }
