@@ -72,9 +72,9 @@ vim.cmd('highlight DiagnosticOk guifg=#40a02b')
 -- vim.cmd('highlight GitSignsDelete guifg=#d20f39')
 
 -- diffs (intented for lewis6991/gitsigns.nvim
-local DiffAddHl     = {'DiffAdd', 'GitSignsAdd', 'GitSignsAddNr', 'GitSignsAddLn'}
-local DiffChangeHl  = {'DiffChange', 'GitSignsChange', 'GitSignsChangeNr', 'GitSignsChangeLn'}
-local DiffDeleteHl  = {'DiffDelete', 'GitSignsDelete', 'GitSignsDeleteNr', 'GitSignsDeleteLn'}
+local DiffAddHl     = {'DiffAdd', 'GitSignsAdd'}
+local DiffChangeHl  = {'DiffChange', 'GitSignsChange'}
+local DiffDeleteHl  = {'DiffDelete', 'GitSignsDelete'}
 local DiffAdd       = '#40a02b'
 local DiffChange    = '#df8e1d'
 local DiffDelete    = '#d20f39'
