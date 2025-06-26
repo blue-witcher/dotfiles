@@ -34,8 +34,10 @@ return {
     -- end, },
 
     -- { "olimorris/onedarkpro.nvim", priority = 1000, config = function()
-    --     require 'diffColors'
+    --     require("onedarkpro").setup({
+    --         options = { transparency = true, }, })
     --     vim.cmd.colorscheme 'onedark_dark'
+    --     require 'diffColors'
     -- end, },
 
     -- { 'projekt0n/github-nvim-theme',
