@@ -1,8 +1,8 @@
 -- package manager
 require("manager.lazy")
-
--- pretty colors
-vim.cmd.colorscheme "my_colorscheme"
+vim.cmd.colorscheme 'myTheme3'
+-- require 'diffColors'
+require 'myColors'
 
 --enable features
 local set = vim.opt
