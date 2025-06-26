@@ -2,7 +2,7 @@
 require("manager.lazy")
 
 -- pretty colors
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "my_colorscheme"
 
 --enable features
 local set = vim.opt
