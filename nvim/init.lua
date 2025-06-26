@@ -1,7 +1,4 @@
 -- colors
-vim.cmd.colorscheme 'myTheme4'
-require 'diffColors'
-require 'myColors'
 
 -- package manager
 require("manager.lazy")

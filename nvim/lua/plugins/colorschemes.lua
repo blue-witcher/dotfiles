@@ -21,6 +21,14 @@ return {
     --     vim.cmd.colorscheme 'catppuccin'
     -- end, },
 
+    { 'Mofiqul/dracula.nvim', config = function()
+        require("dracula").setup({
+            transparent_bg = true})
+        vim.cmd.colorscheme 'dracula'
+        require 'diffColors'
+        require 'myColors'
+    end, },
+
 	--    { 'nyoom-engineering/oxocarbon.nvim', config = function()
 	--        vim.opt.background = "dark"
 	--        vim.cmd.colorscheme 'oxocarbon'
