@@ -2,18 +2,18 @@
 local set = vim.opt
 set.hlsearch = true
 set.ignorecase = true
+set.smartcase = true
 set.cursorline = true
 set.mouse = ''
 set.showtabline = 2
 set.showmode = false -- Don't show the mode, since it's already in the status line
 set.list = true
 set.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-
-
---- enable line numbers
 set.tabstop = 4
 set.shiftwidth = 0 -- 0 means using the value from tabstop
 set.expandtab = true
+
+--- enable line numbers
 set.number = true
 set.relativenumber = true
 
