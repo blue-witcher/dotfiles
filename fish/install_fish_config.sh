@@ -22,9 +22,9 @@ fish -c "
 read -P 'Which keyboard layout do you use? Colemak-(D)H or (q)werty?' layout
 switch \"\$(string lower \$layout)\"
     case 'q*'
-        set -U kb_layout 'qwerty'
+        set -Ux kb_layout 'qwerty'
     case 'd*'
-        set -U kb_layout 'colemak-dh'
+        set -Ux kb_layout 'colemak-dh'
     case '*'
         echo 'No keyboard layout set.'
 end"
