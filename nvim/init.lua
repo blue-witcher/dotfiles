@@ -9,7 +9,11 @@ set.hlsearch = true
 set.ignorecase = true
 set.cursorline = true
 set.mouse = ''
-vim.o.showtabline = 2
+set.showtabline = 2
+set.showmode = false -- Don't show the mode, since it's already in the status line
+set.list = true
+set.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
 
 --- enable line numbers
 set.tabstop = 4
@@ -32,6 +36,7 @@ vim.keymap.set({'n', 'v'}, '<leader>p', '"+p', { desc = "Paste from system clipb
 vim.keymap.set({'n', 'v'}, '<leader>x', '"+x', { desc = "Cut into system clipboard" })
 vim.keymap.set({'n', 'v'}, '<leader>d', '"+d', { desc = "Cut into system clipboard" })
 vim.keymap.set('i', '<s-tab>', '<Del>')
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- Clear highlights on search when pressing <Esc> in normal mode
 
 -- reset cursor on exit
 -- not needed in kitty, but in other terminals
