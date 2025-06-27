@@ -1,8 +1,3 @@
--- colors
-
--- package manager
-require("manager.lazy")
-
 --enable features
 local set = vim.opt
 set.hlsearch = true
@@ -48,3 +43,6 @@ end
 if vim.fn.has("termguicolors") then
   vim.opt.termguicolors = true
 end
+
+-- package manager -- source last so (good) plugins see my config and can base their binds on mine maybe?
+require("manager.lazy")
