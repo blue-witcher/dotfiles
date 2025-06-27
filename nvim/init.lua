@@ -22,9 +22,12 @@ set.relativenumber = true
 require 'kb_layout'
 
 --other mappings
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 vim.keymap.set({'n', 'v'}, '<leader>y', '"+y', { desc = "Yank into system clipboard" })
 vim.keymap.set({'n', 'v'}, '<leader>p', '"+p', { desc = "Paste from system clipboard" })
 vim.keymap.set({'n', 'v'}, '<leader>x', '"+x', { desc = "Cut into system clipboard" })
+vim.keymap.set({'n', 'v'}, '<leader>d', '"+d', { desc = "Cut into system clipboard" })
 vim.keymap.set('i', '<s-tab>', '<bs>')
 
 -- reset cursor on exit
