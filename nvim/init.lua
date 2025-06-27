@@ -18,14 +18,13 @@ set.expandtab = true
 set.number = true
 set.relativenumber = true
 
--- cursor remappings
-require 'colemak'
+-- layout specific (re)maps
+require 'kb_layout'
 
---other remaps
+--other mappings
 vim.keymap.set({'n', 'v'}, '<leader>y', '"+y', { desc = "Yank into system clipboard" })
 vim.keymap.set({'n', 'v'}, '<leader>p', '"+p', { desc = "Paste from system clipboard" })
 vim.keymap.set({'n', 'v'}, '<leader>x', '"+x', { desc = "Cut into system clipboard" })
-vim.keymap.set({'n', 'v'}, ';', ':')
 vim.keymap.set('i', '<s-tab>', '<bs>')
 
 -- reset cursor on exit
