@@ -31,7 +31,7 @@ vim.keymap.set({'n', 'v'}, '<leader>y', '"+y', { desc = "Yank into system clipbo
 vim.keymap.set({'n', 'v'}, '<leader>p', '"+p', { desc = "Paste from system clipboard" })
 vim.keymap.set({'n', 'v'}, '<leader>x', '"+x', { desc = "Cut into system clipboard" })
 vim.keymap.set({'n', 'v'}, '<leader>d', '"+d', { desc = "Cut into system clipboard" })
-vim.keymap.set('i', '<s-tab>', '<bs>')
+vim.keymap.set('i', '<s-tab>', '<Del>')
 
 -- reset cursor on exit
 -- not needed in kitty, but in other terminals
