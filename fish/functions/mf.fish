@@ -38,7 +38,7 @@ function mf --description "mass file move/copy"
             case 'n*'
                 read -P "Enter starting value for \$$_countervar: " value
                 # check if value is a number
-                if not test "$value" -gt '0'
+                if test -z "$value"; or not test "$value" -gt '0'
                     echo 'Forbidden value.'
                     return
                 else
