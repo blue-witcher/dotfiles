@@ -41,7 +41,7 @@ end
 
 -- colors
 if vim.fn.has("termguicolors") then
-  vim.opt.termguicolors = true
+    set.termguicolors = true
 end
 
 -- package manager -- source last so (good) plugins see my config and can base their binds on mine maybe?
