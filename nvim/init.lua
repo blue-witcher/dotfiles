@@ -2,16 +2,23 @@
 local set = vim.opt
 set.hlsearch = true
 set.ignorecase = true
-set.smartcase = true
+set.smartcase = true -- be case sensitive when upper case in somewhere in the search
 set.cursorline = true
-set.mouse = ''
+set.mouse = '' -- disable live
 set.showtabline = 2
 set.showmode = false -- Don't show the mode, since it's already in the status line
 set.list = true
 set.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 set.tabstop = 4
-set.shiftwidth = 0 -- 0 means using the value from tabstop
 set.expandtab = true
+set.shiftwidth = 0 -- 0 means using the value from tabstop
+set.scrolloff = 10 -- Minimal number of screen lines to keep above and below the cursor.
+set.confirm = true
+set.splitright = true
+set.splitbelow = true
+set.inccommand = 'split' -- preview substitutions live
+set.undofile = true -- Save undo history
+set.breakindent = true -- Enable break indent
 
 --- enable line numbers
 set.number = true
@@ -32,6 +39,15 @@ vim.keymap.set({'n', 'v'}, '<leader>x', '"+x', { desc = "Cut into system clipboa
 vim.keymap.set({'n', 'v'}, '<leader>d', '"+d', { desc = "Cut into system clipboard" })
 vim.keymap.set('i', '<s-tab>', '<Del>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- Clear highlights on search when pressing <Esc> in normal mode
+
+-- highlight when yanking
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.hl.on_yank()
+  end,
+})
 
 -- reset cursor on exit
 -- not needed in kitty, but in other terminals
