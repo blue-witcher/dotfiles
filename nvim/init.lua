@@ -20,6 +20,9 @@ set.relativenumber = true
 
 -- layout specific (re)maps
 require 'kb_layout'
+vim.keymap.set('ca', 'cdh', 'lua require \'colemak-dh\'')
+vim.keymap.set('ca', 'qwtz', 'lua require \'qwertz\'')
+vim.keymap.set('ca', 'qwty', 'lua require \'qwerty\'')
 
 --other mappings
 vim.g.mapleader = ' '
