@@ -21,7 +21,7 @@ fish -c 'fish_config theme save Dracula'
 fish -c "
 read -P 'Which keyboard layout do you use? Colemak-(D)H or (q)werty?' layout
 switch \"\$(string lower \$layout)\"
-    case 'c*'
+    case 'q*'
         set -U kb_layout 'qwerty'
     case 'd*'
         set -U kb_layout 'colemak-dh'
