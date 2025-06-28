@@ -4,7 +4,9 @@ if status is-interactive
             abbr -a bat     "$i"
             abbr -a b       "$i"
             abbr -a cat     "$i -p"
+            abbr -a c       "$i -p"
             abbr -a catp    "$i -pp"
+            abbr -a cc      "$i -pp"
         end
     end
 
