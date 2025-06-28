@@ -27,10 +27,10 @@ M.config = function()
         bg              = "#0a0a10", -- deep night
         dark_gray       = "#181825", -- tombshade, ui color
         red             = "#d90d0d", -- blood
-        red             = "#f10e0e", -- blood
         poison_green    = "#67FF80", -- potion glow
         dark_purple     = "#8e44ad", -- phantom
         teal            = "#0e1e22", -- cemetery mist
+        light_teal      = "#173036", -- visual
         orange          = "#ee892b", -- cooler pumpkin(?)
         blue            = "#1176d4", -- spooky glow
         diff_add        = "#2fa84a",
@@ -46,7 +46,7 @@ M.config = function()
     -- Core
     hi(0, "Normal",                         { fg = c.fg, bg = c.bg })
     hi(0, "CursorColumn",                   { bg = c.ui })
-    hi(0, "Visual",                         { bg = c.teal })
+    hi(0, "Visual",                         { bg = c.light_teal})
     hi(0, "LineNr",                         { fg = c.comment, bg = c.bg })
     hi(0, "Cursor",                         { bg = c.cursor })
     hi(0, "CursorLine",                     { bg = c.teal })
