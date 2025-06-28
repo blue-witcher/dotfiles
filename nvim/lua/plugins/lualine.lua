@@ -4,8 +4,7 @@ return {
     config = function()
       require('lualine').setup {
           options = {
-              theme = require('lualine.themes.myTheme'),
-              -- theme = 'dracula',
+              theme = 'halloween',
           },
           sections = {
               lualine_c = {
