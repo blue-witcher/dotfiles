@@ -1,5 +1,13 @@
---enable features
 local set = vim.opt
+-- colors
+if vim.fn.has("termguicolors") then
+    set.termguicolors = true
+end
+
+-- colorscheme
+vim.cmd.colorscheme 'halloween'
+
+-- enable features
 set.hlsearch = true
 set.ignorecase = true
 set.smartcase = true -- be case sensitive when upper case in somewhere in the search
@@ -55,10 +63,6 @@ if os.getenv('TERM') ~= 'xterm-kitty' then
     require('cursor')
 end
 
--- colors
-if vim.fn.has("termguicolors") then
-    set.termguicolors = true
-end
 
 -- package manager -- source last so (good) plugins see my config and can base their binds on mine maybe?
 require("manager.lazy")
