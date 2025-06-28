@@ -7,6 +7,14 @@ return {
               theme = require('lualine.themes.myTheme'),
               -- theme = 'dracula',
           },
+          sections = {
+              lualine_c = {
+                  {
+                      'filename',
+                      path = 1,
+                  },
+              },
+          },
       }
     end,
   },
