@@ -26,6 +26,7 @@ return {
             { "<leader>fc", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
             { "<leader>e", function() Snacks.explorer.open() end, desc = "Open explorer" },
             { "<leader>t", function() Snacks.terminal.toggle() end, desc = "Toggle terminal" },
+            { "<leader>i", function() Snacks.notifier.show_history() end, desc = "Show notification history" },
         },
     }
 }
