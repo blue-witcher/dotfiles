@@ -45,8 +45,10 @@ vim.keymap.set({'n', 'v'}, '<leader>y', '"+y', { desc = "Yank into system clipbo
 vim.keymap.set({'n', 'v'}, '<leader>p', '"+p', { desc = "Paste from system clipboard" })
 vim.keymap.set({'n', 'v'}, '<leader>x', '"+x', { desc = "Cut into system clipboard" })
 vim.keymap.set({'n', 'v'}, '<leader>d', '"+d', { desc = "Cut into system clipboard" })
-vim.keymap.set('i', '<s-tab>', '<Del>')
+vim.keymap.set('i', '<S-Tab>', '<Del>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- Clear highlights on search when pressing <Esc> in normal mode
+vim.keymap.set('n', '<S-Up>', '<C-U>') -- Move half a page up
+vim.keymap.set('n', '<S-Down>', '<C-D>') -- Move half a page down
 
 -- highlight when yanking
 vim.api.nvim_create_autocmd('TextYankPost', {
