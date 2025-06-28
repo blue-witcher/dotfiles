@@ -13,11 +13,11 @@ set.tabstop = 4
 set.expandtab = true
 set.shiftwidth = 0 -- 0 means using the value from tabstop
 set.scrolloff = 10 -- Minimal number of screen lines to keep above and below the cursor.
-set.confirm = true
+set.confirm = true -- ask whether to save when trying to quit
 set.splitright = true
 set.splitbelow = true
 set.inccommand = 'split' -- preview substitutions live
-set.undofile = true -- Save undo history
+set.undofile = true -- Save undo history across sessions
 set.breakindent = true -- Enable break indent
 
 --- enable line numbers
