@@ -1,7 +1,7 @@
 if status is-interactive
     # sort by priority
-    set -l PAGERS       bat batcat less
-    set -l EDITORS      nvim micro vim nano
+    set -l editors      nvim micro vim nano
+    set -l pagers       less
 
     function set_env
         for i in $argv[2..]
@@ -12,6 +12,7 @@ if status is-interactive
         end
     end
 
-    set_env PAGER $PAGERS
-    set_env EDITOR $EDITORS
+    set_env EDITOR $editors
+    set_env VISUAL $editors
+    set_env PAGER  $pagers
 end
