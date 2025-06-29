@@ -18,6 +18,8 @@ return {
             quickfile = {enabled = true},
             terminal = {enabled = true},
             scroll = {enabled = true},
+            git = {enabled = true},
+            gitbrowse = {enabled = true},
         },
         keys = {
             { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
@@ -27,6 +29,8 @@ return {
             { "<leader>e", function() Snacks.explorer.open() end, desc = "Open explorer" },
             { "<leader>t", function() Snacks.terminal.toggle() end, desc = "Toggle terminal" },
             { "<leader>i", function() Snacks.notifier.show_history() end, desc = "Show notification history" },
+            { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Show git blame for current line" },
+            { "<leader>go", function() Snacks.gitbrowse.open() end, desc = "Show remote git file" },
         },
     }
 }
