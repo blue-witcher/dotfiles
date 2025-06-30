@@ -39,9 +39,13 @@ vim.keymap.set('ca', 'qwty', 'lua require \'qwerty\'')
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.keymap.set({'n', 'v'}, '<leader>y', '"+y', { desc = "Yank into system clipboard" })
+vim.keymap.set({'n', 'v'}, '<leader>Y', '"+Y', { desc = "Yank rest of line into system clipboard" })
 vim.keymap.set({'n', 'v'}, '<leader>p', '"+p', { desc = "Paste from system clipboard" })
+vim.keymap.set({'n', 'v'}, '<leader>P', '"+P', { desc = "Paste from system clipboard (before cursor)" })
 vim.keymap.set({'n', 'v'}, '<leader>x', '"+x', { desc = "Cut into system clipboard" })
+vim.keymap.set({'n', 'v'}, '<leader>X', '"+X', { desc = "Cut into system clipboard (left of cursor)" })
 vim.keymap.set({'n', 'v'}, '<leader>d', '"+d', { desc = "Cut into system clipboard" })
+vim.keymap.set({'n', 'v'}, '<leader>D', '"+D', { desc = "Cut rest of line into system clipboard" })
 vim.keymap.set('i', '<S-Tab>', '<Del>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<S-Up>', '<C-U>') -- Move half a page up
