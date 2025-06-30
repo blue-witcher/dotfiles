@@ -10,7 +10,7 @@ set.ignorecase = true
 set.smartcase = true -- be case sensitive when upper case in somewhere in the search
 set.cursorline = true
 set.mouse = '' -- disable live
-set.showtabline = 2
+set.showtabline = 1
 set.showmode = false -- Don't show the mode, since it's already in the status line
 set.list = true
 set.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
