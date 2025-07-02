@@ -119,25 +119,35 @@ cmd bulk-rename ${{
 
 
 # mappings
-
 ## navitagion
-map n updir
-map e down
-map i up
-map o open
-map h high
-map m middle
-map l low
-map <tab> half-up
-map <c-e> half-down
-map <c-n> top
-map <c-o> bottom
+cmd on-init %{{
+    if [ "$kb_layout" = "colemak-dh" ] || [ "$kb_layout" = "colemak" ]; then
+        # unbind keys
+        lf -remote "send $id map H"
+        lf -remote "send $id map k"
+        lf -remote "send $id map j"
+        lf -remote "send $id map L"
+        # bind keys
+        lf -remote "send $id map n updir"
+        lf -remote "send $id map e down"
+        lf -remote "send $id map i up"
+        lf -remote "send $id map o open"
+        lf -remote "send $id map h high"
+        lf -remote "send $id map m middle"
+        lf -remote "send $id map l low"
+        lf -remote "send $id map <tab> half-up"
+        lf -remote "send $id map <c-e> half-down"
+        lf -remote "send $id map <c-n> top"
+        lf -remote "send $id map <c-o> bottom"
+    elif [ "$kb_layout" = "qwerty" ] || [ "$kb_layout" = "qwertz" ]; then
+        true
+    fi
+}}
 
 ## utilities
 map I batpage
 map E $$EDITOR "$f"
-# map ac mkdir
-map ac push %mkdir<space>
+map ac push %mkdir<space> # map ac mkdir
 map az zo
 map zz zo
 map Z zo
@@ -158,8 +168,4 @@ map as icat
 map Q %lf -remote "send $id :cd \"$OLDPWD\"; quit"
  # unbound keys
 map y
-map k
-map j 
-map L
 map M
-map H
