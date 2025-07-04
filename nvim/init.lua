@@ -23,6 +23,9 @@ vim.opt.splitbelow = true
 vim.opt.inccommand = 'split' -- preview substitutions live
 vim.opt.undofile = true -- Save undo history across sessions
 vim.opt.breakindent = true -- Enable break indent
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
 
 --- enable line numbers
 vim.opt.number = true
