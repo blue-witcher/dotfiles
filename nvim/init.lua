@@ -1,33 +1,32 @@
-local set = vim.opt
 -- colors
 if vim.fn.has("termguicolors") then
-    set.termguicolors = true
+    vim.opt.termguicolors = true
 end
 
 -- enable features
-set.hlsearch = true
-set.ignorecase = true
-set.smartcase = true -- be case sensitive when upper case in somewhere in the search
-set.cursorline = true
-set.mouse = '' -- disable live
-set.showtabline = 1
-set.showmode = false -- Don't show the mode, since it's already in the status line
-set.list = true
-set.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-set.tabstop = 4
-set.expandtab = true
-set.shiftwidth = 0 -- 0 means using the value from tabstop
-set.scrolloff = 10 -- Minimal number of screen lines to keep above and below the cursor.
-set.confirm = true -- ask whether to save when trying to quit
-set.splitright = true
-set.splitbelow = true
-set.inccommand = 'split' -- preview substitutions live
-set.undofile = true -- Save undo history across sessions
-set.breakindent = true -- Enable break indent
+vim.opt.hlsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true -- be case sensitive when upper case in somewhere in the search
+vim.opt.cursorline = true
+vim.opt.mouse = '' -- disable live
+vim.opt.showtabline = 1
+vim.opt.showmode = false -- Don't show the mode, since it's already in the status line
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.tabstop = 4
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 0 -- 0 means using the value from tabstop
+vim.opt.scrolloff = 10 -- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.confirm = true -- ask whether to save when trying to quit
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+vim.opt.inccommand = 'split' -- preview substitutions live
+vim.opt.undofile = true -- Save undo history across sessions
+vim.opt.breakindent = true -- Enable break indent
 
 --- enable line numbers
-set.number = true
-set.relativenumber = true
+vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- layout specific (re)maps
 require 'kb_layout'
