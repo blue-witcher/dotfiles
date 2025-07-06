@@ -1,4 +1,5 @@
 if status is-interactive
+    # colemak-dh bindings
 	if test "$fish_key_bindings" = 'fish_hybrid_key_bindings' ;or test "$fish_key_bindings" = 'fish_vi_key_bindings' ;and test "$kb_layout" = 'colemak-dh'
 		# cursor movement
 		bind -s -M default  o       forward-char
@@ -42,6 +43,7 @@ if status is-interactive
 		bind -s -M insert   alt-n   backward-word
 		bind -s -M visual   alt-n   backward-word
 
+        # qwerty/default
     else if test "$fish_key_bindings" = 'fish_hybrid_key_bindings' ;or test "$fish_key_bindings" = 'fish_vi_key_bindings' ;and test "$kb_layout" = 'qwerty' -o "$kb_layout" = ''
 		# token history search
 		bind -s -M default  alt-k   history-token-search-backward
