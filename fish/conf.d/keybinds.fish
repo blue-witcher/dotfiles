@@ -52,8 +52,8 @@ if status is-interactive
             bind -s -M insert   alt-n   backward-word
             bind -s -M visual   alt-n   backward-word
 
-        # vi mode qwerty bindings
-        else if test "$kb_layout" = 'qwerty' -o "$kb_layout" = ''
+        # vi mode qwerty/qwertz bindings
+        else if test "$kb_layout" = 'qwerty' -o "$kb_layout" = "qwertz" -o "$kb_layout" = ''
             # history
             bind -s -M default  alt-k   up-or-search
             bind -s -M insert   alt-k   up-or-search
