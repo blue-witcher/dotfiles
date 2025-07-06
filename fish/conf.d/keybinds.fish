@@ -73,8 +73,6 @@ if status is-interactive
     else if test "$fish_key_bindings" = 'fish_default_key_bindings'
         # history with alt '<'/'>'
         bind -s -M default      alt-comma   up-or-search
-        bind -s -M insert       alt-comma   up-or-search
         bind -s -M default      alt-.       down-or-search
-        bind -s -M insert       alt-.       down-or-search
     end
 end
