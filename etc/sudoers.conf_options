@@ -1,0 +1,2 @@
+# always ask for password
+Defaults timestamp_timeout=0
