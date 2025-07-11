@@ -11,5 +11,8 @@ if status is-interactive
     abbr -a rm 'rm -I'
     abbr -a mv 'mv -i'
     abbr -a cp 'cp -i'
-    
+
+# shred
+    abbr -a shred 'shred -zu'
+
 end
