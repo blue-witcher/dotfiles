@@ -6,8 +6,9 @@ if status is-interactive
     if command -q advmv
         abbr -a amv 'advmv -gi'
     end
+
 # rm cp mv abbr
-    abbr -a rm 'rm -i'
+    abbr -a rm 'rm -I'
     abbr -a mv 'mv -i'
     abbr -a cp 'cp -i'
     
