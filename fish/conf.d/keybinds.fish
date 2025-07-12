@@ -1,9 +1,4 @@
 if status is-interactive
-    # prefer doas over sudo
-    bind -M default alt-s 'for cmd in doas sudo please; if command -q $cmd; fish_commandline_prepend $cmd; break; end; end'
-    bind -M insert  alt-s 'for cmd in doas sudo please; if command -q $cmd; fish_commandline_prepend $cmd; break; end; end'
-    bind -M visual  alt-s 'for cmd in doas sudo please; if command -q $cmd; fish_commandline_prepend $cmd; break; end; end'
-
     # vi mode general bindings
     if test "$fish_key_bindings" = 'fish_hybrid_key_bindings' ;or test "$fish_key_bindings" = 'fish_vi_key_bindings'
         # move token history with alt '<'/'>'
