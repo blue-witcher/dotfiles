@@ -13,16 +13,18 @@ if status is-interactive
         abbr -a c 'cat'
     end
 
-    if command -q batman
-        abbr -a man     'batman'
-    end
+    begin # bat utils
+        if command -q batman
+            abbr -a man     'batman'
+        end
 
-    if command -q batgrep
-        abbr -a bse     'batgrep -i'
-        abbr -a brg     'batgrep'
-    end
+        if command -q batgrep
+            abbr -a bse     'batgrep -i'
+            abbr -a brg     'batgrep'
+        end
 
-    if command -q batdiff
-        abbr -a bdiff   'batdiff'
-    end
+        if command -q batdiff
+            abbr -a bdiff   'batdiff'
+        end
+    end # bat utils
 end
