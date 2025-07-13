@@ -9,6 +9,9 @@ if status is-interactive
             abbr -a cc      "$i -pp"
         end
     end
+    if not command -q 'bat' 'batcat' ;and command -q cat
+        abbr -a c 'cat'
+    end
 
     if command -q batman
         abbr -a man     'batman'
