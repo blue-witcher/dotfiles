@@ -1,10 +1,10 @@
 if status is-interactive
 # advcpmv abbr
     if command -q advcp
-        abbr -a acp 'advcp -gi'
+        abbr -a cpp 'advcp -gi'
     end
     if command -q advmv
-        abbr -a amv 'advmv -gi'
+        abbr -a mvp 'advmv -gi'
     end
 
 # rm cp mv abbr
