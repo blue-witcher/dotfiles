@@ -37,7 +37,7 @@ function private --description 'Toggle fish private mode'
             set -ge fish_private_mode
             echo "Fish private mode is now off."
         else
-            set -g fish_private_mode
+            set -g fish_private_mode 1
             echo "Fish private mode is now on."
         end
     end
