@@ -22,19 +22,19 @@ if status is-interactive
             bind -s -M visual   i       up-line
             # displaced binds from cursor rebinds
             ## displaced i
-            bind -s -m insert   l       repaint-mode
-            bind -s -m insert   L       beginning-of-line repaint-mode
-            bind -s -M visual -m insert l end-selection repaint-mode
-            bind -s -M visual -m insert L end-selection beginning-of-line repaint-mode
+            bind -s -m insert   k       repaint-mode
+            bind -s -m insert   K       beginning-of-line repaint-mode
+            bind -s -M visual -m insert k end-selection repaint-mode
+            bind -s -M visual -m insert K end-selection beginning-of-line repaint-mode
             ## displaced o
-            bind -s -m insert   k       'set fish_cursor_end_mode exclusive' insert-line-under repaint-mode
-            bind -s -m insert   K       'set fish_cursor_end_mode exclusive' insert-line-over repaint-mode
-            bind -s -M visual   k       swap-selection-start-stop repaint-mode
+            bind -s -m insert   l       'set fish_cursor_end_mode exclusive' insert-line-under repaint-mode
+            bind -s -m insert   L       'set fish_cursor_end_mode exclusive' insert-line-over repaint-mode
+            bind -s -M visual   l       swap-selection-start-stop repaint-mode
             ## displaced e
-            bind -s             h       'set fish_cursor_end_mode exclusive' forward-single-char forward-word backward-char 'set fish_cursor_end_mode inclusive'
-            bind -s             H       'set fish_cursor_end_mode exclusive' forward-single-char forward-bigword backward-char 'set fish_cursor_end_mode inclusive'
-            bind -s -M visual   h       'set fish_cursor_end_mode exclusive' forward-single-char forward-word backward-char 'set fish_cursor_end_mode inclusive'
-            bind -s -M visual   H       'set fish_cursor_end_mode exclusive' forward-single-char forward-bigword backward-char 'set fish_cursor_end_mode inclusive'
+            bind -s             j       'set fish_cursor_end_mode exclusive' forward-single-char forward-word backward-char 'set fish_cursor_end_mode inclusive'
+            bind -s             J       'set fish_cursor_end_mode exclusive' forward-single-char forward-bigword backward-char 'set fish_cursor_end_mode inclusive'
+            bind -s -M visual   j       'set fish_cursor_end_mode exclusive' forward-single-char forward-word backward-char 'set fish_cursor_end_mode inclusive'
+            bind -s -M visual   J       'set fish_cursor_end_mode exclusive' forward-single-char forward-bigword backward-char 'set fish_cursor_end_mode inclusive'
             ## displaced n
             ### there is no displaced n
 
