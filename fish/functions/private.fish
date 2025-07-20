@@ -4,10 +4,12 @@ function private --description 'Toggle fish private mode'
     # help flag
     function __private_help
         echo -se \
+            'Toggle fish\'s private mode.' '\n\n'\
             '-h/--help      Show help' '\n'\
             '-s/--status    Show if private mode is on' '\n'\
             '-n/--new       Start new private fish shell inside of current shell' '\n'\
-            '-r/--replace   Replace current shell with private fish shell.'
+            '-r/--replace   Replace current shell with private fish shell.' '\n'\
+            'Private mode cannot be turned off when started using --replace or --new.'
     end
 
     # status flag
