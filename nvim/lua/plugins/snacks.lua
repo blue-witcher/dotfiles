@@ -17,7 +17,6 @@ return {
             explorer = {enabled = true},
             quickfile = {enabled = true},
             terminal = {enabled = true},
-            scroll = {enabled = true},
             git = {enabled = true},
             gitbrowse = {enabled = true},
         },
