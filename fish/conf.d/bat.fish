@@ -3,9 +3,9 @@ if status is-interactive
         if command -q $i
             abbr -a bat     "$i"
             abbr -a b       "$i"
-            abbr -a cat     "$i --style grid,header-filename"
+            # abbr -a cat     "$i --style grid,header-filename"
             abbr -a c       "$i --style grid,header-filename"
-            abbr -a catp    "$i -pp"
+            # abbr -a catp    "$i -pp"
             abbr -a cc      "$i -pp"
         end
     end
