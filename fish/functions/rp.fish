@@ -14,7 +14,7 @@ function rp --description 'Repeat the last command'
     # -i flag
     function __rp_interactive
         __rp_loop_protec
-        read -l -P "Execute \"$history[$count]\"? [y/n] " ans
+        read -l -n 1 -P "Execute \"$history[$count]\"? [y/n] " ans
         switch "$(string lower "$ans")"
             case 'y'
                 return 0
@@ -27,7 +27,7 @@ function rp --description 'Repeat the last command'
     function __rp_loop_protec -S
         # avoid endless loop
         set -f count 1
-        while string match -q 'rp *' $history[$count] ;or string match -q 'rp' $history[$count] ;or not type -q (string split -f 1 ' ' $history[$count])
+        while string match -q 'rp *' "$history[$count]" ;or string match -q 'rp' "$history[$count]" ;or not type -q (string split -f 1 ' ' $history[$count]) ;and test "$history[$count]" != ''
             set count (math "$count" +1)
         end
     end
@@ -35,6 +35,10 @@ function rp --description 'Repeat the last command'
     # main
     function __rp_main
         __rp_loop_protec
+        if test "$history[$count]" = ''
+            echo "Nothing to repeat."
+            return 1
+        end
         echo "Repeating \"$history[$count]\"" >&2 # >&2 so this doesn't get send to stdout, so it doesn't show up when redirecting or piping
         eval $history[$count]
     end
@@ -43,9 +47,7 @@ function rp --description 'Repeat the last command'
     if set -lq _flag_help
         __rp_help
     else if set -lq _flag_interactive
-        if __rp_interactive
-            __rp_main
-        end
+        __rp_interactive ;and __rp_main
     else
         __rp_main
     end
