@@ -7,7 +7,8 @@ return {
                 -- color = "#",
             },
             handlers = {
-                gitsigns = true, -- Requires gitsigns
+                gitsigns = false, -- Requires gitsigns
+                cursor = false,
             },
         })
     end }
