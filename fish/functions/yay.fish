@@ -22,17 +22,31 @@ else if command -q pacman
 
 else if command -q zypper
     function yay --wraps=zypper --description 'alias yay=zypper'
-        zypper $argv
+        if contains -- "$argv[1]" in install
+            echo "Yay we're installing software!! :3"
+            sudo zypper $argv
+        else if contains -- "$argv[1]" rm remove in install
+            sudo zypper $argv
+        else
+            zypper $argv
+        end
     end
 
 else if command -q nala
     function yay --wraps=nala --description 'alias yay=nala'
-        nala $argv
+        if contains -- "$argv[1]" install upgrade
+            echo "Yay we're installing software!! :3"
+            sudo nala $argv
+        else if contains -- "$argv[1]" remove purge update
+            sudo nala $argv
+        else
+            nala $argv
+        end
     end
 
 else
     function yay
-        echo 'Function not applicable.'
+        echo 'No compatible package manager found.'
     end
 
 end
