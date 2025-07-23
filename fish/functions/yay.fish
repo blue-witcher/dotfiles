@@ -14,6 +14,9 @@ else if command -q pacman
     function yay --wraps=zypper --description 'alias yay=zypper'
         if string match -q -- '-S*' $argv ;and not string match -q -- '-S*s*' $argv ;and not string match -q -- '-S*i*' $argv
             echo "Yay we're installing software!! :3"
+            sudo pacman $argv
+        else
+            pacman $argv
         end
     end
 
