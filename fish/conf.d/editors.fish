@@ -17,7 +17,7 @@ if status is-interactive
 
     # nano
     if command -q nano
-        abbr -a nano 'nano --modernbindings'
+        abbr -a nano 'nano -/'
     end
 
     # set $EDITOR environment var
@@ -34,7 +34,7 @@ if status is-interactive
 
         # add --modernbindings option to nano
         if test "$EDITOR" = "nano"
-            for env_var in VISUAL EDITOR; set -gxa $env_var '--modernbindings'; end
+            for env_var in VISUAL EDITOR; set -a $env_var '-/'; end
         end
     end
     set_editor $editors
