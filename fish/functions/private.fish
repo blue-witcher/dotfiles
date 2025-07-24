@@ -14,7 +14,7 @@ function private --description 'Toggle fish private mode'
 
     # status flag
     function __private_status
-        if set -q fish_private_mode
+        if test -n "$fish_private_mode"
             echo "Private mode is on."
         else
             echo "Private mode is off."
