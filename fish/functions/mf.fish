@@ -26,39 +26,34 @@ function mf --description "mass file move/copy"
         return 1
     end
 
-    # create counter var
-    set -f _countervar $_flag_name'_counter'
-
     # check if counter for name already exists, set counter otherwise
-    if not set -q $_countervar
-        read -P "Set starting counter value for \$$_countervar to 01? y/n: " ans
-        switch (string lower "$ans")
-            case 'y*'
-                set -g $_countervar 01
-            case 'n*'
-                read -P "Enter starting value for \$$_countervar: " value
-                # check if value is a number
-                if test -z "$value"; or not test "$value" -gt '0'
-                    echo 'Forbidden value.'
-                    return
-                else
-                    set -g $_countervar $value
-                end
-            case '*'
-                echo 'stopping function'
-                return 1
-        end
+    read -P "Set starting counter value for counter to 01? y/n: " ans
+    switch (string lower "$ans")
+        case 'y*'
+            set -f _counter 01
+        case 'n*'
+            read -P "Enter starting value for counter: " value
+            # check if value is a number
+            if not test "$value" -gt '0'
+                echo 'Forbidden value.'
+                return
+            else
+                set -f _counter $value
+            end
+        case '*'
+            echo 'stopping function'
+            return 1
     end
 
     # copy/move files
     for i in $argv
         set ext (string split -rm1 -f2 . $i)
         if set -q _flag_move
-            mv -iv $i "$_flag_name""-$$_countervar"".$ext"
-            and set $_countervar (string pad -c0 -w2 (math $$_countervar +1))
+            mv -iv $i "$_flag_name""-$_counter"".$ext"
+            and set _counter (string pad -c0 -w2 (math $_counter +1))
         else if set -q _flag_copy
-            cp -iv $i "$_flag_name""-$$_countervar"".$ext"
-            and set $_countervar (string pad -c0 -w2 (math $$_countervar +1))
+            cp -iv $i "$_flag_name""-$_counter"".$ext"
+            and set _counter (string pad -c0 -w2 (math $_counter +1))
         end
     end
 end
