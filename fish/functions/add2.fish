@@ -28,7 +28,7 @@ function add2 --description='add values to variable if not already in it'
         end
 
         for i in $argv
-            if not contains $i $$_flag_var
+            if not contains -- $i $$_flag_var
                 set -a $_flag_var $i
             else
                 set --function present 1
@@ -48,7 +48,7 @@ function add2 --description='add values to variable if not already in it'
         end
 
         for i in $argv
-            if not contains $i (cat $_flag_file)
+            if not contains -- $i (cat $_flag_file)
                 echo $i >> $_flag_file
             else
                 set -f present 1
