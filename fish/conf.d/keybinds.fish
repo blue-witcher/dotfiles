@@ -1,4 +1,18 @@
 if status is-interactive
+    if not set -q kb_layout
+        read -P 'Which keyboard layout do you use? Colemak-(D)H, qwert(y) or qwert(z)?' layout
+        switch "$(string lower $layout)"
+            case 'y'
+                set -Ux kb_layout 'qwerty'
+            case 'd'
+                set -Ux kb_layout 'colemak-dh'
+            case 'z'
+                set -Ux kb_layout 'qwertz'
+            case '*'
+                echo 'No keyboard layout set.'
+        end
+    end
+
     # vi mode general bindings
     if test "$fish_key_bindings" = 'fish_hybrid_key_bindings' ;or test "$fish_key_bindings" = 'fish_vi_key_bindings'
         # move token history with alt '<'/'>'
