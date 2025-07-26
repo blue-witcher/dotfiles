@@ -36,21 +36,59 @@ if status is-interactive
             bind -s             i       up-or-search
             bind -s             I       'man (commandline -t) 2>/dev/null; or echo -n \a'
             bind -s -M visual   i       up-line
-            # displaced binds from cursor rebinds
-            ## displaced i
+            # other hjkl -> neio
+            # displaced l -> o
+            bind -s -M default  d,o     delete-char
+            bind -s -m insert   c,o     begin-selection kill-selection end-selection repaint-mode
+            bind -s -M default  y,o     begin-selection kill-selection yank end-selection
+            # displaced h -> n
+            bind -s -M default  d,n backward-char delete-char
+            bind -s -m insert   c,n backward-char begin-selection kill-selection end-selection repaint-mode
+            bind -s -M default  y,n backward-char begin-selection kill-selection yank end-selection
+
+            # displaced binds from cursor rebinds aka neio -> hjkl
+            ## displaced i -> k
             bind -s -m insert   k       repaint-mode
             bind -s -m insert   K       beginning-of-line repaint-mode
             bind -s -M visual -m insert k end-selection repaint-mode
             bind -s -M visual -m insert K end-selection beginning-of-line repaint-mode
-            ## displaced o
+            bind -s -M default  d,k,w   forward-single-char forward-single-char backward-word kill-word
+            bind -s -M default  d,k,W   forward-single-char forward-single-char backward-bigword kill-bigword
+            bind -s -M default  d,k,b   jump-till-matching-bracket and jump-till-matching-bracket and begin-selection jump-till-matching-bracket kill-selection end-selection
+            bind -s -M default  d,k     backward-jump-till and repeat-jump-reverse and begin-selection repeat-jump kill-selection end-selection
+            bind -s -M insert   c,k,w   forward-single-char forward-single-char backward-word kill-word repaint-mode
+            bind -s -M insert   c,k,W   forward-single-char forward-single-char backward-bigword kill-bigword repaint-mode
+            bind -s -M insert   c,k,b   jump-till-matching-bracket and jump-till-matching-bracket and begin-selection jump-till-matching-bracket kill-selection end-selection
+            bind -s -M insert   c,k     backward-jump-till and repeat-jump-reverse and begin-selection repeat-jump kill-selection end-selection repaint-mode
+            bind -s -M default  y,k,w   forward-single-char forward-single-char backward-word kill-word yank
+            bind -s -M default  y,k,W   forward-single-char forward-single-char backward-bigword kill-bigword yank
+            bind -s -M default  y,k,b   jump-till-matching-bracket and jump-till-matching-bracket and begin-selection jump-till-matching-bracket kill-selection yank end-selection
+            bind -s -M default  y,k     backward-jump-till and repeat-jump-reverse and begin-selection repeat-jump kill-selection yank end-selection
+            ## displaced o -> l
             bind -s -m insert   l       'set fish_cursor_end_mode exclusive' insert-line-under repaint-mode
             bind -s -m insert   L       'set fish_cursor_end_mode exclusive' insert-line-over repaint-mode
             bind -s -M visual   l       swap-selection-start-stop repaint-mode
-            ## displaced e
+            ## displaced e -> j
             bind -s             j       'set fish_cursor_end_mode exclusive' forward-single-char forward-word backward-char 'set fish_cursor_end_mode inclusive'
             bind -s             J       'set fish_cursor_end_mode exclusive' forward-single-char forward-bigword backward-char 'set fish_cursor_end_mode inclusive'
             bind -s -M visual   j       'set fish_cursor_end_mode exclusive' forward-single-char forward-word backward-char 'set fish_cursor_end_mode inclusive'
             bind -s -M visual   J       'set fish_cursor_end_mode exclusive' forward-single-char forward-bigword backward-char 'set fish_cursor_end_mode inclusive'
+            bind -s -M default  g,j     backward-word
+            bind -s -M default  g,J     backward-bigword
+            bind -s -M default  d,j     kill-word
+            bind -s -M default  d,J     kill-bigword
+            bind -s -M default  d,g,j   backward-kill-word
+            bind -s -M default  d,g,J   backward-kill-bigword
+            bind -s -m insert   c,j     kill-word repaint-mode
+            bind -s -m insert   c,J     kill-bigword repaint-mode
+            bind -s -m insert   c,g,j   backward-kill-word repaint-mode
+            bind -s -m insert   c,g,J   backward-kill-bigword repaint-mode
+            bind -s -M default  y,j     kill-word yank
+            bind -s -M default  y,J     kill-bigword yank
+            bind -s -M default  y,g,j   backward-kill-word yank
+            bind -s -M default  y,g,J   backward-kill-bigword yank
+            bind -s -M visual   g,j     backward-word
+            bind -s -M visual   g,J     backward-bigword
             ## displaced n
             ### there is no displaced n
 
