@@ -1,7 +1,7 @@
 if command -q paru
     function yay --wraps=paru --description 'alias yay=paru'
         if string match -q -- '-*' $argv
-            if string match -q -- '*-S*' $argv ;and not string match -q -- '-S*s*' $argv ;and not match -q -- '-S*i*' $argv
+            if string match -q -- '*-S*' $argv ;and not string match -q -- '-S*s*' $argv ;and not string match -q -- '-S*i*' $argv
                 echo "Yay we're installing software!! :3"
             end
         else
