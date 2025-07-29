@@ -1,5 +1,6 @@
 vim.keymap.set({'n', 'v'}, '.', ':')
-vim.keymap.set({'n', 'v'}, '<C-->', 'gcc', { remap = true })
+vim.keymap.set('n', '<C-->', 'gcc', { remap = true, desc = 'toggle line comment' })
+vim.keymap.set('v', '<C-->', 'gc', { remap = true, desc = 'toggle line comment' })
 
 -- move window focus
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
