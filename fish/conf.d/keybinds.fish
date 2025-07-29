@@ -22,6 +22,8 @@ if status is-interactive
         bind -s -M insert       alt-.       history-token-search-forward
         bind -s -M default      ' p'        'set -g fish_cursor_end_mode exclusive' forward-char 'set -g fish_cursor_end_mode inclusive' fish_clipboard_paste
         bind -s -M default      ' P'        fish_clipboard_paste
+        bind -s -M visual -m default ' y'   'fish_clipboard_copy; commandline -f end-selection repaint-mode'
+        bind -s -M default      ' y'        fish_clipboard_copy
 
         # vi mode colemak-dh bindings
         if test "$kb_layout" = 'colemak-dh'
