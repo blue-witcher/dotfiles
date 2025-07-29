@@ -14,9 +14,9 @@ function rp --description 'Repeat the last command'
     # -i flag
     function __rp_interactive
         __rp_loop_protec
-        read -l -n 1 -P "Execute \"$history[$count]\"? [y/n] " ans
+        read -l -n 1 -P "Execute \"$history[$count]\"? [Y/n] " ans
         switch "$(string lower "$ans")"
-            case 'y'
+            case 'y' ''
                 return 0
             case '*'
                 return 1
