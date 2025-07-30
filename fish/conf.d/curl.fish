@@ -4,4 +4,5 @@ if status is-interactive ;and command -q curl
     abbr -a --command curl -- '--se' '--skip-existing'
     abbr -a --command curl -- '--nc' '--no-clobber'
     abbr -a --command curl -- '--O' '--remote-name-all'
+    abbr -a --command curl -- '--od' '--output-dir'
 end
