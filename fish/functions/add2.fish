@@ -15,21 +15,21 @@ function add2 --description='add values to variable if not already in it'
     # variable
     if set -q _flag_var
         # check if variable name is legal
-        if not set -la $_flag_var 2>/dev/null
+        if not set -la -- $_flag_var 2>/dev/null
             echo "Variable name is illegal. Only letters, numbers and underscores are allowed."
             return 1
         else
-            set -le $_flag_var
+            set -le -- $_flag_var
         end
 
         if not set -gq $_flag_var
             echo "\$$_flag_var doesn't exit. Creating.."
-            set -g $_flag_var
+            set -g -- $_flag_var
         end
 
         for i in $argv
             if not contains -- $i $$_flag_var
-                set -a $_flag_var $i
+                set -a -- $_flag_var $i
             else
                 set --function present 1
             end
