@@ -5,4 +5,5 @@ if status is-interactive ;and command -q curl
     abbr -a --command curl -- '--nc' '--no-clobber'
     abbr -a --command curl -- '--O' '--remote-name-all'
     abbr -a --command curl -- '--od' '--output-dir'
+    abbr -a --command curl -- '--rme' '--remove-on-error'
 end
