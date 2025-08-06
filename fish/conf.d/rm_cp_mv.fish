@@ -15,4 +15,6 @@ if status is-interactive
 # shred
     abbr -a shred 'shred -zu'
 
+    command -q vidir ;and \
+        abbr -a vidir 'vidir --verbose'
 end
