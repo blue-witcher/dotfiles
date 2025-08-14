@@ -7,7 +7,7 @@ set -x GIT_ASKPASS '/usr/bin/ksshaskpass'
 if status is-interactive
 # Commands to run in interactive sessions can go here
 # Environment variable for use only in interactive shell or processes called from interactive shell
-    fish_add_path ~/.local/bin
+    fish_add_path -g ~/.local/bin
     set -g fish_greeting \
 '              ⠀⠀⠀⢠⠏⡆⠀⠀⠀⠀⠀⢀⣀⣤⣤⣤⣀⡀
     ⠀⠀⠀⠀⠀⡟⢦⡀ ⠀⠀⣀⠞⠀⠀⠘⡀⢀⡠⠚⣉⠤⠂⠀⠀⠀⠈⠙⢦⡀
