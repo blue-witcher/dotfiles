@@ -1,0 +1,47 @@
+theme = "base16_transparent"
+
+[editor]
+line-number = "relative"
+mouse = false
+auto-format = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+
+[editor.soft-wrap]
+enable = true
+
+[keys.normal]
+';' = 'command_mode'
+# colemak-dh
+n = 'move_char_left'
+g = { n = 'goto_line_start', o = 'goto_line_end' }
+e = 'move_visual_line_down'
+i = 'move_visual_line_up'
+o = 'move_char_right'
+h = 'search_next'
+j = 'move_next_word_end'
+J = 'move_next_long_word_end'
+k = 'insert_mode'
+K = 'insert_at_line_start'
+l = 'open_below'
+L = 'open_above'
+
+[keys.select]
+n = 'extend_char_left'
+e = 'extend_visual_line_down'
+i = 'extend_visual_line_up'
+o = 'extend_char_right'
+h = 'extend_search_next'
+H = 'extend_search_prev'
+j = 'extend_next_word_end'
+J = 'extend_next_long_word_end'
+k = 'insert_mode'
+K = 'insert_at_line_start'
+l = 'open_below'
+L = 'open_above'
