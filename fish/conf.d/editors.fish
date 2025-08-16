@@ -21,7 +21,7 @@ if status is-interactive
     end
 
     # set $EDITOR environment var
-    set -l editors      nvim micro msedit ms-edit nano vim vi
+    set -l editors      helix nvim micro msedit ms-edit nano vim vi
     function set_editor
         for editor in $argv
             if command -q $editor
