@@ -29,5 +29,7 @@ meow :3⠀⢰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⣤⠶⠶⢶⡄⠀�
     abbr -a name 'print_name' # doesn't resolve symlinks
 # clear screen and scrollback
     abbr -a clears 'printf "\e[H\e[3J"'
+# source user drop-in files again
+    for drop_in in ~/.config/fish/conf.d/*.fish ;source $drop_in ;end
 
 end
