@@ -2,17 +2,15 @@ if status is-interactive
     for i in 'bat' 'batcat'
         if command -q $i
             abbr -a bat     "$i"
-            abbr -a b       "$i"
-            # abbr -a cat     "$i --style grid,header-filename"
-            abbr -a c       "$i --style grid,header-filename"
-            # abbr -a catp    "$i -pp"
-            abbr -a cc      "$i -pp"
+            abbr -a b       "$i --style grid,header-filename"
+            abbr -a bb      "$i --style grid,header-filename -P"
         end
     end
-    if not command -q 'bat' 'batcat' ;and command -q cat
-        abbr -a c 'cat'
-    end
 
+    if type -q cat
+        abbr -a c cat
+    end
+        
     begin # bat utils
         if command -q batman
             abbr -a man     'batman'
