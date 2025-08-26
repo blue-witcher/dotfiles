@@ -28,7 +28,6 @@ enable = true
 ';' = 'command_mode'
 # colemak-dh
 n = 'move_char_left'
-g = { n = 'goto_line_start', o = 'goto_line_end', h = 'goto_next_buffer'}
 e = 'move_visual_line_down'
 i = 'move_visual_line_up'
 o = 'move_char_right'
