@@ -1,16 +1,16 @@
 if status is-interactive
 # advcpmv abbr
     if command -q advcp
-        abbr -a cpp 'advcp -giv'
+        abbr -a cpp 'advcp -gvi'
     end
     if command -q advmv
-        abbr -a mvp 'advmv -giv'
+        abbr -a mvp 'advmv -gvi'
     end
 
 # rm cp mv abbr
-    abbr -a rm 'rm -Iv'
-    abbr -a mv 'mv -iv'
-    abbr -a cp 'cp -iv'
+    abbr -a rm 'rm -vI'
+    abbr -a mv 'mv -vi'
+    abbr -a cp 'cp -vi'
 
 # shred
     abbr -a shred 'shred -zu'
