@@ -1,0 +1,5 @@
+rclone config create $rc_config_name webdav url=$rc_remote_url vendor=owncloud pacer_min_sleep=0.01ms user=k pass=hunter2
+
+rclone mount --vfs-cache-mode off --dir-cache-time 5s $rc_config_name: $rc_mountpoint
+
+(systemd units are on the remote)
