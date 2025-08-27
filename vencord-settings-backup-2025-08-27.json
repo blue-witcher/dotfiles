@@ -275,7 +275,7 @@
                 "ignoreChannels": "",
                 "ignoreGuilds": "",
                 "collapseDeleted": false,
-                "inlineEdits": true
+                "inlineEdits": false
             },
             "MessageTags": {
                 "enabled": false
@@ -728,6 +728,13 @@
             },
             "DisableDeepLinks": {
                 "enabled": true
+            },
+            "CopyStickerLinks": {
+                "enabled": false
+            },
+            "ImageFilename": {
+                "enabled": true,
+                "showFullUrl": true
             }
         },
         "notifications": {
@@ -740,7 +747,7 @@
             "authenticated": false,
             "url": "https://api.vencord.dev/",
             "settingsSync": false,
-            "settingsSyncVersion": 1750641378210
+            "settingsSyncVersion": 1756253823039
         },
         "eagerPatches": false
     },
