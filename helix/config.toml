@@ -29,6 +29,7 @@ enable = true
 
 [keys.normal]
 ';' = 'command_mode'
+'space' = { ';' = 'collapse_selection' }
 # colemak-dh
 n = 'move_char_left'
 e = 'move_visual_line_down'
