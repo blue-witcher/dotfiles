@@ -7,7 +7,7 @@ auto-format = false
 bufferline = 'multiple'
 scrolloff = 10
 color-modes = true
-
+smart-tab.enable = false
 
 [editor.statusline]
 left = ["mode", "spinner", "version-control", "file-name", "file-modification-indicator"]
