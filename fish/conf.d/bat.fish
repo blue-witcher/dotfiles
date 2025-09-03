@@ -2,8 +2,8 @@ if status is-interactive
     for i in 'bat' 'batcat'
         if command -q $i
             abbr -a bat     "$i"
-            abbr -a b       "$i --style grid,header-filename"
-            abbr -a bb      "$i --style grid,header-filename -P"
+            abbr -a b       "$i"
+            abbr -a bb      "$i -P"
         end
     end
 
