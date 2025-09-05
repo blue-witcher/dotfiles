@@ -1,28 +1,27 @@
 if status is-interactive
-    for i in 'bat' 'batcat'
+    for i in bat batcat
         if command -q $i
-            abbr -a bat     "$i"
-            abbr -a b       "$i"
-            abbr -a bb      "$i -P"
+            abbr -a bat "$i"
+            abbr -a b "$i --style rule,header-filename"
         end
     end
 
     if type -q cat
         abbr -a c cat
     end
-        
+
     begin # bat utils
         if command -q batman
-            abbr -a man     'batman'
+            abbr -a man batman
         end
 
         if command -q batgrep
-            abbr -a bse     'batgrep -i'
-            abbr -a brg     'batgrep'
+            abbr -a bse 'batgrep -i'
+            abbr -a brg batgrep
         end
 
         if command -q batdiff
-            abbr -a bdiff   'batdiff'
+            abbr -a bdiff batdiff
         end
     end # bat utils
 end
