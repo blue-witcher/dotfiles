@@ -4,6 +4,11 @@
     "title",
     "separator",
     "os",
+    {
+      "type": "command",
+      "key": "Age",
+      "text": "echo $(~/.config/fastfetch/os_age.sh) days"
+    },
     "kernel",
     "packages",
     "de",
@@ -21,7 +26,7 @@
     "disk",
     "poweradapter",
     "battery",
-    "localIp",
+    "localip",
     "break",
     "colors"
   ]
