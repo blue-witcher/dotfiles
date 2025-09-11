@@ -31,6 +31,8 @@ switch \"\$(string lower \$layout)\"
         set -Ux kb_layout 'colemak-dh'
     case 'z*'
         set -Ux kb_layout 'qwertz'
+    case 'n'
+        set -Ux kb_layout ''
     case '*'
         echo 'No keyboard layout set.'
 end"
