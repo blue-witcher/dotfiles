@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-function os_age() {
+os_age() {
   current_date=$(date +%s)
   install_date=$(stat / | grep -Po 'Birth: \K[[:graph:]]+')
   install_date=$(date -d "$install_date" +%s)
