@@ -1,5 +1,5 @@
 if status is-interactive ;and command -q curl
-    set -l -- opts -g -f --proto-default https -L --no-clobber --skip-existing
+    set -l -- opts -g -f --proto-default https -L --no-clobber --skip-existing --remove-on-error
     abbr -a curl "curl $opts"
     abbr -a --command curl -- '--se' '--skip-existing'
     abbr -a --command curl -- '--nc' '--no-clobber'
