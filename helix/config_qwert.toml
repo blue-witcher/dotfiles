@@ -1,0 +1,32 @@
+theme = "base16_transparent"
+
+[editor]
+line-number = "relative"
+mouse = false
+auto-format = false
+bufferline = 'multiple'
+scrolloff = 10
+color-modes = true
+smart-tab.enable = false
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control", "file-name", "file-modification-indicator"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-type"]
+mode.normal = 'NORMAL'
+mode.insert = 'INSERT'
+mode.select = 'SELECT'
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = false
+
+[editor.soft-wrap]
+enable = true
+
+[keys.normal]
+';' = 'command_mode'
+'space' = { ';' = 'collapse_selection' }
