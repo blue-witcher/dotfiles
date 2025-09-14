@@ -29,4 +29,10 @@ enable = true
 
 [keys.normal]
 ';' = 'command_mode'
-'space' = { ';' = 'collapse_selection' }
+':' = 'keep_primary_selection'
+',' = 'collapse_selection'
+
+[keys.select]
+';' = 'command_mode'
+':' = 'keep_primary_selection'
+',' = 'collapse_selection'

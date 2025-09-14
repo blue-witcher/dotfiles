@@ -29,7 +29,9 @@ enable = true
 
 [keys.normal]
 ';' = 'command_mode'
-'space' = { ';' = 'collapse_selection' }
+':' = 'keep_primary_selection'
+',' = 'collapse_selection'
+
 # colemak-dh
 n = 'move_char_left'
 e = 'move_visual_line_down'
@@ -56,3 +58,8 @@ k = 'insert_mode'
 K = 'insert_at_line_start'
 l = 'open_below'
 L = 'open_above'
+# end colemak-dh
+
+';' = 'command_mode'
+':' = 'keep_primary_selection'
+',' = 'collapse_selection'
