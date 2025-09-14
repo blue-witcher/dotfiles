@@ -1,8 +1,8 @@
 if status is-interactive
     for i in bat batcat
         if command -q $i
-            abbr -a bat "$i"
-            abbr -a b "$i --style rule,header-filename"
+            abbr -a bat "$i --style full"
+            abbr -a b "$i"
         end
     end
 
