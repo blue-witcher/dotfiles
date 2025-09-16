@@ -1,6 +1,12 @@
 function kb_layout
-    argparse -x 'c,d,z,y,n' 'c/colemak' 'd/colemak-dh' 'z/qwertz' 'y/qwerty' 'n/none' -- $argv
-    if set -qf _flag_colemak
+    argparse -x 'c,d,z,y,n,h' 'c/colemak' 'd/colemak-dh' 'z/qwertz' 'y/qwerty' 'n/none' 'h/help' -- $argv
+    if set -qf _flag_help
+        echo -es \
+        'Set the kb_layout variable or show the current value.' '\n' \
+        'Flags: ' 'c/colemak ' 'd/colemak-dh ' 'z/qwertz ' 'y/qwerty ' 'n/none ' 'h/help ' '\n' \
+        'Sometimes it\'s better to just spawn a shell using "kb_layout=qwerty exec fish".'
+        return
+    else if set -qf _flag_colemak
         set -Ux kb_layout colemak
         echo "New keyboard-layout: $kb_layout"
     else if set -qf _flag_colemak_dh
