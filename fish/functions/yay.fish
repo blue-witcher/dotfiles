@@ -1,7 +1,7 @@
 if command -q paru
     function yay --wraps=paru --description 'alias yay=paru'
         if string match -q -- '-*' $argv
-            if string match -q -- '*-S*' $argv ;and not string match -q -- '-S*s*' $argv ;and not string match -q -- '-S*i*' $argv
+            if string match -q -- '*-S*' $argv; and not string match -q -- '-S*s*' $argv; and not string match -q -- '-S*i*' $argv
                 echo "Yay we're installing software!! :3"
             end
         else
@@ -12,7 +12,7 @@ if command -q paru
 
 else if command -q pacman
     function yay --wraps=zypper --description 'alias yay=zypper'
-        if string match -q -- '-S*' $argv ;and not string match -q -- '-S*s*' $argv ;and not string match -q -- '-S*i*' $argv
+        if string match -q -- '-S*' $argv; and not string match -q -- '-S*s*' $argv; and not string match -q -- '-S*i*' $argv
             echo "Yay we're installing software!! :3"
             sudo pacman $argv
         else
@@ -34,10 +34,10 @@ else if command -q zypper
 
 else if command -q nala
     function yay --wraps=nala --description 'alias yay=nala'
-        if contains -- "$argv[1]" install upgrade
+        if contains -- "$argv[1]" install upgrade full-upgrade
             echo "Yay we're installing software!! :3"
             sudo nala $argv
-        else if contains -- "$argv[1]" remove purge update
+        else if contains -- "$argv[1]" remove purge update autoremove autopurge fetch
             sudo nala $argv
         else
             nala $argv
