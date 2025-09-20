@@ -4,7 +4,7 @@ if command -q eza
     end
 
 else if command -q exa
-    function ll --wraps='eza --color=always --group-directories-first --icons --smart-group --git --links --no-quotes --hyperlink -al' --description 'alias ll=ls -al'
+    function ll --wraps='exa --color=always --group-directories-first --icons --git --links -al' --description 'alias ll=ls -al'
         ls -al $argv
     end
 end
